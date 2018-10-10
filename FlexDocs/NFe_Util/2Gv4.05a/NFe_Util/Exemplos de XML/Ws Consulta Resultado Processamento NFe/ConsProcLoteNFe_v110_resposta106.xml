@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<retConsReciNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.10">
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<nRec>350000000999999</nRec>
+<cStat>106</cStat>
+<xMotivo>Lote não localizado</xMotivo>
+<cUF>35</cUF>
+</retConsReciNFe>

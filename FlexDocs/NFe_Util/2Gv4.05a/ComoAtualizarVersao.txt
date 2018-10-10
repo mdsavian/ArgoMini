@@ -1,0 +1,21 @@
+1. na pasta onde se encontra uma verão da DLL (é necessário que a exista a versão da DLL na pasta) em uso, digitar na linha de comando do DOS:
+
+   regasm /u NFe_Util_2G.dll /tlb:NFe_Util_2G.tlb
+
+este processo evita que as versões continuem registradas, mas não é algo extremamente necessário,
+ 
+2. copiar a nova versão da DLL e digital na linha de comando do DOS
+
+    regasm NFe_Util_2G.dll /tlb:NFe_Util_2G.tlb
+ 
+
+É importante verificar as mensagens do regasm, a digitação dos comandos pode ser substituída pela exceução dos bat (desregistraDLL_NFe_2G.bat e registraDLL_NFe_2G.bat)
+ 
+3. é recomendado fazer a importação do type library também, principalmente quando muda a versão ex.: 1.4x - 1.5x, pois nestes casos em geral acrescentamos novas funcionalidades (chamadas).
+ 
+4. chame a funcionalidade versao para verificar se a DLL foi registrada (pode utilizar o opção no demo).
+ 
+ 
+5. não esquecer de copiar a DLL atual para o seu projeto.
+
+6. o guia de uso on-line está sendo disponbilizado em www.flexdocs.com.br/guiaNFe

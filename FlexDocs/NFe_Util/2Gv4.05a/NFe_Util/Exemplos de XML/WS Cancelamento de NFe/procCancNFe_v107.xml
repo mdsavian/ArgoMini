@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<procCancNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.07">
+<cancNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.07">
+<infCanc Id="ID35080699999090910270550000000000011234567890">
+<tpAmb>2</tpAmb>
+<xServ>CANCELAR</xServ>
+<chNFe>35080699999090910270550000000000011234567890</chNFe>
+<nProt>135080000000001</nProt>
+<xJust>Teste do WS de Cancelamento</xJust>
+</infCanc>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+<Reference URI="#ID35080699999090910270550000000000011234567890">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<DigestValue>gMhbMj7swEBRTp7h2IlxidBEHGw=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>XEc3RWHy0+9MFmMBjUhzvV0uKVf1zgWStcLMdJ5qL4LP9jU/OuEXXcUotVn0VjReMJ5BPqdjblvy/iA/dB2hU3auYcq+pqdxthIFha1oB5aBh/DggugrohnXTWn9zyBkwRpMifFUwCN2wlm3ldxa+XwJtIz3dHW1US+uoHZnhig=</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>MIIEuzCCA6OgAwIBAgIDMTMxMA0GCSqGSIb3DQEBBQUAMIGSMQswCQYDVQQGEwJCUjELMAkGA1UECBMCUlMxFTATBgNVBAcTDFBvcnRvIEFsZWdyZTEdMBsGA1UEChMUVGVzdGUgUHJvamV0byBORmUgUlMxHTAbBgNVBAsTFFRlc3RlIFByb2pldG8gTkZlIFJTMSEwHwYDVQQDExhORmUgLSBBQyBJbnRlcm1lZGlhcmlhIDEwHhcNMDgwNDI4MDkwMTAyWhcNMDkwNDMwMjM1OTU5WjCBnjELMAkGA1UECBMCUlMxHTAbBgNVBAsTFFRlc3RlIFByb2pldG8gTkZlIFJTMR0wGwYDVQQKExRUZXN0ZSBQcm9qZXRvIE5GZSBSUzEVMBMGA1UEBxMMUE9SVE8gQUxFR1JFMQswCQYDVQQGEwJCUjEtMCsGA1UEAxMkTkZlIC0gQXNzb2NpYWNhbyBORi1lOjk5OTk5MDkwOTEwMjcwMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDh6RRv0bj4RYX+tDQrZRb5opa77LBVVs+6LphIfSF3TSWPfnKh0+xLlBFdmnB5YGgbbW9Uon6pZQTfaC8jZhRhI5eFRRofY/Ugoeo0NGt6PcIQNZQd6lLQ/ASd1qWwjqJoEa7udriKjy3h351Mf1bng1VxS1urqC3Dn39ZWIEwQIDAQABo4IBjjCCAYowIgYDVR0jAQEABBgwFoAUPT5TqhNWAm+ZpcVsvB7malDBjEQwDwYDVR0TAQH/BAUwAwEBADAPBgNVHQ8BAf8EBQMDAOAAMAwGA1UdIAEBAAQCMAAwgbwGA1UdEQEBAASBsTCBrqA4BgVgTAEDBKAvBC0wNzA4MTk1MTE1MTk0NTMxMDg3MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgHQYFYEwBAwKgFAQSRmVybmFuZG8gQ2FudG8gQWx0oBkGBWBMAQMDoBAEDjk5OTk5MDkwOTEwMjcwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIEfZmVybmFuZG8tYWx0QHByb2NlcmdzLnJzLmdvdi5icjAgBgNVHSUBAf8EFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwUwYDVR0fAQEABEkwRzBFoEOgQYY/aHR0cDovL25mZWNlcnRpZmljYWRvLnNlZmF6LnJzLmdvdi5ici9MQ1IvQUNJbnRlcm1lZGlhcmlhMzguY3JsMA0GCSqGSIb3DQEBBQUAA4IBAQCNPpaZ3Byu3/70nObXE8NiM53j1ddIFXsb+v2ghCVd4ffExv3hYc+/a3lfgV8H/WfQsdSCTzS2cHrd4Aasr/eXfclVDmf2hcWz+R7iysOHuT6B6r+DvV3JcMdJJCDdynR5REa+zViMnVZo1G3KuceQ7/y5X3WFNVq4kwHvonJ9oExsWyw8rTwUK5bsjz0A2yEwXkmkJIngnF41sP31+9jCImiqkXcmsesFhxzX7iurAQAQCZOm7iwMWxQKcAjXCZrgSZWRQy6mU224sX3HTArHahmLJ9Iw+WYAua5qBJsiN6PC7v5tfhrEQFpcG39yMnOecxvkkPolDUyBa7d7xwgm</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature>
+</cancNFe>
+<retCancNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.07">
+<infCanc>
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<cStat>101</cStat>
+<xMotivo>Cancelamento de NF-e homologado</xMotivo>
+<cUF>35</cUF>
+<chNFe>35080699999090910270550000000000011234567890</chNFe>
+<dhRecbto>2008-06-14T15:19:58</dhRecbto>
+<nProt>135080123456789</nProt>
+</infCanc>
+</retCancNFe>
+</procCancNFe>

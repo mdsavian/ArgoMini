@@ -1,0 +1,12 @@
+senha:
+
+associacao
+
+
+IMPORTANTE:
+
+Este certificado serve apenas para familialização com o uso de certificados digitais e assinatura digital, mas não é válido para consumir os Web Services da SEFAZ.
+
+
+O prazo de validade do certificado digital expirou no dia 01/10/2010, para utiliza-lo é necessário retroceder a data do equipamento, pois a DLL só permite o uso de certificados que se encontram dentro do prazo de validade.
+

@@ -1,0 +1,23 @@
+NOTA FISCAL|1|
+A|2.00|NFe|
+B|35|00605000|Venda|0|55|1|1|2010-10-10|2010-10-11|08:10:01|1|3534708|1|1|9|2|1|3|NFe_Util_2Gv0.6|||
+C|MRM KATO ASAKURA ME|FlexDocs Documentos Eletronicos|495171423115||||3|
+C02|10142785000190|
+C05|Av. Doutor Altino Arantes|131|sala 66|Centro|3534708|Ourinhos|SP|19900030|1058|BRASIL||
+E|BANCO DO BRASIL S/A|||contato@bb.com.br|
+E02|00000000000191|
+E05|Av. Sao Joao|1|18 andar|Centro|3550308|Sao Paulo|SP|01035000|1058|BRASIL|12345678|
+H|1|Informacoes adicionais do produto|
+I|0001||Agua Mineral 6x1.5L|25||5402|pack|10|6.00|60.00||und|60|1.00|3.00|2.00|0||1|Pedido 2010-001|1|
+M|
+N|
+N10d|0|300|
+Q|
+Q05|99|0.00|
+Q10|0.0000|0.0000|
+S|
+S05|99|0.00|
+S09|0.0000|0.0000|
+W|
+W02|0.00|0.00|0.00|0.00|60.00|3.00|2.00|0.00|0.00|0.00|0.00|0.00|0.00|60.00|
+X|0|

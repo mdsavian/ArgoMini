@@ -1,0 +1,5 @@
+este pacote, o PL_100c
+diferencia-se do PL_100b
+na alteracao do tipo de serie do formulário de 
+seguranca que deve ser somente letras e não 
+números.

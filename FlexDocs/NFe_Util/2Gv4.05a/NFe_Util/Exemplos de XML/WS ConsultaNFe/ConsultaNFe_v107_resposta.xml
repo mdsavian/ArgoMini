@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<retConsSitNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.07">
+<infProt>
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<cStat>217</cStat>
+<xMotivo>Rejeição: NF-e não consta na base de dados da SEFAZ</xMotivo>
+<cUF>35</cUF>
+</infProt>
+</retConsSitNFe>

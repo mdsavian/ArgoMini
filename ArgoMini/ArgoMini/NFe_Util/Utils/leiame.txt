@@ -1,0 +1,18 @@
+CertFlex
+--------------------------------------------------------------------------
+
+Aplicativo para testar a compatibilidade do certificado digital do tipo A3
+com o Framework .NET 2.0.
+
+
+TypeLibBrowser
+---------------------------------------------------------------------------
+
+Aplicativo para identificar os TypeLib das DLL da FlexDocs que estão
+registradas no equipamento.
+
+VAlidaNFe
+---------------------------------------------------------------------------
+
+Aplicativo que aplica as principais regras de validação do Web Server
+de recepção da NF-e; 

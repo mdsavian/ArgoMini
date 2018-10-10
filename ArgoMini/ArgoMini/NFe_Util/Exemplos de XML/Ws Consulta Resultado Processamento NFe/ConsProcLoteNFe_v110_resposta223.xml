@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<retConsReciNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.10">
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<nRec>350000000680940</nRec>
+<cStat>223</cStat>
+<xMotivo>Rejeição: CNPJ do transmissor do lote difere do CNPJ do transmissor da consulta</xMotivo>
+<cUF>35</cUF>
+</retConsReciNFe>

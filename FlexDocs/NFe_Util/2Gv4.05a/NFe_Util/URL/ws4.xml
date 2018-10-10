@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--                                                                           -->
+<!--  Tabela de url dos WS da NF-e Nacional versao 4.00                        -->
+<!--                                                                           -->
+<!--  1.SEFAZ NF-e com WS proprio                                              -->
+<!--  =======================================================================  -->
+<!--  AM, BA, CE, GO, MG, MS, MT, PE, PR, RS, SP                               -->
+<!--                                                                           -->
+<!--  2.SEFAZ VIRTUAL PARA NF-e:                                               -->
+<!--  =======================================================================  -->
+<!--  SVRS: AC, AL, AP, DF, ES, PI, PB, RJ, RN, RO, RR, SC, SE, TO             -->
+<!--  SVAN: MA, PA                                                             -->
+<!--                                                                           -->
+<!--  3.SEFAZ VIRTUAL PARA CONSULTA CADASTRO:                                  -->
+<!--  =======================================================================  -->
+<!--  SVRS: AC, RN, PB, SC                                                     -->
+<!--                                                                           -->
+<!--  4.SEFAZ VIRTUAL de CONTINGENCIA:                                         -->
+<!--  =======================================================================  -->
+<!--   SVC-AN: AC, AL, AP, DF, ES, MG, PB, PI, RJ, RN, RO, RR, RS, SC, SE, SP, TO  -->
+<!--   SVC-RS: AM, BA, CE, GO, MA, MS, MT, PA, PE, PR                          -->
+<!--                                                                           -->
+<!--  5.SEFAZ NFC-e com WS proprio                                             -->
+<!--  =======================================================================  -->
+<!--  am, pr, mt, RS, sp                                                       -->
+<!--                                                                           -->
+<!--  6.SEFAZ VIRTUAL PARA NFC-e:                                              -->
+<!--  =======================================================================  -->
+<!--  SVRS: AC, MA, RN, SE, RJ, RR, RO, PA                                     -->
+<!--                                                                           -->
+<!--                                                                           -->
+<!--  acrescente novas UFs                                                     -->
+<!--                                                                           -->
+<!--   100 - 01/08/2017 - versao inicial                                       -->
+<!--                                                                           -->
+<!--  Acrescimo de opcao do protocolo de comunicacao:                          -->
+<!--  SSL 3.0, TLS 1.0, TLS 1.1 e TLS 1.2                                      -->
+<!--                                                                           -->
+
+<!--               Gabarito            -->
+
+<!--
+    <UF>
+    <sigla>UF</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>	
+        <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+        </producao>
+    </UF>
+-->
+
+<URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<FlexDocs>
+   <empresa>FlexDocs Documentos Eletronicos</empresa>
+   <versao>400</versao>
+   <data>19-08-2018</data>
+   <gravaLog>true</gravaLog>
+   <validaCertificadoWS>false</validaCertificadoWS>
+</FlexDocs>
+<WS>
+<UF>
+    <sigla>AC</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    AC - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+       <Inutilizacao></Inutilizacao>
+       <Consulta></Consulta>
+       <StatusServico></StatusServico>
+       <ConsultaCAD></ConsultaCAD>
+       <Evento></Evento>
+       <Autorizacao></Autorizacao>
+       <RetAutorizacao></RetAutorizacao>
+       <NFCe>http://hml.sefaznet.ac.gov.br</NFCe>
+    </homologacao>
+    <producao>
+       <Inutilizacao></Inutilizacao>
+       <Consulta></Consulta>
+       <StatusServico></StatusServico>
+       <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx</ConsultaCAD>
+       <Evento></Evento>
+       <Autorizacao></Autorizacao>
+       <RetAutorizacao></RetAutorizacao>
+       <NFCe>http://www.sefaznet.ac.gov.br/nfe/NFe.jsp?opc=3</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>AL</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    AL - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://nfce.sefaz.al.gov.br/consultaNFCe.htm</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://nfce.sefaz.al.gov.br/QRCode/consultarNFCe.jsp</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>AP</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    AP - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://satebeta.sefaz.ap.gov.br:8081/sate/seg/SEGf_AcessarFuncao.jsp?cdFuncao=FIS_1261</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>AM</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    Am - SEFAZ PROPRIA NF-e      -->
+        <homologacao>
+            <Inutilizacao>https://homnfe.sefaz.am.gov.br/services2/services/NfeInutilizacao4</Inutilizacao>
+            <Consulta>https://homnfe.sefaz.am.gov.br/services2/services/NfeConsulta4</Consulta>
+            <StatusServico>https://homnfe.sefaz.am.gov.br/services2/services/NfeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://homnfe.sefaz.am.gov.br/services2/services/RecepcaoEvento4</Evento>
+            <Autorizacao>https://homnfe.sefaz.am.gov.br/services2/services/NfeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://homnfe.sefaz.am.gov.br/services2/services/NfeRetAutorizacao4</RetAutorizacao>
+            <NFCe>http://homnfce.sefaz.am.gov.br/nfceweb/consultarNFCe.jsp</NFCe>
+	</homologacao>
+        <producao>
+            <Inutilizacao>https://nfe.sefaz.am.gov.br/services2/services/NfeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.sefaz.am.gov.br/services2/services/NfeConsulta4</Consulta>
+            <StatusServico>https://nfe.sefaz.am.gov.br/services2/services/NfeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://nfe.sefaz.am.gov.br/services2/services/RecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.sefaz.am.gov.br/services2/services/NfeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.sefaz.am.gov.br/services2/services/NfeRetAutorizacao4</RetAutorizacao>
+            <NFCe>http://sistemas.sefaz.am.gov.br/nfceweb/consultarNFCe.jsp</NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>am</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    Am - SEFAZ PROPRIA NFC-e      -->
+        <homologacao>
+            <Inutilizacao>https://homnfe.sefaz.am.gov.br/services2/services/NfeInutilizacao4</Inutilizacao>
+            <Consulta>https://homnfe.sefaz.am.gov.br/services2/services/NfeConsulta4</Consulta>
+            <StatusServico>https://homnfe.sefaz.am.gov.br/services2/services/NfeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://homnfe.sefaz.am.gov.br/services2/services/RecepcaoEvento4</Evento>
+            <Autorizacao>https://homnfe.sefaz.am.gov.br/services2/services/NfeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://homnfe.sefaz.am.gov.br/services2/services/NfeRetAutorizacao4</RetAutorizacao>
+            <NFCe>http://homnfce.sefaz.am.gov.br/nfceweb/consultarNFCe.jsp</NFCe>
+	</homologacao>
+        <producao>
+            <Inutilizacao>https://nfce.sefaz.am.gov.br/nfce-services/services/NfeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfce.sefaz.am.gov.br/nfce-services/services/NfeConsulta4</Consulta>
+            <StatusServico>https://nfce.sefaz.am.gov.br/nfce-services/services/NfeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://nfce.sefaz.am.gov.br/nfce-services/services/RecepcaoEvento4</Evento>
+            <Autorizacao>https://nfce.sefaz.am.gov.br/nfce-services/services/NfeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfce.sefaz.am.gov.br/nfce-services/services/NfeRetAutorizacao4</RetAutorizacao>
+            <NFCe>http://sistemas.sefaz.am.gov.br/nfceweb/consultarNFCe.jsp</NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>BA</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>true</SSL30>
+	<TLS10>true</TLS10>
+	<TLS11>true</TLS11>
+	<TLS12>true</TLS12>
+    <!--  BA - SEFAZ PROPRIA  -->
+        <homologacao>
+            <Inutilizacao>https://hnfe.sefaz.ba.gov.br/webservices/NFeInutilizacao4/NFeInutilizacao4.asmx</Inutilizacao>
+            <Consulta>https://hnfe.sefaz.ba.gov.br/webservices/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx</Consulta>
+            <StatusServico>https://hnfe.sefaz.ba.gov.br/webservices/NFeStatusServico4/NFeStatusServico4.asmx</StatusServico>
+            <ConsultaCAD>https://hnfe.sefaz.ba.gov.br/webservices/CadConsultaCadastro4/CadConsultaCadastro4.asmx</ConsultaCAD>
+            <Evento>https://hnfe.sefaz.ba.gov.br/webservices/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx</Evento>
+            <Autorizacao>https://hnfe.sefaz.ba.gov.br/webservices/NFeAutorizacao4/NFeAutorizacao4.asmx</Autorizacao>
+            <RetAutorizacao>https://hnfe.sefaz.ba.gov.br/webservices/NFeRetAutorizacao4/NFeRetAutorizacao4.asmx</RetAutorizacao>
+            <NFCe>http://hnfe.sefaz.ba.gov.br/servicos/nfce/modulos/geral/NFCEC_consulta_chave_acesso.aspx</NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfe.sefaz.ba.gov.br/webservices/NFeInutilizacao4/NFeInutilizacao4.asmx</Inutilizacao>
+            <Consulta>https://nfe.sefaz.ba.gov.br/webservices/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx</Consulta>
+            <StatusServico>https://nfe.sefaz.ba.gov.br/webservices/NFeStatusServico4/NFeStatusServico4.asmx</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.ba.gov.br/webservices/CadConsultaCadastro4/CadConsultaCadastro4.asmx</ConsultaCAD>
+            <Evento>https://nfe.sefaz.ba.gov.br/webservices/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx</Evento>
+            <Autorizacao>https://nfe.sefaz.ba.gov.br/webservices/NFeAutorizacao4/NFeAutorizacao4.asmx</Autorizacao>
+            <RetAutorizacao>https://nfe.sefaz.ba.gov.br/webservices/NFeRetAutorizacao4/NFeRetAutorizacao4.asmx</RetAutorizacao>
+            <NFCe>http://nfe.sefaz.ba.gov.br/servicos/nfce/modulos/geral/NFCEC_consulta_chave_acesso.aspx</NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>CE</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+	<homologacao>
+            <Inutilizacao>https://nfeh.sefaz.ce.gov.br/nfe4/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfeh.sefaz.ce.gov.br/nfe4/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfeh.sefaz.ce.gov.br/nfe4/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://nfeh.sefaz.ce.gov.br/nfe4/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfeh.sefaz.ce.gov.br/nfe4/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfeh.sefaz.ce.gov.br/nfe4/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfe.sefaz.ce.gov.br/nfe4/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.sefaz.ce.gov.br/nfe4/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfe.sefaz.ce.gov.br/nfe4/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.ce.gov.br/nfe4/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfe.sefaz.ce.gov.br/nfe4/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.sefaz.ce.gov.br/nfe4/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.sefaz.ce.gov.br/nfe4/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>DF</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    DF - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://dec.fazenda.df.gov.br/ConsultarNFCe.aspx</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://dec.fazenda.df.gov.br/ConsultarNFCe.aspx</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>ES</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  ES - SEFAZ VIRTUAL DO RIO GRANDE DO SUL  -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>GO</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  GO - SEFAZ PROPRIA  -->
+        <homologacao>        
+            <Inutilizacao>https://homolog.sefaz.go.gov.br/nfe/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://homolog.sefaz.go.gov.br/nfe/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://homolog.sefaz.go.gov.br/nfe/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://homolog.sefaz.go.gov.br/nfe/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://homolog.sefaz.go.gov.br/nfe/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://homolog.sefaz.go.gov.br/nfe/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://homolog.sefaz.go.gov.br/nfe/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfe.sefaz.go.gov.br/nfe/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.sefaz.go.gov.br/nfe/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfe.sefaz.go.gov.br/nfe/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.go.gov.br/nfe/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfe.sefaz.go.gov.br/nfe/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.sefaz.go.gov.br/nfe/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.sefaz.go.gov.br/nfe/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>go</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  GO - SEFAZ PROPRIA  -->
+        <homologacao>        
+            <Inutilizacao>https://homolog.sefaz.go.gov.br/nfe/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://homolog.sefaz.go.gov.br/nfe/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://homolog.sefaz.go.gov.br/nfe/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://homolog.sefaz.go.gov.br/nfe/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://homolog.sefaz.go.gov.br/nfe/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://homolog.sefaz.go.gov.br/nfe/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://homolog.sefaz.go.gov.br/nfe/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfe.sefaz.go.gov.br/nfe/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.sefaz.go.gov.br/nfe/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfe.sefaz.go.gov.br/nfe/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.go.gov.br/nfe/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfe.sefaz.go.gov.br/nfe/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.sefaz.go.gov.br/nfe/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.sefaz.go.gov.br/nfe/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>MA</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  PA - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://www.hom.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://www.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>ma</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  MA - SEFAZ VIRTUAL DO RIO GRANDE DO SUL -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+	    <NFCe>http://www.hom.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://www.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>MG</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  MG - SEFAZ PROPRIA  -->
+    <homologacao>         
+            <Inutilizacao>https://hnfe.fazenda.mg.gov.br/nfe2/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://hnfe.fazenda.mg.gov.br/nfe2/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://hnfe.fazenda.mg.gov.br/nfe2/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://hnfe.fazenda.mg.gov.br/nfe2/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://hnfe.fazenda.mg.gov.br/nfe2/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://hnfe.fazenda.mg.gov.br/nfe2/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao>https://nfe.fazenda.mg.gov.br/nfe2/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.fazenda.mg.gov.br/nfe2/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfe.fazenda.mg.gov.br/nfe2/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://nfe.fazenda.mg.gov.br/nfe2/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.fazenda.mg.gov.br/nfe2/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.fazenda.mg.gov.br/nfe2/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>MS</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>    
+	<!--  MS - SEFAZ PROPRIA  -->
+        <homologacao>
+            <Inutilizacao>https://hom.nfe.sefaz.ms.gov.br/ws/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://hom.nfe.sefaz.ms.gov.br/ws/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://hom.nfe.sefaz.ms.gov.br/ws/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://hom.nfe.sefaz.ms.gov.br/ws/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://hom.nfe.sefaz.ms.gov.br/ws/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://hom.nfe.sefaz.ms.gov.br/ws/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://hom.nfe.sefaz.ms.gov.br/ws/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfe.sefaz.ms.gov.br/ws/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.sefaz.ms.gov.br/ws/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfe.sefaz.ms.gov.br/ws/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.ms.gov.br/ws/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfe.sefaz.ms.gov.br/ws/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.sefaz.ms.gov.br/ws/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.sefaz.ms.gov.br/ws/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>ms</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  MS - SEFAZ PROPRIA  -->
+        <homologacao>
+            <Inutilizacao>https://hom.nfce.sefaz.ms.gov.br/ws/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://hom.nfce.sefaz.ms.gov.br/ws/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://hom.nfce.sefaz.ms.gov.br/ws/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://hom.nfe.sefaz.ms.gov.br/ws/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://hom.nfce.sefaz.ms.gov.br/ws/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://hom.nfce.sefaz.ms.gov.br/ws/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://hom.nfce.sefaz.ms.gov.br/ws/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfce.sefaz.ms.gov.br/ws/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfce.sefaz.ms.gov.br/ws/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfce.sefaz.ms.gov.br/ws/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.ms.gov.br/ws/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfce.sefaz.ms.gov.br/ws/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfce.sefaz.ms.gov.br/ws/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfce.sefaz.ms.gov.br/ws/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>MT</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>    
+	<!--  MT - SEFAZ PROPRIA NF-e -->
+        <homologacao>
+            <Inutilizacao>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeInutilizacao4</Inutilizacao>
+            <Consulta>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeConsulta4</Consulta>
+            <StatusServico>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeStatusServico4</StatusServico>
+            <ConsultaCAD>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/RecepcaoEvento4</Evento>
+            <Autorizacao>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeRetAutorizacao4</RetAutorizacao>
+            <NFCe>http://homologacao.sefaz.mt.gov.br/nfce/consultanfce</NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeConsulta4</Consulta>
+            <StatusServico>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.mt.gov.br/nfews/v2/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfe.sefaz.mt.gov.br/nfews/v2/services/RecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeRetAutorizacao4</RetAutorizacao>
+            <NFCe>http://www.sefaz.mt.gov.br/nfce/consultanfce</NFCe>
+        </producao>
+</UF>  
+<UF>
+    <sigla>mt</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  MT - SEFAZ PROPRIA NFC-e -->
+        <homologacao>
+            <Inutilizacao>https://homologacao.sefaz.mt.gov.br/nfcews/services/NfeInutilizacao4</Inutilizacao>
+            <Consulta>https://homologacao.sefaz.mt.gov.br/nfcews/services/NfeInutilizacao4</Consulta>
+            <StatusServico>https://homologacao.sefaz.mt.gov.br/nfcews/services/NfeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://homologacao.sefaz.mt.gov.br/nfcews/services/RecepcaoEvento4</Evento>
+            <Autorizacao>https://homologacao.sefaz.mt.gov.br/nfcews/services/NfeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://homologacao.sefaz.mt.gov.br/nfcews/services/NfeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfce.sefaz.mt.gov.br/nfcews/services/NfeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfce.sefaz.mt.gov.br/nfcews/services/NfeConsulta4</Consulta>
+            <StatusServico>https://nfce.sefaz.mt.gov.br/nfcews/services/NfeStatusServico4</StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento>https://nfce.sefaz.mt.gov.br/nfcews/services/RecepcaoEvento4</Evento>
+            <Autorizacao>https://nfce.sefaz.mt.gov.br/nfcews/services/NfeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfce.sefaz.mt.gov.br/nfcews/services/NfeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </producao>
+</UF>  
+<UF>
+    <sigla>PA</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  PA - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>https://appnfc.sefa.pa.gov.br/portal-homologacao/view/consultas/nfce/nfceForm.seam</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>https://appnfc.sefa.pa.gov.br/portal/view/consultas/nfce/nfceForm.seam</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>PB</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>    
+	<!--    PB - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>https://www6.receita.pb.gov.br/atf/seg/SEGf_AcessarFuncao.jsp?cdFuncao=FIS_1410</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx</ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>https://www5.receita.pb.gov.br/atf/seg/SEGf_AcessarFuncao.jsp?cdFuncao=FIS_1410</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>PI</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  PI - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>PE</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>true</SSL30>
+	<TLS10>true</TLS10>
+	<TLS11>true</TLS11>
+	<TLS12>true</TLS12>
+    <!--  PE - SEFAZ PROPRIA  -->
+        <homologacao>
+            <Inutilizacao>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe>https://nfe.sefaz.pe.gov.br/nfe-service/services/RecepcaoEvento4</NFCe>
+        </homologacao>
+        <producao>
+            <Inutilizacao>https://nfe.sefaz.pe.gov.br/nfe-service/services/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.sefaz.pe.gov.br/nfe-service/services/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfe.sefaz.pe.gov.br/nfe-service/services/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.pe.gov.br/nfe-service/services/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfe.sefaz.pe.gov.br/nfe-service/services/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.sefaz.pe.gov.br/nfe-service/services/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.sefaz.pe.gov.br/nfe-service/services/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe></NFCe>
+        </producao>
+</UF>
+<UF>
+    <sigla>PR</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  PR - SEFAZ PROPRIA  -->
+    <homologacao>
+            <Inutilizacao>https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://homologacao.nfe.sefa.pr.gov.br/nfe/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe>http://www.dfeportal.fazenda.pr.gov.br/dfe-portal/rest/servico/consultaNFCe</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao>https://nfe.sefa.pr.gov.br/nfe/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfe.sefa.pr.gov.br/nfe/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfe.sefa.pr.gov.br/nfe/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfe.sefa.pr.gov.br/nfe/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfe.sefa.pr.gov.br/nfe/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfe.sefa.pr.gov.br/nfe/NFeRetAutorizacao4</RetAutorizacao>
+            <NFCe>http://www.dfeportal.fazenda.pr.gov.br/dfe-portal/rest/servico/consultaNFCe</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>pr</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>3000000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    PR - SEFA PROPRIA NFC-e -->
+    <homologacao>
+            <Inutilizacao>https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://homologacao.nfce.sefa.pr.gov.br/nfce/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeRetAutorizacao4</RetAutorizacao>
+	    <NFCe></NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao>https://nfce.sefa.pr.gov.br/nfce/NFeInutilizacao4</Inutilizacao>
+            <Consulta>https://nfce.sefa.pr.gov.br/nfce/NFeConsultaProtocolo4</Consulta>
+            <StatusServico>https://nfce.sefa.pr.gov.br/nfce/NFeStatusServico4</StatusServico>
+            <ConsultaCAD>https://nfce.sefa.pr.gov.br/nfce/CadConsultaCadastro4</ConsultaCAD>
+            <Evento>https://nfce.sefa.pr.gov.br/nfce/NFeRecepcaoEvento4</Evento>
+            <Autorizacao>https://nfce.sefa.pr.gov.br/nfce/NFeAutorizacao4</Autorizacao>
+            <RetAutorizacao>https://nfce.sefa.pr.gov.br/nfce/NFeRetAutorizacao4</RetAutorizacao>
+	    <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>RJ</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://www4.fazenda.rj.gov.br/consultaNFCe/QRCode</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://www4.fazenda.rj.gov.br/consultaNFCe/QRCode</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>RO</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    RO  - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://www.nfce.sefin.ro.gov.br/consultanfce/consulta.jsp</NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe>http://www.nfce.sefin.ro.gov.br/consultanfce/consulta.jsp</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>RN</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  RN - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+        <Inutilizacao></Inutilizacao>
+        <Consulta></Consulta>
+        <StatusServico></StatusServico>
+        <ConsultaCAD></ConsultaCAD>
+        <Evento></Evento>
+        <Autorizacao></Autorizacao>
+        <RetAutorizacao></RetAutorizacao>
+        <NFCe>http://www.hom.nfe.rn.gov.br/portal/consultarNFCe.jsp</NFCe>
+    </homologacao>
+    <producao>
+        <Inutilizacao></Inutilizacao>
+        <Consulta></Consulta>
+        <StatusServico></StatusServico>
+        <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx</ConsultaCAD>
+        <Evento></Evento>
+        <Autorizacao></Autorizacao>
+        <RetAutorizacao></RetAutorizacao>
+	<NFCe>http://www.nfe.rn.gov.br/portal/consultarNFCe.jsp</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>RR</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  RR - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+        <Inutilizacao></Inutilizacao>
+        <Consulta></Consulta>
+        <StatusServico></StatusServico>
+        <ConsultaCAD></ConsultaCAD>
+        <Evento></Evento>
+        <Autorizacao></Autorizacao>
+        <RetAutorizacao></RetAutorizacao>
+        <NFCe>http://200.174.88.103:8080/nfce/servlet/qrcode</NFCe>
+    </homologacao>
+    <producao>
+        <Inutilizacao></Inutilizacao>
+        <Consulta></Consulta>
+        <StatusServico></StatusServico>
+        <ConsultaCAD></ConsultaCAD>
+        <Evento></Evento>
+        <Autorizacao></Autorizacao>
+        <RetAutorizacao></RetAutorizacao>
+	<NFCe>https://www.sefaz.rr.gov.br/nfce/servlet/qrcode</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>RS</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <homologacao>
+        <Inutilizacao>https://nfe-homologacao.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+        <Consulta>https://nfe-homologacao.sefazrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+        <StatusServico>https://nfe-homologacao.sefazrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+        <ConsultaCAD></ConsultaCAD>
+        <Evento>https://nfe-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+        <Autorizacao>https://nfe-homologacao.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+        <RetAutorizacao>https://nfe-homologacao.sefazrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+        <NFCe>https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx</NFCe>
+    </homologacao>
+    <producao>
+        <Inutilizacao>https://nfe.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+        <Consulta>https://nfe.sefazrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+        <StatusServico>https://nfe.sefazrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+        <ConsultaCAD>https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx</ConsultaCAD>
+        <Evento>https://nfe.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+        <Autorizacao>https://nfe.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+        <RetAutorizacao>https://nfe.sefazrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+        <NFCe>https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>rs</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <homologacao>
+        <Inutilizacao>https://nfce-homologacao.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+        <Consulta>https://nfce-homologacao.sefazrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+        <StatusServico>https://nfce-homologacao.sefazrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+        <ConsultaCAD></ConsultaCAD>
+        <Evento>https://nfce-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+        <Autorizacao>https://nfce-homologacao.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+        <RetAutorizacao>https://nfce-homologacao.sefazrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+        <NFCe>https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx</NFCe>
+    </homologacao>
+    <producao>
+        <Inutilizacao>https://nfce.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+        <Consulta>https://nfce.sefazrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+        <StatusServico>https://nfce.sefazrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+        <ConsultaCAD></ConsultaCAD>
+        <Evento>https://nfce.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+        <Autorizacao>https://nfce.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+        <RetAutorizacao>https://nfce.sefazrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+        <NFCe>https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>SC</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--   SC - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+        <Inutilizacao></Inutilizacao>
+        <Consulta></Consulta>
+        <StatusServico></StatusServico>
+        <ConsultaCAD></ConsultaCAD>
+        <Evento></Evento>
+        <Autorizacao></Autorizacao>
+        <RetAutorizacao></RetAutorizacao>
+       <NFCe></NFCe>
+    </homologacao>
+    <producao>
+        <Inutilizacao></Inutilizacao>
+        <Consulta></Consulta>
+        <StatusServico></StatusServico>
+        <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx</ConsultaCAD>
+        <Evento></Evento>
+        <Autorizacao></Autorizacao>
+        <RetAutorizacao></RetAutorizacao>
+       <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>SE</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    SE  - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+         <Inutilizacao></Inutilizacao>
+         <Consulta></Consulta>
+         <StatusServico></StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento></Evento>
+         <Autorizacao></Autorizacao>
+         <RetAutorizacao></RetAutorizacao>
+	 <NFCe>http://www.hom.nfe.se.gov.br/portal/consultarNFCe.jsp</NFCe>
+    </homologacao>	
+    <producao>
+         <Inutilizacao></Inutilizacao>
+         <Consulta></Consulta>
+         <StatusServico></StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento></Evento>
+         <Autorizacao></Autorizacao>
+         <RetAutorizacao></RetAutorizacao>
+	 <NFCe>http://www.nfe.se.gov.br/portal/consultarNFCe.jsp</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>SP</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  SP - SEFAZ PROPRIA   -->
+    <homologacao>
+         <Inutilizacao>https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeinutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeconsultaprotocolo4.asmx</Consulta>
+         <StatusServico>https://homologacao.nfe.fazenda.sp.gov.br/ws/nfestatusservico4.asmx</StatusServico>
+         <ConsultaCAD>https://homologacao.nfe.fazenda.sp.gov.br/ws/cadconsultacadastro4.asmx</ConsultaCAD>
+         <Evento>https://homologacao.nfe.fazenda.sp.gov.br/ws/nferecepcaoevento4.asmx</Evento>
+         <Autorizacao>https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeautorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://homologacao.nfe.fazenda.sp.gov.br/ws/nferetautorizacao4.asmx</RetAutorizacao>
+	 <NFCe>https://www.homologacao.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx</NFCe>
+    </homologacao>	
+    <producao>
+         <Inutilizacao>https://nfe.fazenda.sp.gov.br/ws/nfeinutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://nfe.fazenda.sp.gov.br/ws/nfeconsultaprotocolo4.asmx</Consulta>
+         <StatusServico>https://nfe.fazenda.sp.gov.br/ws/nfestatusservico4.asmx</StatusServico>
+         <ConsultaCAD>https://nfe.fazenda.sp.gov.br/ws/cadconsultacadastro4.asmx</ConsultaCAD>
+         <Evento>https://nfe.fazenda.sp.gov.br/ws/nferecepcaoevento4.asmx</Evento>
+         <Autorizacao>https://nfe.fazenda.sp.gov.br/ws/nfeautorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://nfe.fazenda.sp.gov.br/ws/nferetautorizacao4.asmx</RetAutorizacao>
+		 <NFCe>https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx</NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>sp</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  SP - SEFAZ PROPRIA   -->
+    <homologacao>
+         <Inutilizacao>https://homologacao.nfce.fazenda.sp.gov.br/ws/NFeInutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://homologacao.nfce.fazenda.sp.gov.br/ws/NFeConsultaProtocolo4.asmx</Consulta>
+         <StatusServico>https://homologacao.nfce.fazenda.sp.gov.br/ws/NFeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento>https://homologacao.nfce.fazenda.sp.gov.br/ws/NFeRecepcaoEvento4.asmx</Evento>
+         <Autorizacao>https://homologacao.nfce.fazenda.sp.gov.br/ws/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://homologacao.nfce.fazenda.sp.gov.br/ws/NFeRetAutorizacao4.asmx</RetAutorizacao>
+		 <NFCe></NFCe>
+    </homologacao>	
+    <producao>
+         <Inutilizacao>https://nfce.fazenda.sp.gov.br/ws/NFeInutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://nfce.fazenda.sp.gov.br/ws/NFeConsultaProtocolo4.asmx</Consulta>
+         <StatusServico>https://nfce.fazenda.sp.gov.br/ws/NFeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento>https://nfce.fazenda.sp.gov.br/ws/NFeRecepcaoEvento4.asmx</Evento>
+         <Autorizacao>https://nfce.fazenda.sp.gov.br/ws/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://nfce.fazenda.sp.gov.br/ws/NFeRetAutorizacao4.asmx</RetAutorizacao>
+		 <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>SVAN</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+         <Inutilizacao>https://hom.sefazvirtual.fazenda.gov.br/NFeInutilizacao4/NFeInutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://hom.sefazvirtual.fazenda.gov.br/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx</Consulta>
+         <StatusServico>https://hom.sefazvirtual.fazenda.gov.br/NFeStatusServico4/NFeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento>https://hom.sefazvirtual.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx</Evento>
+         <Autorizacao>https://hom.sefazvirtual.fazenda.gov.br/NFeAutorizacao4/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://hom.sefazvirtual.fazenda.gov.br/NFeRetAutorizacao4/NFeRetAutorizacao4.asmx</RetAutorizacao>
+         <NFCe></NFCe>
+    </homologacao>
+    <producao>
+         <Inutilizacao>https://www.sefazvirtual.fazenda.gov.br/NFeInutilizacao4/NFeInutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://www.sefazvirtual.fazenda.gov.br/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx</Consulta>
+         <StatusServico>https://www.sefazvirtual.fazenda.gov.br/NFeStatusServico4/NFeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento>https://www.sefazvirtual.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx</Evento>
+         <Autorizacao>https://www.sefazvirtual.fazenda.gov.br/NFeAutorizacao4/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://www.sefazvirtual.fazenda.gov.br/NFeRetAutorizacao4/NFeRetAutorizacao4.asmx</RetAutorizacao>
+         <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>SVC-AN</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--  SEFAZ VIRTUAL DE CONTINGENCIA DO AMBIENTE NACIONAL  -->
+    <homologacao>
+         <Inutilizacao></Inutilizacao>
+         <Consulta>https://hom.svc.fazenda.gov.br/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx</Consulta>
+         <StatusServico>https://hom.svc.fazenda.gov.br/NFeStatusServico4/NFeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento>https://hom.svc.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx</Evento>
+         <Autorizacao>https://hom.svc.fazenda.gov.br/NFeAutorizacao4/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://hom.svc.fazenda.gov.br/NFeRetAutorizacao4/NFeRetAutorizacao4.asmx</RetAutorizacao>
+         <NFCe></NFCe>
+    </homologacao>
+    <producao>
+         <Inutilizacao></Inutilizacao>
+         <Consulta>https://www.svc.fazenda.gov.br/NFeConsultaProtocolo4/NFeConsultaProtocolo4.asmx</Consulta>
+         <StatusServico>https://www.svc.fazenda.gov.br/NFeStatusServico4/NFeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento>https://www.svc.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx</Evento>
+         <Autorizacao>https://www.svc.fazenda.gov.br/NFeAutorizacao4/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://www.svc.fazenda.gov.br/NFeRetAutorizacao4/NFeRetAutorizacao4.asmx</RetAutorizacao>
+         <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>SVC-RS</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+      <Autorizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+      <RetAutorizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+      <NFCe></NFCe>
+    </homologacao>
+    <producao>
+         <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+         <StatusServico>https://nfe.svrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+         <Autorizacao>https://nfe.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://nfe.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+         <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>SVRS</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+      <Autorizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+      <RetAutorizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+      <NFCe></NFCe>
+    </homologacao>
+    <producao>
+         <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+         <StatusServico>https://nfe.svrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx</ConsultaCAD>
+         <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+         <Autorizacao>https://nfe.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://nfe.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+         <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>svrs</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Inutilizacao>https://nfce-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+      <Consulta>https://nfce-homologacao.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+      <StatusServico>https://nfce-homologacao.svrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfce-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+      <Autorizacao>https://nfce-homologacao.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+      <RetAutorizacao>https://nfce-homologacao.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+      <NFCe></NFCe>
+    </homologacao>
+    <producao>
+         <Inutilizacao>https://nfce.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao4.asmx</Inutilizacao>
+         <Consulta>https://nfce.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta4.asmx</Consulta>
+         <StatusServico>https://nfce.svrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico4.asmx</StatusServico>
+         <ConsultaCAD></ConsultaCAD>
+         <Evento>https://nfce.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento4.asmx</Evento>
+         <Autorizacao>https://nfce.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx</Autorizacao>
+         <RetAutorizacao>https://nfce.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao4.asmx</RetAutorizacao>
+         <NFCe></NFCe>
+    </producao>
+</UF>
+<UF>
+    <sigla>TO</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+	<SSL30>false</SSL30>
+	<TLS10>false</TLS10>
+	<TLS11>false</TLS11>
+	<TLS12>true</TLS12>
+    <!--    SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+    </homologacao>
+    <producao>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+            <Evento></Evento>
+            <Autorizacao></Autorizacao>
+            <RetAutorizacao></RetAutorizacao>
+            <NFCe></NFCe>
+    </producao>
+</UF>
+</WS>
+</URL>

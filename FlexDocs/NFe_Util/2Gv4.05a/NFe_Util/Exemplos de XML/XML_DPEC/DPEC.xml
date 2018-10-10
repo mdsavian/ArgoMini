@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<envDPEC xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.01">
+	<infDPEC Id="DPEC99999090910270">
+		<ideDec>
+			<cUF>35</cUF>
+			<tpAmb>2</tpAmb>
+			<verProc>NFE_Util_PL005b_v1.4</verProc>
+			<CNPJ>99999090910270</CNPJ>
+			<IE>111222333113</IE>
+		</ideDec>
+		<resNFe>
+			<chNFe>35081199999090910270550010000000017260299152</chNFe>
+			<CNPJ>00000000000191</CNPJ>
+			<UF>SP</UF>
+			<vNF>100.00</vNF>
+			<vICMS>18.00</vICMS>
+			<vST>0</vST>
+		</resNFe>
+		<resNFe>
+			<chNFe>35081199999090910270550010000000021515558717</chNFe>
+			<CNPJ>00000000000272</CNPJ>
+			<UF>AC</UF>
+			<vNF>200.00</vNF>
+			<vICMS>36.00</vICMS>
+			<vST>17.00</vST>
+		</resNFe>
+	</infDPEC>
+</envDPEC>

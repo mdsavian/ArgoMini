@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Marcia Regina Miyuki Kato (MRM) -->
+<!-- 2018-01-13 - acrescimo do protocolos SSL 3.00, TLS 1.0, TLS 1.1 e TLS 1.2 -->
+<!-- 2013-11-16 - acrescimo da URL do WS de NFCe -->
+<!-- 2013-11-16 - acrescimo da URL do WS de SVC-AN e SVC-RS -->
+<!-- 2013-09-13 - acrescimo da URL do WS de RetAutorizacao -->
+<!-- 2013-06-25 - acrescimo da URL do WS de autorizacao -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="URL">
+		<xs:annotation>
+			<xs:documentation>ws</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FlexDocs">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="empresa">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="FlexDocs Documentos Eletronicos"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="versao" type="xs:string"/>
+							<xs:element name="data" type="xs:string"/>
+							<xs:element name="gravaLog" type="xs:boolean"/>
+							<xs:element name="validaCertificadoWS" type="xs:boolean"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="WS">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UF" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="sigla" type="xs:string"/>
+										<xs:element name="soapVersion" type="xs:string"/>
+										<xs:element name="timeOut" type="xs:string"/>
+										<xs:element name="SSL30" type="xs:boolean"/>
+										<xs:element name="TLS10" type="xs:boolean"/>
+										<xs:element name="TLS11" type="xs:boolean"/>
+										<xs:element name="TLS12" type="xs:boolean"/>
+										<xs:element name="homologacao">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Inutilizacao" type="xs:token"/>
+													<xs:element name="Consulta" type="xs:token"/>
+													<xs:element name="StatusServico" type="xs:token"/>
+													<xs:element name="ConsultaCAD" type="xs:token"/>
+													<xs:element name="Evento" type="xs:token"/>
+													<xs:element name="Autorizacao" type="xs:token"/>
+													<xs:element name="RetAutorizacao" type="xs:token"/>
+													<xs:element name="NFCe" type="xs:token"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="producao">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Inutilizacao" type="xs:token"/>
+													<xs:element name="Consulta" type="xs:token"/>
+													<xs:element name="StatusServico" type="xs:token"/>
+													<xs:element name="ConsultaCAD" type="xs:token"/>
+													<xs:element name="Evento" type="xs:token"/>
+													<xs:element name="Autorizacao" type="xs:token"/>
+													<xs:element name="RetAutorizacao" type="xs:token"/>
+													<xs:element name="NFCe" type="xs:token"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

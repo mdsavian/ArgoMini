@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--                                                                         -->
+<!--  Tabela de url dos WS da NF-e Nacional versao 2.0                       -->
+<!--                                                                         -->
+<!--  acrescente novas UFs                                                   -->
+<!--                                                                         -->
+<!--  26/03/2010 - correcao das url de MG e GO                               -->
+<!--                acrescimo das url da BA                                  -->
+<!--                                                                         -->
+<!--  05/04/2010 - acrescimo das url de producao de RS/SP/SCAN/SVAN/SVRS     -->
+<!--                                                                         -->
+<!--  14/04/2010 - acrescimo das entradas das UF usuarias das SEFAZ Virtual  -->
+<!--               para permitir a informacao da UF ao inves da sigla WS     -->
+<!--               *** acrescentar a url da consulta cadastro se existir     -->
+<!--                                                                         -->
+<!--  16/04/2010 - acrescimo das URL do SCAN                                 -->
+<!--  21/05/2010 - acrescimo das URL do RS que haviam sido eliminadas        -->
+<!--  21/05/2010 - correcao da URL rececpcao de lote do SCAN                 -->
+<!--  28/05/2010 - correcao das URL do RO que ficaram com as urls do RS      -->
+<!--  17/06/2010 - acrescimo das URL do CE - ambiente de homologacao         -->
+<!--  21/06/2010 - correcao das URL do GO - ambiente de homologacao          -->
+<!--  21/06/2010 - acrescimo das URL do GO - ambiente de producao            -->
+<!--  01/07/2010 - acrescimo das URL de MG - ambiente de producao            -->
+<!--  06/07/2010 - acrescimo das URL de BA - ambiente de producao            -->
+<!--  02/09/2010 - alteracao das URL do MT - ambiente de producao            -->
+<!--  16/09/2010 - correcao da URL da consultaCadastro do MT - homologacao   -->
+<!--  08/10/2010 - acrescimo da URL da consultaCadastro de SP prod/homo      -->
+<!--  09/11/2010 - acrescimo da URL do CE - ambiente de producao             -->
+<!--  09/11/2010 - acrescimo da URL de PE - ambiente de homologacao          -->
+<!--  19/11/2010 - acrescimo da URL do SVAN para PE - ambiente de producao   -->
+<!--  22/11/2010 - acrescimo da URL do PR - ambiente de homologacao          -->
+<!--  30/11/2010 - acrescimo da URL do PE - ambiente de producao proprio     -->
+<!--  01/12/2010 - acrescimo da URL do MS - ambiente de producao             -->
+<!--  05/12/2010 - acrescimo da URL do AM - ambiente de prod/homo            -->
+<!--  21/12/2010 - correcao da URL de cancelamento do ambiente de prod.CE    -->
+<!--  09/02/2011 - alterada a versao do SOAP para 1.2 para MG                -->
+<!--  09/02/2011 - acrescimo da URL do PR - ambiente de producao             -->
+<!--  09/02/2011 - aumento do time-out para 300000ms                         -->
+<!--  21/03/2011 - correcao da URL de cancelamento ambiente de Hom. do AM    -->
+<!--  13/04/2011 - acrescimo da URL de consulta cadastro da BA, CE, Go e MG  -->
+<!--  18/04/2011 - correcao da URL de inutilizacao do ambiente de Prod.do AM -->
+<!--  25/05/2011 - correcao da URL de consulta cadastro do AM                -->
+<!--  25/05/2011 - acrescimo da URL de recepcao de evento do RS e SVRS       -->
+<!--  31/05/2011 - acrescimo da URL de recepcao de evento de SP              -->
+<!--  31/05/2011 - substituicao da URL de recepcao de evento do RS e SVRS    -->
+<!--  31/05/2011 - alteracao da estrutura do arquivo XML inclusao de novos campos  -->
+<!--  01/06/2011 - acrescimo da URL de recepcao de evento de BA, GO, MG      -->
+<!--  05/07/2011 - acrescimo da URL de recepcao de evento do SVAN            -->
+<!--  19/07/2011 - correcao da URL de recepcao de evento de SC e SE          -->
+<!--  01/08/2011 - acrescimo da URL de recepcao de evento de PE              -->
+<!--  1.04 - 11/08/2011 - acrescimo da URL de recepcao de evento do MS       -->
+<!--  1.05 - 27/10/2011 - acrescimo da URL de recepcao de evento do MT e CE  -->
+<!--  1.06 - 28/11/2011 - correcao da URL de recepcao de evento do SVAN      -->
+<!--  1.07 - 27/02/2012 - alteracao da URL de recepcao de evento do MS      -->
+<!--           29/02/2012 - alteracao da URL de recepcao de evento do MG     -->
+<!--           12/03/2012 - acrescimo do parametro para gravacao de log     -->
+<!--           12/03/2012 - acrescimo do parametro para validacao do Certificado WS     -->
+<!--  1.08 - 25/04/2012 - alteracao da URL de recepcao de evento da BA      -->
+<!--  1.09 - 22/05/2012 - alteracao da URL de recepcao de evento de MS      -->
+<!--  1.10 - 20/06/2012 - acrescimo da URL de recepcao de evento do PR      -->
+<!--                    - acrescimo da URL da consulta cadastro do PR       -->
+<!--  1.11 - 27/06/2012 - acrescimo da URL de recepcao de evento do AM      -->
+<!--  1.12 - 29/06/2012 - acrescimo da URL da consulta cadastro do RN       -->
+<!--  1.13 - 07/11/2012 - acrescimo da URL da recepcao de eventos do SCAN   -->
+<!--  1.14 - 26/06/2013 - alteracao do provedor do RN para SVRS             -->
+<!--  1.15 - 11/07/2013 - acrescimo da URL da consulta cadastro do ES       -->
+<!--  1.16 - 10/09/2013 - acrescimo da URL da consulta cadastro do AC/PB/RN/SC/SVRS    -->
+<!--  119  - 30/06/2014 - alteracao da URL do WS recepcao de evento de GO   -->
+<!--  120 -  31/08/2014 - correcao das URL RetRecpcao da SVC-AN             -->
+<!--  121 -  11/05/2015 - alteracao da URL da recepcao de evento do RS, SVC-RS e SVRS  -->
+<!--      -  07/06/2015 - alteracao da URL dos WS do RS, SVC-RS e SVRS  -->
+<!--  122 -  04/10/2015 - alteracao da versao do arquivo  -->
+<!-- 
+               Gabarito
+
+-->
+
+
+<!--
+    <UF>
+    <sigla>UF</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+        <homologacao>
+            <Recepcao></Recepcao>
+            <RetRecepcao></RetRecepcao>
+            <Cancelamento></Cancelamento>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+			<Evento></Evento>
+        </homologacao>
+        <producao>
+            <Recepcao></Recepcao>
+            <RetRecepcao></RetRecepcao>
+            <Cancelamento></Cancelamento>
+            <Inutilizacao></Inutilizacao>
+            <Consulta></Consulta>
+            <StatusServico></StatusServico>
+            <ConsultaCAD></ConsultaCAD>
+			<Evento></Evento>
+        </producao>
+    </UF>
+-->
+
+<URL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<FlexDocs>
+   <empresa>FlexDocs Documentos Eletronicos</empresa>
+   <versao>122</versao>
+   <data>04-10-2015</data>
+   <gravaLog>true</gravaLog>
+   <validaCertificadoWS>false</validaCertificadoWS>
+</FlexDocs>
+<WS>
+<UF>
+    <sigla>AC</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    AC - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad-homologacao.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+
+<UF>
+    <sigla>AL</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    AL - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>AP</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    AP - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+    <UF>
+    <sigla>AM</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+        <homologacao>
+            <Recepcao>https://homnfe.sefaz.am.gov.br/services2/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://homnfe.sefaz.am.gov.br/services2/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://homnfe.sefaz.am.gov.br/services2/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://homnfe.sefaz.am.gov.br/services2/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://homnfe.sefaz.am.gov.br/services2/services/NfeConsulta2</Consulta>
+            <StatusServico>https://homnfe.sefaz.am.gov.br/services2/services/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://homnfe.sefaz.am.gov.br/services2/services/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://homnfe.sefaz.am.gov.br/services2/services/RecepcaoEvento</Evento>
+        </homologacao>
+        <producao>
+            <Recepcao>https://nfe.sefaz.am.gov.br/services2/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfe.sefaz.am.gov.br/services2/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfe.sefaz.am.gov.br/services2/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfe.sefaz.am.gov.br/services2/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfe.sefaz.am.gov.br/services2/services/NfeConsulta2</Consulta>
+            <StatusServico>https://nfe.sefaz.am.gov.br/services2/services/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.am.gov.br/services2/services/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://nfe.sefaz.am.gov.br/services2/services/RecepcaoEvento</Evento>
+        </producao>
+    </UF>
+    <UF>
+    <sigla>BA</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  BA - SEFAZ PROPRIA  -->
+        <homologacao>
+            <Recepcao>https://hnfe.sefaz.ba.gov.br/webservices/nfenw/NfeRecepcao2.asmx</Recepcao>
+            <RetRecepcao>https://hnfe.sefaz.ba.gov.br/webservices/nfenw/NfeRetRecepcao2.asmx</RetRecepcao>
+            <Cancelamento>https://hnfe.sefaz.ba.gov.br/webservices/nfenw/NfeCancelamento2.asmx</Cancelamento>
+            <Inutilizacao>https://hnfe.sefaz.ba.gov.br/webservices/nfenw/NfeInutilizacao2.asmx</Inutilizacao>
+            <Consulta>https://hnfe.sefaz.ba.gov.br/webservices/nfenw/NfeConsulta2.asmx</Consulta>
+            <StatusServico>https://hnfe.sefaz.ba.gov.br/webservices/nfenw/NfeStatusServico2.asmx</StatusServico>
+            <ConsultaCAD>https://hnfe.sefaz.ba.gov.br/webservices/nfenw/CadConsultaCadastro2.asmx</ConsultaCAD>
+            <Evento>https://hnfe.sefaz.ba.gov.br/webservices/sre/RecepcaoEvento.asmx</Evento>
+        </homologacao>
+        <producao>
+            <Recepcao>https://nfe.sefaz.ba.gov.br/webservices/nfenw/NfeRecepcao2.asmx</Recepcao>
+            <RetRecepcao>https://nfe.sefaz.ba.gov.br/webservices/nfenw/NfeRetRecepcao2.asmx</RetRecepcao>
+            <Cancelamento>https://nfe.sefaz.ba.gov.br/webservices/nfenw/NfeCancelamento2.asmx</Cancelamento>
+            <Inutilizacao>https://nfe.sefaz.ba.gov.br/webservices/nfenw/NfeInutilizacao2.asmx</Inutilizacao>
+            <Consulta>https://nfe.sefaz.ba.gov.br/webservices/nfenw/NfeConsulta2.asmx</Consulta>
+            <StatusServico>https://nfe.sefaz.ba.gov.br/webservices/nfenw/NfeStatusServico2.asmx</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.ba.gov.br/webservices/nfenw/CadConsultaCadastro2.asmx</ConsultaCAD>
+            <Evento>https://nfe.sefaz.ba.gov.br/webservices/sre/RecepcaoEvento.asmx</Evento>
+        </producao>
+</UF>
+    <UF>
+    <sigla>CE</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+        <homologacao>
+            <Recepcao>https://nfeh.sefaz.ce.gov.br/nfe2/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfeh.sefaz.ce.gov.br/nfe2/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfeh.sefaz.ce.gov.br/nfe2/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfeh.sefaz.ce.gov.br/nfe2/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfeh.sefaz.ce.gov.br/nfe2/services/NfeConsulta2</Consulta>
+            <StatusServico>https://nfeh.sefaz.ce.gov.br/nfe2/services/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://nfeh.sefaz.ce.gov.br/nfe2/services/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://nfeh.sefaz.ce.gov.br/nfe2/services/RecepcaoEvento</Evento>
+        </homologacao>
+        <producao>
+            <Recepcao>https://nfe.sefaz.ce.gov.br/nfe2/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfe.sefaz.ce.gov.br/nfe2/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfe.sefaz.ce.gov.br/nfe2/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfe.sefaz.ce.gov.br/nfe2/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfe.sefaz.ce.gov.br/nfe2/services/NfeConsulta2</Consulta>
+            <StatusServico>https://nfe.sefaz.ce.gov.br/nfe2/services/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.ce.gov.br/nfe2/services/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://nfe.sefaz.ce.gov.br/nfe2/services/RecepcaoEvento</Evento>
+        </producao>
+    </UF>
+<UF>
+    <sigla>DF</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    DF - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://homolog.nfe.fazenda.df.gov.br/nfe/ServiceConsultaCadastro.asmx</ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://dec.fazenda.df.gov.br/nfe/ServiceConsultaCadastro.asmx</ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>ES</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  ES - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+      <Recepcao>https://hom.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://hom.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://hom.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://hom.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://hom.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://hom.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://app.sefaz.es.gov.br/ConsultaCadastroService/CadConsultaCadastro2.asmx</ConsultaCAD>
+      <Evento>https://hom.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://www.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://www.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://www.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://www.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://www.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://www.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://app.sefaz.es.gov.br/ConsultaCadastroService/CadConsultaCadastro2.asmx</ConsultaCAD>
+      <Evento>https://www.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>GO</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  GO - SEFAZ PROPRIA  -->
+        <homologacao>        
+            <Recepcao>https://homolog.sefaz.go.gov.br/nfe/services/v2/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://homolog.sefaz.go.gov.br/nfe/services/v2/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://homolog.sefaz.go.gov.br/nfe/services/v2/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://homolog.sefaz.go.gov.br/nfe/services/v2/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://homolog.sefaz.go.gov.br/nfe/services/v2/NfeConsulta2</Consulta>
+            <StatusServico>https://homolog.sefaz.go.gov.br/nfe/services/v2/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://homolog.sefaz.go.gov.br/nfe/services/v2/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://homolog.sefaz.go.gov.br/nfe/services/v2/RecepcaoEvento</Evento>
+        </homologacao>
+        <producao>
+            <Recepcao>https://nfe.sefaz.go.gov.br/nfe/services/v2/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfe.sefaz.go.gov.br/nfe/services/v2/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfe.sefaz.go.gov.br/nfe/services/v2/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfe.sefaz.go.gov.br/nfe/services/v2/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfe.sefaz.go.gov.br/nfe/services/v2/NfeConsulta2</Consulta>
+            <StatusServico>https://nfe.sefaz.go.gov.br/nfe/services/v2/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.go.gov.br/nfe/services/v2/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://nfe.sefaz.go.gov.br/nfe/services/v2/RecepcaoEvento</Evento>
+        </producao>
+</UF>
+<UF>
+    <sigla>MA</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <homologacao>
+    <!--  MA - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+      <Recepcao>https://hom.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://hom.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://hom.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://hom.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://hom.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://hom.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://sistemas.sefaz.ma.gov.br/wscadastro/CadConsultaCadastro2</ConsultaCAD>
+      <Evento>https://hom.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://www.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://www.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://www.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://www.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://www.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://www.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://sistemas.sefaz.ma.gov.br/wscadastro/CadConsultaCadastro2</ConsultaCAD>
+      <Evento>https://www.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>MG</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  MG - SEFAZ PROPRIA  -->
+    <homologacao>         
+            <Recepcao>https://hnfe.fazenda.mg.gov.br/nfe2/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://hnfe.fazenda.mg.gov.br/nfe2/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://hnfe.fazenda.mg.gov.br/nfe2/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://hnfe.fazenda.mg.gov.br/nfe2/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://hnfe.fazenda.mg.gov.br/nfe2/services/NfeConsulta2</Consulta>
+            <StatusServico>https://hnfe.fazenda.mg.gov.br/nfe2/services/NfeStatus2</StatusServico>
+            <ConsultaCAD>https://hnfe.fazenda.mg.gov.br/nfe2/services/cadconsultacadastro2</ConsultaCAD>
+            <Evento>https://hnfe.fazenda.mg.gov.br/nfe2/services/RecepcaoEvento</Evento>
+    </homologacao>
+    <producao>
+            <Recepcao>https://nfe.fazenda.mg.gov.br/nfe2/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfe.fazenda.mg.gov.br/nfe2/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfe.fazenda.mg.gov.br/nfe2/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfe.fazenda.mg.gov.br/nfe2/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfe.fazenda.mg.gov.br/nfe2/services/NfeConsulta2</Consulta>
+            <StatusServico>https://nfe.fazenda.mg.gov.br/nfe2/services/NfeStatus2</StatusServico>
+            <ConsultaCAD>https://nfe.fazenda.mg.gov.br/nfe2/services/cadconsultacadastro2</ConsultaCAD>
+            <Evento>https://nfe.fazenda.mg.gov.br/nfe2/services/RecepcaoEvento</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>MS</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  MS - SEFAZ PROPRIA  -->
+        <homologacao>
+            <Recepcao>https://homologacao.nfe.ms.gov.br/homologacao/services2/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://homologacao.nfe.ms.gov.br/homologacao/services2/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://homologacao.nfe.ms.gov.br/homologacao/services2/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://homologacao.nfe.ms.gov.br/homologacao/services2/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://homologacao.nfe.ms.gov.br/homologacao/services2/NfeConsulta2</Consulta>
+            <StatusServico>https://homologacao.nfe.ms.gov.br/homologacao/services2/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://homologacao.nfe.ms.gov.br/homologacao/services2/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://homologacao.nfe.ms.gov.br/homologacao/services2/RecepcaoEvento</Evento>
+        </homologacao>
+        <producao>
+            <Recepcao>https://nfe.fazenda.ms.gov.br/producao/services2/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfe.fazenda.ms.gov.br/producao/services2/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfe.fazenda.ms.gov.br/producao/services2/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfe.fazenda.ms.gov.br/producao/services2/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfe.fazenda.ms.gov.br/producao/services2/NfeConsulta2</Consulta>
+            <StatusServico>https://nfe.fazenda.ms.gov.br/producao/services2/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://nfe.fazenda.ms.gov.br/producao/services2/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://nfe.fazenda.ms.gov.br/producao/services2/RecepcaoEvento</Evento>
+        </producao>
+</UF>
+<UF>
+    <sigla>MT</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  MT - SEFAZ PROPRIA  -->
+        <homologacao>
+            <Recepcao>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeConsulta2</Consulta>
+            <StatusServico>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://homologacao.sefaz.mt.gov.br/nfews/v2/services/RecepcaoEvento</Evento>
+        </homologacao>
+        <producao>
+            <Recepcao>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeConsulta2</Consulta>
+            <StatusServico>https://nfe.sefaz.mt.gov.br/nfews/v2/services/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://nfe.sefaz.mt.gov.br/nfews/v2/services/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://nfe.sefaz.mt.gov.br/nfews/v2/services/RecepcaoEvento</Evento>
+        </producao>
+</UF>  
+<UF>
+    <sigla>PA</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  PA - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+      <Recepcao>https://hom.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://hom.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://hom.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://hom.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://hom.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://hom.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://hom.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://www.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://www.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://www.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://www.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://www.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://www.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://www.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>PB</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    PB - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad-homologacao.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>PI</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  PI - SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+      <Recepcao>https://hom.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://hom.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://hom.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://hom.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://hom.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://hom.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://hom.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://www.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://www.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://www.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://www.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://www.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://www.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://www.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>PE</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  PE - SEFAZ PROPRIA  -->
+        <homologacao>
+            <Recepcao>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NfeConsulta2</Consulta>
+            <StatusServico>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NfeStatusServico2</StatusServico>
+            <ConsultaCAD>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/RecepcaoEvento</Evento>
+        </homologacao>
+        <producao>
+            <Recepcao>https://nfe.sefaz.pe.gov.br/nfe-service/services/NfeRecepcao2</Recepcao>
+            <RetRecepcao>https://nfe.sefaz.pe.gov.br/nfe-service/services/NfeRetRecepcao2</RetRecepcao>
+            <Cancelamento>https://nfe.sefaz.pe.gov.br/nfe-service/services/NfeCancelamento2</Cancelamento>
+            <Inutilizacao>https://nfe.sefaz.pe.gov.br/nfe-service/services/NfeInutilizacao2</Inutilizacao>
+            <Consulta>https://nfe.sefaz.pe.gov.br/nfe-service/services/NfeConsulta2</Consulta>
+            <StatusServico>https://nfe.sefaz.pe.gov.br/nfe-service/services/NfeStatusServico2</StatusServico>
+          <ConsultaCAD>https://nfe.sefaz.pe.gov.br/nfe-service/services/CadConsultaCadastro2</ConsultaCAD>
+            <Evento>https://nfe.sefaz.pe.gov.br/nfe-service/services/RecepcaoEvento</Evento>
+        </producao>
+</UF>
+<UF>
+    <sigla>PR</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>3000000</timeOut>
+    <!--    PR -       -->
+    <homologacao>
+      <Recepcao>https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeRecepcao2</Recepcao>
+      <RetRecepcao>https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeRetRecepcao2</RetRecepcao>
+      <Cancelamento>https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeCancelamento2</Cancelamento>
+      <Inutilizacao>https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeInutilizacao2</Inutilizacao>
+      <Consulta>https://homologacao.nfe.fazenda.pr.gov.br/nfe/CadConsultaCadastro2</Consulta>
+      <StatusServico>https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeStatusServico2</StatusServico>
+      <ConsultaCAD>https://homologacao.nfe2.fazenda.pr.gov.br/nfe/CadConsultaCadastro2</ConsultaCAD>
+      <Evento>https://homologacao.nfe2.fazenda.pr.gov.br/nfe-evento/NFeRecepcaoEvento</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe2.fazenda.pr.gov.br/nfe/NFeRecepcao2</Recepcao>
+      <RetRecepcao>https://nfe2.fazenda.pr.gov.br/nfe/NFeRetRecepcao2</RetRecepcao>
+      <Cancelamento>https://nfe2.fazenda.pr.gov.br/nfe/NFeCancelamento2</Cancelamento>
+      <Inutilizacao>https://nfe2.fazenda.pr.gov.br/nfe/NFeInutilizacao2</Inutilizacao>
+      <Consulta>https://nfe2.fazenda.pr.gov.br/nfe/NFeConsulta2</Consulta>
+      <StatusServico>https://nfe2.fazenda.pr.gov.br/nfe/NFeStatusServico2</StatusServico>
+      <ConsultaCAD>https://nfe.fazenda.pr.gov.br/nfe/CadConsultaCadastro2</ConsultaCAD>
+      <Evento>https://nfe2.fazenda.pr.gov.br/nfe-evento/NFeRecepcaoEvento</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>RJ</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>RO</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    RO  - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>RN</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    RN  - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad-homologacao.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>RS</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <homologacao>
+      <Recepcao>https://homologacao.nfe.sefaz.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://homologacao.nfe.sefaz.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://homologacao.nfe.sefaz.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://homologacao.nfe.sefaz.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://homologacao.nfe.sefaz.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://homologacao.nfe.sefaz.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.sefaz.rs.gov.br/ws/Nferecepcao/NFeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.sefaz.rs.gov.br/ws/NfeRetRecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.sefaz.rs.gov.br/ws/NfeCancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.sefaz.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.sefaz.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.sefaz.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>SC</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--   SC - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad-homologacao.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>SE</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    SE  - SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>SP</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  SP - SEFAZ PROPRIA   -->
+    <homologacao>
+      <Recepcao>https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://homologacao.nfe.fazenda.sp.gov.br/ws/cadconsultacadastro2.asmx</ConsultaCAD>
+      <Evento>https://homologacao.nfe.fazenda.sp.gov.br/eventosWEB/services/RecepcaoEvento.asmx</Evento>
+    </homologacao>
+    <producao>
+        <Recepcao>https://nfe.fazenda.sp.gov.br/nfeweb/services/nferecepcao2.asmx</Recepcao>
+        <RetRecepcao>https://nfe.fazenda.sp.gov.br/nfeweb/services/nferetrecepcao2.asmx</RetRecepcao>
+        <Cancelamento>https://nfe.fazenda.sp.gov.br/nfeweb/services/nfecancelamento2.asmx</Cancelamento>
+        <Inutilizacao>https://nfe.fazenda.sp.gov.br/nfeweb/services/nfeinutilizacao2.asmx</Inutilizacao>
+        <Consulta>https://nfe.fazenda.sp.gov.br/nfeweb/services/nfeconsulta2.asmx</Consulta>
+        <StatusServico>https://nfe.fazenda.sp.gov.br/nfeweb/services/nfestatusservico2.asmx</StatusServico>
+        <ConsultaCAD>https://nfe.fazenda.sp.gov.br/ws/cadconsultacadastro2.asmx</ConsultaCAD>
+ 	<Evento>https://nfe.fazenda.sp.gov.br/eventosWEB/services/RecepcaoEvento.asmx </Evento>
+    </producao>
+</UF>
+<UF>
+    
+    <sigla>SCAN</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  SISTEMA DE CONTINGENCIA DO AMBIENTE NACIONAL  -->
+    <homologacao>
+      <Recepcao>https://hom.nfe.fazenda.gov.br/SCAN/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://hom.nfe.fazenda.gov.br/SCAN/NfeRetRecepcao2/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://hom.nfe.fazenda.gov.br/SCAN/NfeCancelamento2/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://hom.nfe.fazenda.gov.br/SCAN/NfeInutilizacao2/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://hom.nfe.fazenda.gov.br/SCAN/Nfeconsulta2/Nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://hom.nfe.fazenda.gov.br/SCAN/NfeStatusServico2/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://hom.nfe.fazenda.gov.br/SCAN/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://www.scan.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://www.scan.fazenda.gov.br/NfeRetRecepcao2/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://www.scan.fazenda.gov.br/NfeCancelamento2/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://www.scan.fazenda.gov.br/NfeInutilizacao2/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://www.scan.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://www.scan.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://www.scan.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>SVAN</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  SEFAZ VIRTUAL DO AMBIENTE NACIONAL  -->
+    <homologacao>
+      <Recepcao>https://hom.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://hom.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://hom.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://hom.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://hom.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://hom.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://hom.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://www.sefazvirtual.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://www.sefazvirtual.fazenda.gov.br/NFeRetRecepcao2/NFeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://www.sefazvirtual.fazenda.gov.br/NFeCancelamento2/NFeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://www.sefazvirtual.fazenda.gov.br/NFeInutilizacao2/NFeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://www.sefazvirtual.fazenda.gov.br/nfeconsulta2/nfeconsulta2.asmx</Consulta>
+      <StatusServico>https://www.sefazvirtual.fazenda.gov.br/NFeStatusServico2/NFeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://www.sefazvirtual.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>SVC-AN</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--  SEFAZ VIRTUAL DE CONTINGENCIA DO AMBIENTE NACIONAL  -->
+    <homologacao>
+      <Recepcao>https://hom.svc.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://hom.svc.fazenda.gov.br/NfeRetRecepcao2/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento></Cancelamento>
+      <Inutilizacao></Inutilizacao>
+      <Consulta>https://hom.svc.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://hom.svc.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://hom.svc.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://www.svc.fazenda.gov.br/NfeRecepcao2/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://www.svc.fazenda.gov.br/NfeRetRecepcao2/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento></Cancelamento>
+      <Inutilizacao></Inutilizacao>
+      <Consulta>https://www.svc.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://www.svc.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://www.svc.fazenda.gov.br/RecepcaoEvento/RecepcaoEvento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>SVC-RS</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/Nferecepcao/NFeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeRetRecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento></Cancelamento>
+      <Inutilizacao></Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/Nferecepcao/NFeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/NfeRetRecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento></Cancelamento>
+      <Inutilizacao></Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>SVRS</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://svp-ws.sefazvirtual.rs.gov.br/ws/CadConsultaCadastro/CadConsultaCadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD>https://svp-ws.sefazvirtual.rs.gov.br/ws/CadConsultaCadastro/CadConsultaCadastro2.asmx</ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+<UF>
+    <sigla>TO</sigla>
+    <soapVersion>1.2</soapVersion>
+    <timeOut>300000</timeOut>
+    <!--    SEFAZ VIRTUAL DO RIO GRANDE DO SUL      -->
+    <homologacao>
+      <Recepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe-homologacao.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe-homologacao.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe-homologacao.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe-homologacao.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </homologacao>
+    <producao>
+      <Recepcao>https://nfe.svrs.rs.gov.br/ws/nferecepcao/NfeRecepcao2.asmx</Recepcao>
+      <RetRecepcao>https://nfe.svrs.rs.gov.br/ws/nferetrecepcao/NfeRetRecepcao2.asmx</RetRecepcao>
+      <Cancelamento>https://nfe.svrs.rs.gov.br/ws/nfecancelamento/NfeCancelamento2.asmx</Cancelamento>
+      <Inutilizacao>https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/NfeInutilizacao2.asmx</Inutilizacao>
+      <Consulta>https://nfe.svrs.rs.gov.br/ws/nfeconsulta/NfeConsulta2.asmx</Consulta>
+      <StatusServico>https://nfe.svrs.rs.gov.br/ws/nfestatusservico/NfeStatusServico2.asmx</StatusServico>
+      <ConsultaCAD></ConsultaCAD>
+      <Evento>https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx</Evento>
+    </producao>
+</UF>
+</WS>
+</URL>

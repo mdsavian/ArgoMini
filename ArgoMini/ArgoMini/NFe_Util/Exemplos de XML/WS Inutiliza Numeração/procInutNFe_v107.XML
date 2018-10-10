@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcInutNFe  xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.07">
+<inutNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.07">
+<infInut Id="ID359999909091027055000000000001000000001">
+<tpAmb>2</tpAmb>
+<xServ>INUTILIZAR</xServ>
+<cUF>35</cUF>
+<ano>08</ano>
+<CNPJ>99999090910270</CNPJ>
+<mod>55</mod>
+<serie>0</serie>
+<nNFIni>1</nNFIni>
+<nNFFin>1</nNFFin>
+<xJust>Teste do WS de Inutilização</xJust>
+</infInut>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+<Reference URI="#ID359999909091027055000000000001000000001">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<DigestValue>Yr/VlR/B8svc8QIn5w1hDHTCYEA=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>Cg5hBvgZEIbRr8SUB4NhGcXLfYMObwsqstsP0bbsIpaZIDAmUWxH+wZ27GGInmR9bzvQqEAZC+Qq81TfEDHdLCNqmXV5DRM9kiLqQBFQ2h2tvnT+kH2GSniVk+HfNv8vWAaXo5OTTiWMM43PZwSvOZfsYvHx8gjRUaTwRcPmZpU=</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>MIIEuzCCA6OgAwIBAgIDMTMxMA0GCSqGSIb3DQEBBQUAMIGSMQswCQYDVQQGEwJCUjELMAkGA1UECBMCUlMxFTATBgNVBAcTDFBvcnRvIEFsZWdyZTEdMBsGA1UEChMUVGVzdGUgUHJvamV0byBORmUgUlMxHTAbBgNVBAsTFFRlc3RlIFByb2pldG8gTkZlIFJTMSEwHwYDVQQDExhORmUgLSBBQyBJbnRlcm1lZGlhcmlhIDEwHhcNMDgwNDI4MDkwMTAyWhcNMDkwNDMwMjM1OTU5WjCBnjELMAkGA1UECBMCUlMxHTAbBgNVBAsTFFRlc3RlIFByb2pldG8gTkZlIFJTMR0wGwYDVQQKExRUZXN0ZSBQcm9qZXRvIE5GZSBSUzEVMBMGA1UEBxMMUE9SVE8gQUxFR1JFMQswCQYDVQQGEwJCUjEtMCsGA1UEAxMkTkZlIC0gQXNzb2NpYWNhbyBORi1lOjk5OTk5MDkwOTEwMjcwMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDh6RRv0bj4RYX+tDQrZRb5opa77LBVVs+6LphIfSF3TSWPfnKh0+xLlBFdmnB5YGgbbW9Uon6pZQTfaC8jZhRhI5eFRRofY/Ugoeo0NGt6PcIQNZQd6lLQ/ASd1qWwjqJoEa7udriKjy3h351Mf1bng1VxS1urqC3Dn39ZWIEwQIDAQABo4IBjjCCAYowIgYDVR0jAQEABBgwFoAUPT5TqhNWAm+ZpcVsvB7malDBjEQwDwYDVR0TAQH/BAUwAwEBADAPBgNVHQ8BAf8EBQMDAOAAMAwGA1UdIAEBAAQCMAAwgbwGA1UdEQEBAASBsTCBrqA4BgVgTAEDBKAvBC0wNzA4MTk1MTE1MTk0NTMxMDg3MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgHQYFYEwBAwKgFAQSRmVybmFuZG8gQ2FudG8gQWx0oBkGBWBMAQMDoBAEDjk5OTk5MDkwOTEwMjcwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIEfZmVybmFuZG8tYWx0QHByb2NlcmdzLnJzLmdvdi5icjAgBgNVHSUBAf8EFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwUwYDVR0fAQEABEkwRzBFoEOgQYY/aHR0cDovL25mZWNlcnRpZmljYWRvLnNlZmF6LnJzLmdvdi5ici9MQ1IvQUNJbnRlcm1lZGlhcmlhMzguY3JsMA0GCSqGSIb3DQEBBQUAA4IBAQCNPpaZ3Byu3/70nObXE8NiM53j1ddIFXsb+v2ghCVd4ffExv3hYc+/a3lfgV8H/WfQsdSCTzS2cHrd4Aasr/eXfclVDmf2hcWz+R7iysOHuT6B6r+DvV3JcMdJJCDdynR5REa+zViMnVZo1G3KuceQ7/y5X3WFNVq4kwHvonJ9oExsWyw8rTwUK5bsjz0A2yEwXkmkJIngnF41sP31+9jCImiqkXcmsesFhxzX7iurAQAQCZOm7iwMWxQKcAjXCZrgSZWRQy6mU224sX3HTArHahmLJ9Iw+WYAua5qBJsiN6PC7v5tfhrEQFpcG39yMnOecxvkkPolDUyBa7d7xwgm</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature>
+</inutNFe>
+<retInutNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.07">
+<infInut>
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<cStat>102</cStat>
+<xMotivo>Inutilização de número homologado</xMotivo>
+<cUF>35</cUF>
+<ano>08</ano>
+<CNPJ>99999090910270</CNPJ>
+<mod>55</mod>
+<serie>0</serie>
+<nNFIni>1</nNFIni>
+<nNFFin>1</nNFFin>
+<dhRecbto>2008-06-14T15:19:58</dhRecbto>
+<nProt>135080123456789</nProt>
+</infInut>
+</retInutNFe>
+</ProcInutNFe>

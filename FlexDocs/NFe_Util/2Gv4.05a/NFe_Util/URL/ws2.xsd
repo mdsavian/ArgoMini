@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="URL">
+		<xs:annotation>
+			<xs:documentation>ws</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FlexDocs">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="empresa">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="FlexDocs Documentos Eletronicos"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="versao" type="xs:string"/>
+							<xs:element name="data" type="xs:string"/>
+							<xs:element name="gravaLog" type="xs:string"/>
+							<xs:element name="validaCertificadoWS" type="xs:string"/>
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="WS">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UF" maxOccurs="31">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="sigla" type="xs:string"/>
+										<xs:element name="soapVersion" type="xs:string"/>
+										<xs:element name="timeOut" type="xs:string"/>
+										<xs:element name="homologacao">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Recepcao" type="xs:token"/>
+													<xs:element name="RetRecepcao" type="xs:token"/>
+													<xs:element name="Cancelamento" type="xs:token"/>
+													<xs:element name="Inutilizacao" type="xs:token"/>
+													<xs:element name="Consulta" type="xs:token"/>
+													<xs:element name="StatusServico" type="xs:token"/>
+													<xs:element name="ConsultaCAD" type="xs:token"/>
+													<xs:element name="Evento" type="xs:token"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="producao">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Recepcao" type="xs:token"/>
+													<xs:element name="RetRecepcao" type="xs:token"/>
+													<xs:element name="Cancelamento" type="xs:token"/>
+													<xs:element name="Inutilizacao" type="xs:token"/>
+													<xs:element name="Consulta" type="xs:token"/>
+													<xs:element name="StatusServico" type="xs:token"/>
+													<xs:element name="ConsultaCAD" type="xs:token"/>
+													<xs:element name="Evento" type="xs:token"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

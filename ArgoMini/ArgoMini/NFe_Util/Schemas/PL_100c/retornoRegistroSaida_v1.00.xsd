@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 (http://www.altova.com) by ana.lunardi (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.portalfiscal.inf.br/nfe" targetNamespace="http://www.portalfiscal.inf.br/nfe" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="registroSaidaTipoBasico.xsd"/>
+	<xs:element name="retEnvRegSaida">
+		<xs:annotation>
+			<xs:documentation>Retorno do registro de saída</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="retRegSaida" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="tpAmb" type="TAmb">
+								<xs:annotation>
+									<xs:documentation>Identificação do Ambiente:
+1 - Produção
+2 - Homologação</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="verAplic" type="tipoVersaoAplicacao">
+								<xs:annotation>
+									<xs:documentation>Versão do Aplicativo que processou o pedido de cancelamento</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="cStat" type="tipoCodigoRetorno">
+								<xs:annotation>
+									<xs:documentation>Código do status da mensagem enviada.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="xMotivo" type="tipoMensagemRetorno">
+								<xs:annotation>
+									<xs:documentation>Descrição literal do status do serviço solicitado.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="cUF" type="TCodUfIBGE">
+								<xs:annotation>
+									<xs:documentation>código da UF de atendimento</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="chNFe" type="xs:token">
+								<xs:annotation>
+									<xs:documentation>Chaves de acesso da NF-e, compostas por: UF do emitente, AAMM da emissão da NFe, CNPJ do emitente, modelo, série e número da NF-e e código numérico + DV.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="dtHrRegSaida" type="xs:dateTime" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Data e hora de Saída, no formato AAAA-MM-DDTHH:MM:SS. Deve ser preenchida com data e hora da gravação no Banco em caso de Confirmação.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="nProt" type="tipoNumeroProtocolo" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Número do Protocolo de Status da NF-e. 1 posição (1 – Secretaria de Fazenda Estadual 2 – Receita Federal); 2 - código da UF - 2 posições ano; 10 seqüencial no ano.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="versao" type="tipoVersaoAplicacao"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

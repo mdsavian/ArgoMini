@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 (http://www.altova.com) by ana.lunardi (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.portalfiscal.inf.br/nfe" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.portalfiscal.inf.br/nfe" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="registroSaidaTipoBasico_v1.00.xsd"/>
+	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema_v1.01.xsd"/>
+	<xs:complexType name="TRegistroSaida">
+		<xs:sequence>
+			<xs:element name="tpAmb" type="TAmb">
+				<xs:annotation>
+					<xs:documentation>Identificação do Ambiente:
+1 - Produção
+2 - Homologação</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="chNFe" type="tipoChaveNotaFiscal">
+				<xs:annotation>
+					<xs:documentation>Chaves de acesso</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nSeqRegSaida">
+				<xs:annotation>
+					<xs:documentation>Seqüencial do evento para o mesmo tipo de evento.  Para maioria dos eventos será 1, nos casos em que possa existir mais de um evento, como é o caso da carta de correção, o autor do evento deve numerar de forma seqüencial.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="preserve"/>
+						<xs:enumeration value="11"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="17"/>
+			<xs:enumeration value="18"/>
+			<xs:enumeration value="19"/>
+			<xs:enumeration value="20"/>
+						<!--<xs:pattern value="[1-9][0-9]{0,1}"/>-->
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="dtHrRegSaida" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Data e hora de Saída, no formato AAAA-MM-DDTHH:MM:SS</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="placaVeiculo" type="tipoPlaca" minOccurs="0"/>
+			<xs:element name="placaCarreta" type="tipoPlaca" minOccurs="0"/>
+			<xs:element name="placaCarreta2" type="tipoPlaca" minOccurs="0"/>
+			<xs:element name="qtdVias" type="tipoInteiroMaiorQueZero" minOccurs="0"/>
+			<xs:element name="formularioSeguranca" type="tipoFormularioSeguranca" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ds:Signature"/>
+		</xs:sequence>
+		<xs:attribute name="versao" type="tipoVersaoAplicacao" use="required"/>
+		<xs:attribute name="Id" type="tipoChaveNotaFiscal" use="required"/>
+	</xs:complexType>
+</xs:schema>

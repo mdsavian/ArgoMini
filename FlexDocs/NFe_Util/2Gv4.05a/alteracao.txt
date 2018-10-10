@@ -1,0 +1,99 @@
+FlexDocs Documentos Eletrônicos
+
+DLL de utilidades da NF-e - NFe_Util_2G_v4.05 (C) 2008-2018 - Todos os direitos reservados
+
+Vide guia on-line, disponível em www.flexdocs.com.br/guiaNFe
+
+*** IMPORTANTE ****
+
+As assinaturas das funcionalidades foram alteradas com acréscimo de novos parâmetros e relocação de outros.
+Para facilitar os teste a DLL foi alterada para poder conviver com a versão 1.x.
+A estrutura das pastas foi alterada, vide a seguir.
+
+
+Versão preliminar da DLL compatível com a Nota Técnica NT 2016/002 v1.51
+============================================================================================================
+
+
+2018/06/10 - v 4.0.5 - versão preliminar
+
+
+===============================================================================================================
+INFORMAÇÕES GERAIS
+===============================================================================================================
+
+1. Alteração dos WS
+--------------------
+
+Foram disponbilizadas as novas chamadas multi-versão (2.00, 3.10 e 4.00) para os seguintes WS:
+
+a) EnviaLoteV3
+b) BuscaLoteV3
+c) EnviaNFSincrono
+d) ConsultaNF2G
+e) ConsultaStatus2G
+f) InutilizaNroNF2G
+g) EnviaNFe2G
+h) BuscaNFe2G
+i) ConsultaCad2G
+j) CancelaNFEvento 
+k) EnviaCCe2G 
+l) EnviaEPEC 
+m) EnviaPedProrrog 
+n) EnviaCancPedProrrog 
+
+Vale observar que nem todas as UF oferecem os WS em ambiente de homologação e os serviços ainda estão instáveis.
+
+
+2. Alteração do leiaute XML da NF-e;
+------------------------------------
+
+string identificador400(int cUF, int cNF, string natOp, int mod, int serie, int nNF, string dhEmi, string dhSaiEnt, int tpNF, int idDest, string cMunFG, string NFref_Opc, int tpImp, int tpEmis, int cDV, int tpAmb, int finNFe, int indFinal, int indPres, int procEmi, string verProc, string dhCont_Opc, string xJust_Opc)
+
+string produto400(string cProd, string cEAN, string xProd, string NCM, string NVE_Opc, string CEST_Opc, string indEscala_Opc, string CNPJFab_Opc, string cBenef_Opc, string EXTIPI_Opc, int CFOP, string uCom, string qCom, string vUnCom, double vProd, string cEANTrib, string uTrib, string qTrib, string vUnTrib, double vFrete, double vSeg, double vDesc, double vOutro, int indTot, string DI_Opc, string detExport_Opc, string DetEspecifico_Opc, string xPed_Opc, string nItemPed_Opc, string nFCI_Opc, string rastro_Opc)
+
+string rastro(string nLote, double qLote, DateTime dFab, DateTime dVal, string cAgreg_Opc)
+
+string med400(string cProdANVISA, double vPMC)
+
+string comb400(string cProdANP, string descANP, double pGLP_Opc, double pGNn_Opc, double pGNi_Opc, double vPart_Opc, string CODIF_Opc, double qTemp_Opc, string UFCons, double qBCProd_Opc, double vAliqProd_Opc, double vCIDE_Opc, string encerrante_Opc)
+
+string icms400(string orig, string CST, int modBC, double pRedBC, double vBC, double pICMS, double vICMS, int modBCST, double pMVAST, double pRedBCST, double vBCST, double pICMSST, double vICMSST, double vBCSTRet, double vICMSSRet, double vBCSTDest, double vICMSSTDest, int motDesICMS, double pBCOp, string UFST, double pCredSN, double vCredICMSSN, double vICMSDeson, double vICMSOp, double pDif, double vICMSDif, double vBCFCP, double pFCP, double vFCP, double vBCFCPST, double pFCPST, double vFCPST, double vBCFCPSTRet, double pFCPSTRet, double vFCPSTRet, double pST)
+
+string ICMSUFDest400(double vBCUFDest, double vBCFCPUFDest_Opc, double pFCPUFDest, double pICMSUFDest, double pICMSInter, double pICMSInterPart, double vFCPUFDest, double vICMSUFDest, double vICMSUFRemet)
+
+string totalICMS400(double vBC, double vICMS, double vBCST, double vST, double vProd, double vFrete, double vSeg, double vDesc, double vII, double vIPI, double vPIS, double vCOFINS, double vOutro, double vNF, double vTotTrib, double vICMSDeson, double vICMSUFDest_Opc, double vICMSUFRemet_Opc, double vFCPUFDest_Opc, double vFCP, double vFCPST, double vFCPSTRet, double vIPIDevol)
+
+string AssinarNFCe400(string NFe, string nomeCertificado, string idToken, string Token, string versaoQRCode, string URLConsulta, string urlChave, string indSinc, out int cStat, out string msgResultado, out string lote, out string urlNFCe)
+
+string pagamento400(string detPag, double vTroco_Opc);
+
+string detPag(string indPag_Opc, string tPag, double vPag, string tpIntegra_Opc, string CNPJ_Opc, string tBand_Opc, string cAut_Opc)
+
+string IPI400(string CNPJProd, string cSelo, double qSelo, string cEnq, string CST, double vBC, double pIPI, double vIPI, double qUnid, double vUnid)
+
+produto400VFP
+
+string produto400VFP(string cProd, string cEAN, string xProd, string NCM, string NVE_Opc, string CEST_Opc, string EXTIPI_Opc, int CFOP, string uCom, string qCom, string vUnCom, double vProd, string cEANTrib, string uTrib, string qTrib, string vUnTrib, double vFrete, double vSeg, double vDesc, double vOutro, int indTot, string DI_Opc, string detExport_Opc, string DetEspecifico_Opc, string xPed_Opc, string nItemPed_Opc, string camposV400);
+
+camposv400 = "indEscala | CNPJFab | cBenef | nFCI | rastros"
+
+
+imposto400VFP 
+
+string icms400VFP(string orig, string CST, int modBC, double pRedBC, double vBC, double pICMS, double vICMS, int modBCST, double pMVAST, double pRedBCST, double vBCST, double pICMSST, double vICMSST, double vBCSTRet, double vICMSSTRet, double vBCICMSSTDest, double vICMSSTDest, int motDesICMS, double pBCOp, string UFST, double pCredSN, double vCredICMSSN, double vICMSDeson, double vICMSOp, double pDif, double vICMSDif, string camposV400);
+
+camposv400 = "vBCFCP | pFCP | vFCP | vBCFCPST | pFCPST | vFCPST | vBCFCPSTRet | pFCPSTRet | vFCPSTRet | pST"
+
+string calcICMSUFDest400(int formaCalculo, double valorBase, double aliqDestino, double aliqInterestadual, double valorBaseFCP, double aliqFCP, int anoOperacao, out double vBCUFDest, out double pFCPUFDest, out double pICMSUFDest, out double pICMSInter, out double pICMSInterPart, out double vFCPUFDest, out double vICMSUFDest, out double vICMSUFRemet, out double vBCOpeInter, out double vICMSOpeInter, out int cResultado, out string msgResultado, out double vBCFCPUFDest);
+
+string icmsEfet(string orig, string CST, double vBCSTRet_Opc, double pST_Opc, double vICMSSTRet_Opc, double vBCFCPSTRet_Opc, double pFCPSTRet_Opc, double vFCPSTRet_Opc, double pRedBCEfet_Opc, double vBCEfet_Opc, double pICMSEfet_Opc, double vICMSEfet_Opc)
+
+
+
+4. ATUALIZAÇÃO DE VERSÃO:
+-------------------------
+
+A atualização para a versão 2G v4.0x é gratuita para todos os usuários que adquiriram ou ativaram a versão 2G após 30/11/2016, os demais usuários devem adquirir a atualização da DLL por R$ 30,00 por CNPJ licenciado. Caso não tenha recebido um e-mail com a relação das chaves da versão 2G para as licenças adquiridas após 30/11/2016 queira entrar em conato pelo fale conosco: wwww.flexdocs.com.br/suporte.
+
+A chave da licença de uso desta versão é distinta da versão anterior e será disponibilizada oportunamente, caso necessite utilizar a versão 2G em produção, queira solicitar a chave da licença, mas ressaltamos que a DLL ainda não foi suficentemente testada e nem existe garantia que os Web Services da SEFAZ estão estáveis também.

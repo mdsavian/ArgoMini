@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<retEnviNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.10">
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<cStat>103</cStat>
+<xMotivo>Lote recebido com sucesso</xMotivo>
+<cUF>35</cUF>
+<infRec>
+<nRec>350000000680939</nRec>
+<dhRecbto>2008-06-14T15:19:58</dhRecbto>
+<tMed>0</tMed>
+</infRec>
+</retEnviNFe>

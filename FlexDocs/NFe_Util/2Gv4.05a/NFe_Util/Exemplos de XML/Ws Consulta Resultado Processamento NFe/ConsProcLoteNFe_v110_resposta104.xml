@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<retConsReciNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.10">
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<nRec>350000000680939</nRec>
+<cStat>104</cStat>
+<xMotivo>Lote processado</xMotivo>
+<cUF>35</cUF>
+<protNFe versao="1.10">
+<infProt>
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<chNFe>35080599999090910270550010000000015180051273</chNFe>
+<dhRecbto>2008-06-14T15:19:58</dhRecbto>
+<digVal>XQ9rHwZSmw93oYIKCJ6Kc27e0nI=</digVal>
+<cStat>290</cStat>
+<xMotivo>Rejeição: Certificado Assinatura inválido</xMotivo>
+</infProt>
+</protNFe>
+<protNFe versao="1.10">
+<infProt>
+<tpAmb>2</tpAmb>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<chNFe>35080599999090910270570010000000022975853361</chNFe>
+<dhRecbto>2008-06-14T15:19:58</dhRecbto>
+<digVal>8d9OV40LNcuUQiatL0Rsj7bSNr8=</digVal>
+<cStat>290</cStat>
+<xMotivo>Rejeição: Certificado Assinatura inválido</xMotivo>
+</infProt>
+</protNFe>
+</retConsReciNFe>

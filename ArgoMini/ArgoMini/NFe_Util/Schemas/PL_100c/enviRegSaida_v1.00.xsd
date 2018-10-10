@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 (http://www.altova.com) by ana.lunardi (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.portalfiscal.inf.br/nfe" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.portalfiscal.inf.br/nfe" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="registroSaidaTipoBasico_v1.00.xsd"/>
+	<xs:include schemaLocation="registroSaida_v1.00.xsd"/>
+	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema_v1.01.xsd"/>
+	<xs:element name="envRegSaida">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idLote" type="tipoIdLote"/>
+				<xs:element name="regSaida" type="TRegistroSaida" maxOccurs="50"/>
+			</xs:sequence>
+			<xs:attribute name="versao" type="tipoVersaoAplicacao" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

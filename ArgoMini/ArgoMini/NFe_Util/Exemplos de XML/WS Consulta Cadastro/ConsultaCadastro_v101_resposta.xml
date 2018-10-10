@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<retConsCad xmlns="http://www.portalfiscal.inf.br/nfe" versao="1.01">
+<infCons>
+<verAplic>SP_NFE_PL_005a_R01</verAplic>
+<cStat>260</cStat>
+<xMotivo>Rejeição: IE da consulta inválida</xMotivo>
+<UF>SP</UF>
+<IE>123456789012</IE>
+<dhCons>2008-06-14T12:10:10</dhCons>
+<cUF>35</cUF>
+</infCons>
+</retConsCad>
