@@ -172,6 +172,7 @@
     <Compile Include="Models\NotaFiscalItem.cs" />
     <Compile Include="Models\NotaFiscalSaida.cs" />
     <Compile Include="Models\Pessoa.cs" />
+    <Compile Include="Negocio\NotaFiscalNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
