@@ -17,7 +17,6 @@ namespace ArgoMini.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-            new NotaFiscalNegocio().EmitirNotaFiscal();
             return View();
         }
 

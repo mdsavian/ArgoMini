@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ArgoMini.Models.Mercadoria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.CodigoBarras)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.PrecoCusto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.PrecoVenda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Quantidade)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var emp in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(x => emp.CodigoBarras)
+
+        </td>
+        <td>
+            @Html.DisplayFor(x => emp.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(x => emp.PrecoCusto)
+        </td>
+        <td>
+            @Html.DisplayFor(x => emp.PrecoVenda)
+        </td>
+        <td>
+            @Html.DisplayFor(x => emp.Quantidade)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = emp.MercadoriaId }) |
+            @Html.ActionLink("Detail", "Detail", new { id = emp.MercadoriaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = emp.MercadoriaId })
+        </td>
+    </tr>
+    }
+</table>

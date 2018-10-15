@@ -1,0 +1,59 @@
+﻿@model ArgoMini.Models.NaoPersistidos.FrenteCaixa
+@{
+    ViewBag.Title = "Frente De Caixa";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h4>Employees</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(x => x.CodigoMercadoria, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.CodigoMercadoria, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CodigoMercadoria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Quantidade, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.Quantidade, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Quantidade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.PrecoVenda, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.PrecoVenda, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.PrecoVenda, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.ValorTotal, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.ValorTotal, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.ValorTotal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink("Adicionar Produto", "AdicionarProduto", "FrenteCaixa", new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("Emitir Nota Fiscal", "EmitirNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary" })
+    </div>
+</div>

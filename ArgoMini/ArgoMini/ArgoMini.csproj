@@ -156,6 +156,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\MercadoriaController.cs" />
+    <Compile Include="Controllers\EstabelecimentoController.cs" />
+    <Compile Include="Controllers\FrenteCaixaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enums\ESituacaoNotaFiscalSaida.cs" />
     <Compile Include="Global.asax.cs">
@@ -169,6 +172,7 @@
     <Compile Include="Models\ArgoMiniContext.cs" />
     <Compile Include="Models\Estabelecimento.cs" />
     <Compile Include="Models\Mercadoria.cs" />
+    <Compile Include="Models\NaoPersistidos\FrenteCaixa.cs" />
     <Compile Include="Models\NotaFiscalItem.cs" />
     <Compile Include="Models\NotaFiscalSaida.cs" />
     <Compile Include="Models\Pessoa.cs" />
@@ -1783,6 +1787,22 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\FrenteCaixa\FrenteCaixa.cshtml" />
+    <Content Include="Views\Pessoa\Create.cshtml" />
+    <Content Include="Views\Pessoa\Delete.cshtml" />
+    <Content Include="Views\Pessoa\Detail.cshtml" />
+    <Content Include="Views\Pessoa\Edit.cshtml" />
+    <Content Include="Views\Pessoa\Index.cshtml" />
+    <Content Include="Views\Estabelecimento\Create.cshtml" />
+    <Content Include="Views\Estabelecimento\Delete.cshtml" />
+    <Content Include="Views\Estabelecimento\Detail.cshtml" />
+    <Content Include="Views\Estabelecimento\Edit.cshtml" />
+    <Content Include="Views\Estabelecimento\Index.cshtml" />
+    <Content Include="Views\Mercadoria\Create.cshtml" />
+    <Content Include="Views\Mercadoria\Delete.cshtml" />
+    <Content Include="Views\Mercadoria\Detail.cshtml" />
+    <Content Include="Views\Mercadoria\Edit.cshtml" />
+    <Content Include="Views\Mercadoria\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
