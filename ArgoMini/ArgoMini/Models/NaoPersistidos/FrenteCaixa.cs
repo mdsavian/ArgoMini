@@ -10,7 +10,7 @@ namespace ArgoMini.Models.NaoPersistidos
 
         [Required]
         [Display(Name = "Código Mercadoria")]
-        public string CodigoMercadoria { get; set; }
+        public int CodigoMercadoria { get; set; }
         [Required]
         [Display(Name = "Preço Venda")]
         public decimal PrecoVenda { get; set; }
@@ -20,6 +20,13 @@ namespace ArgoMini.Models.NaoPersistidos
         [Required]
         [Display(Name = "Valor Total")]
         public decimal ValorTotal { get; set; }
-        
+
+        public int NotaFiscalId { get; set; }
+
+
+        public FrenteCaixa()
+        {
+            MercadoriasFrenteCaixa = new List<Mercadoria>();
+        }
     }
 }
