@@ -30,9 +30,9 @@ namespace ArgoMini.Negocio
             return nota;
         }
 
-        public void EmitirNotaFiscal(NotaFiscalSaida notaFiscal)
+        public  void EmitirNotaFiscal(NotaFiscalSaida notaFiscal)
         {
-
+             new FlexDocsNegocio().EmitirNfe(notaFiscal);
         }
     }
 }

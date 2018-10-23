@@ -14,7 +14,10 @@ namespace ArgoMini.Controllers
         public ActionResult Index()
         {
             var estabelecimentos = _context.Estabelecimentos.ToList();
-            return View(estabelecimentos);
+            if (estabelecimentos.FirstOrDefault() != null)
+                return RedirectToAction("Edit", estabelecimentos.First().EstabelecimentoId);
+
+            return RedirectToAction("Create");
         }
 
         public ActionResult Create()
@@ -36,17 +39,19 @@ namespace ArgoMini.Controllers
 
         public ActionResult Edit(int? id)
         {
+            var estabelecimentos = _context.Estabelecimentos.ToList();
+
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                id = estabelecimentos.First().EstabelecimentoId;
             }
 
-            var employee = _context.Estabelecimentos.SingleOrDefault(e => e.EstabelecimentoId == id);
-            if (employee == null)
+            var estabelecimento = _context.Estabelecimentos.SingleOrDefault(e => e.EstabelecimentoId == id);
+            if (estabelecimento == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(estabelecimento);
         }
 
         [HttpPost]
@@ -60,45 +65,6 @@ namespace ArgoMini.Controllers
             }
 
             return View(estabelecimento);
-        }
-
-        public ActionResult Detail(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            var estabelecimento = _context.Estabelecimentos.SingleOrDefault(e => e.EstabelecimentoId == id);
-            if (estabelecimento == null)
-            {
-                return HttpNotFound();
-            }
-            return View(estabelecimento);
-        }
-
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            var estabelecimento = _context.Estabelecimentos.SingleOrDefault(e => e.EstabelecimentoId == id);
-            if (estabelecimento == null)
-            {
-                return HttpNotFound();
-            }
-            return View(estabelecimento);
-        }
-
-        [HttpPost]
-        public ActionResult Delete(int id)
-        {
-            var estabelecimento = _context.Estabelecimentos.SingleOrDefault(x => x.EstabelecimentoId == id);
-            _context.Estabelecimentos.Remove(estabelecimento ?? throw new InvalidOperationException());
-            _context.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

@@ -1,0 +1,4 @@
+importar os códigos da uf -- 43 e os codigos do municipio 
+colocar modelo da nota, serie, numero nota no cadastro estabelecimento
+ajustar -> ConverterParaChave | ConverteParaIdentificador
+criar CEST, Unidade de medida na mercadoria 
