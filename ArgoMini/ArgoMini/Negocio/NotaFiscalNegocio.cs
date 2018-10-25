@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ArgoMini.Enums;
 using ArgoMini.Models;
@@ -30,9 +31,16 @@ namespace ArgoMini.Negocio
             return nota;
         }
 
-        public  void EmitirNotaFiscal(NotaFiscalSaida notaFiscal)
+
+        public void EmitirNotaFiscal(NotaFiscalSaida notaFiscal)
         {
-             new FlexDocsNegocio().EmitirNfe(notaFiscal);
+            try
+            {
+                new FlexDocsNegocio().EmitirNfe(notaFiscal);
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using ArgoMini.Enums;
 
 namespace ArgoMini.Models
@@ -17,6 +18,7 @@ namespace ArgoMini.Models
         public string CnpjCpf { get; set; }
         public decimal ValorMercadorias { get; set; }
         public int QuantidadeItensNota { get; set; }
+        [Display(Name = "Valor Total Nota")]
         public decimal ValorTotalNota { get; set; }
 
         public virtual List<NotaFiscalSaidaItem> Itens { get; set; }

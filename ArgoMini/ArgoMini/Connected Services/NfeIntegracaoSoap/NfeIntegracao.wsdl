@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao">
+      <s:element name="nfeIntegracaoContab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nfeDadosMsgDownload">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nfeIntegracaoContabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nfeIntegracaoContabResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nfeIntegracaoSEAPA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nfeDadosMsgDownload">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nfeIntegracaoSEAPAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nfeIntegracaoSEAPAResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nfeIntegracaoOrgao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nfeDadosMsgDownload">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nfeIntegracaoOrgaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nfeIntegracaoOrgaoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="nfeIntegracaoContabSoapIn">
+    <wsdl:part name="parameters" element="tns:nfeIntegracaoContab" />
+  </wsdl:message>
+  <wsdl:message name="nfeIntegracaoContabSoapOut">
+    <wsdl:part name="parameters" element="tns:nfeIntegracaoContabResponse" />
+  </wsdl:message>
+  <wsdl:message name="nfeIntegracaoSEAPASoapIn">
+    <wsdl:part name="parameters" element="tns:nfeIntegracaoSEAPA" />
+  </wsdl:message>
+  <wsdl:message name="nfeIntegracaoSEAPASoapOut">
+    <wsdl:part name="parameters" element="tns:nfeIntegracaoSEAPAResponse" />
+  </wsdl:message>
+  <wsdl:message name="nfeIntegracaoOrgaoSoapIn">
+    <wsdl:part name="parameters" element="tns:nfeIntegracaoOrgao" />
+  </wsdl:message>
+  <wsdl:message name="nfeIntegracaoOrgaoSoapOut">
+    <wsdl:part name="parameters" element="tns:nfeIntegracaoOrgaoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NFeIntegracaoSoap">
+    <wsdl:operation name="nfeIntegracaoContab">
+      <wsdl:input message="tns:nfeIntegracaoContabSoapIn" />
+      <wsdl:output message="tns:nfeIntegracaoContabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="nfeIntegracaoSEAPA">
+      <wsdl:input message="tns:nfeIntegracaoSEAPASoapIn" />
+      <wsdl:output message="tns:nfeIntegracaoSEAPASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="nfeIntegracaoOrgao">
+      <wsdl:input message="tns:nfeIntegracaoOrgaoSoapIn" />
+      <wsdl:output message="tns:nfeIntegracaoOrgaoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NFeIntegracaoSoap" type="tns:NFeIntegracaoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="nfeIntegracaoContab">
+      <soap:operation soapAction="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao/nfeIntegracaoContab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nfeIntegracaoSEAPA">
+      <soap:operation soapAction="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao/nfeIntegracaoSEAPA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nfeIntegracaoOrgao">
+      <soap:operation soapAction="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao/nfeIntegracaoOrgao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NFeIntegracaoSoap12" type="tns:NFeIntegracaoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="nfeIntegracaoContab">
+      <soap12:operation soapAction="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao/nfeIntegracaoContab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nfeIntegracaoSEAPA">
+      <soap12:operation soapAction="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao/nfeIntegracaoSEAPA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nfeIntegracaoOrgao">
+      <soap12:operation soapAction="http://www.portalfiscal.inf.br/nfe/wsdl/NFeIntegracao/nfeIntegracaoOrgao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NFeIntegracao">
+    <wsdl:port name="NFeIntegracaoSoap" binding="tns:NFeIntegracaoSoap">
+      <soap:address location="https://nfe-rs-integracao-hmle.sefazvirtual.rs.gov.br/ws/NfeIntegracao/NfeIntegracao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NFeIntegracaoSoap12" binding="tns:NFeIntegracaoSoap12">
+      <soap12:address location="https://nfe-rs-integracao-hmle.sefazvirtual.rs.gov.br/ws/NfeIntegracao/NfeIntegracao.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

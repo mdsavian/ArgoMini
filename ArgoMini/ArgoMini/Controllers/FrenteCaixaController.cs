@@ -23,11 +23,20 @@ namespace ArgoMini.Controllers
             return View(notaFiscal);
         }
 
-        public Action EmitirNotaFiscal()
+        public ActionResult EmitirNotaFiscal()
         {
             var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
-            new NotaFiscalNegocio().EmitirNotaFiscal(notaFiscal);
-            return null;
+            try
+            {
+                new NotaFiscalNegocio().EmitirNotaFiscal(notaFiscal);
+                TempData.Remove("NotaFiscalSaida");
+            }
+            catch(Exception ex)
+            {
+                
+            }
+            // retornar para view frente caixa branco
+            return RedirectToAction("FrenteCaixa");
         }
 
         public ActionResult AddProduto()
@@ -45,109 +54,25 @@ namespace ArgoMini.Controllers
         [HttpPost]
         public ActionResult AddProduto(FrenteCaixa frenteCaixa)
         {
-            var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
-            //var aa = _context.Mercadorias.ToList().First(c => c.MercadoriaId == frenteCaixa.CodigoMercadoria);
-            //try
-            var notaFiscalItem = new NotaFiscalSaidaItemNegocio().TransformaFrenteCaixa(frenteCaixa, notaFiscal);
-
-            
-            if (notaFiscal != null)
+            try
             {
-                notaFiscal.Itens.Add(notaFiscalItem);
+                var notaFiscal = (NotaFiscalSaida) TempData.Peek("NotaFiscalSaida");
+                var notaFiscalItem = new NotaFiscalSaidaItemNegocio().TransformaFrenteCaixa(frenteCaixa, notaFiscal);
 
-                _context.Entry(notaFiscal).State = EntityState.Modified;
-                _context.SaveChanges();
+
+                if (notaFiscal != null)
+                    NotaFiscalSaidaItemNegocio.AdicionarNovoItemNota(ref notaFiscal, notaFiscalItem);
+
+                TempData["NotaFiscalSaida"] = notaFiscal;
+                TempData.Keep();
             }
+            catch (Exception e)
+            {
 
-            TempData["NotaFiscalSaida"] = notaFiscal;
-            TempData.Keep();
+            }
 
             return RedirectToAction("FrenteCaixa");
         }
-
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public ActionResult Create(Employee employee)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Employees.Add(employee);
-        //        _context.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(employee);
-        //}
-
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-
-        //    var employee = _context.Employees.SingleOrDefault(e => e.EmployeeId == id);
-        //    if (employee == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(employee);
-        //}
-
-        //[HttpPost]
-        //public ActionResult Edit(Employee employee)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Entry(employee).State = EntityState.Modified;
-        //        _context.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(employee);
-        //}
-
-        //public ActionResult Detail(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-
-        //    var employee = _context.Employees.SingleOrDefault(e => e.EmployeeId == id);
-        //    if (employee == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(employee);
-        //}
-
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-
-        //    var employee = _context.Employees.SingleOrDefault(e => e.EmployeeId == id);
-        //    if (employee == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(employee);
-        //}
-
-        //[HttpPost]
-        //public ActionResult Delete(int id)
-        //{
-        //    var employee = _context.Employees.SingleOrDefault(x => x.EmployeeId == id);
-        //    _context.Employees.Remove(employee ?? throw new InvalidOperationException());
-        //    _context.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
 
         protected override void Dispose(bool disposing)
         {

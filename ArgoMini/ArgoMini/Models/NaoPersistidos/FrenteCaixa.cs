@@ -21,6 +21,9 @@ namespace ArgoMini.Models.NaoPersistidos
         [Display(Name = "Valor Total")]
         public decimal ValorTotal { get; set; }
 
+        [Display(Name = "Valor Total Documento")]
+        public decimal ValorTotalNota { get; set; }
+
         public int NotaFiscalId { get; set; }
 
 

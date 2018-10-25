@@ -62,7 +62,8 @@ namespace ArgoMini.Negocio
                     {
                         //enviando nfce
                         
-                        var requisicaoConcluida = FuncoesThread.RunMethodWithTimeout(() => _nfeUtil.EnviaNFSincrono(siglaWs, nfce, nomeCertificado, versao, out msgDados, out msgRetWs, out cStat, out msgResultado, out nroProtocolo, out dhProtocolo, out string nfeAssinada, proxy, funcionario, senha, licenca), 15000, out procNFe);
+                        var requisicaoConcluida = FuncoesThread.RunMethodWithTimeout(() => _nfeUtil.EnviaNFSincrono(siglaWs, nfce, nomeCertificado, versao, out msgDados, out msgRetWs, out cStat, out msgResultado, 
+                                                                                    out nroProtocolo, out dhProtocolo, out string nfeAssinada, proxy, funcionario, senha, licenca), 15000, out procNFe);
 
                         if (!requisicaoConcluida)
                         {

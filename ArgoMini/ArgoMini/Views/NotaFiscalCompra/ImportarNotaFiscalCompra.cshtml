@@ -1,0 +1,92 @@
+﻿@*@model ArgoMini.Models.NotaFiscalSaida*@
+
+@{
+    ViewBag.Title = "Importar Nota Fiscal Compra";
+}
+
+<h2>Importar Nota Fiscal Compra</h2>
+
+@using (Html.BeginForm())
+{
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.Label("CodigoBarra", new {@class= "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.TextBox("codigoBarra", new {@class = "form-control"})
+        </div>
+    </div>
+    @*<div class="form-group">
+        @Html.LabelFor(x => x.Serie, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.Serie, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Serie, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.ClienteId, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.ClienteId, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.ClienteId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.DataEmissao, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.DataEmissao, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.DataEmissao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <h4>Itens</h4>
+    <table class="table table-responsive table-hover">
+        <tr>
+            <th>
+                @Html.DisplayName("Código de Barras")
+            </th>
+            <th>
+                @Html.DisplayName("Preço Venda")
+            </th>
+            <th>
+                @Html.DisplayName("Quantidade")
+            </th>
+            <th>
+                @Html.DisplayName("Valor Total")
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var emp in Model.Itens)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => emp.Mercadoria.CodigoBarras)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => emp.PrecoVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => emp.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => emp.TotalMercadoria)
+                </td>
+            </tr>
+        }
+
+    </table>*@
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.ValorTotalNota, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ValorTotalNota, new { htmlAttributes = new { disabled = "disabled", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ValorTotalNota, "", new { @class = "text-danger" })
+            </div>*@
+        @*<label class="control-label" for="ValorTotalNota">ValorTotalNota</label>
+        <input class="form-control text-box single-line" data-val="true" data-val-number="The field ValorTotalNota must be a number." data-val-required="O campo ValorTotalNota é obrigatório." disabled="disabled" id="ValorTotalNota" name="ValorTotalNota" type="text" value="0,00">*@
+    </div>
+    <div>
+        @*@Html.ActionLink("Emitir Nota Fiscal", "EmitirNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary " })*@
+    </div>
+
+</div>
+}

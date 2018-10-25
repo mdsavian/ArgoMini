@@ -1,0 +1,20 @@
+O usuário da aplicação fará o cadastro de novos produtos. OK
+O usuário realizará a entrada de notas fiscais de compra
+através do código de barras da nota de compra será possível consultá la no sefaz, facilitando a entrada da nota.
+através da leitura do código de barras da nota será possível dar entrada parcial nos itens da nota
+A partir do xml da nota será dado entrada na nota de compra
+Atualização de preços a partir da entrada da nota de compra
+Exportação de cupons emitidos no dia
+O usuário poderá cadastrar fornecedores.
+Buscar o endereço da pessoa informando o cep
+Emissão de cupons fiscais.OK
+Cancelamento de itens dos cupons fiscais.
+Cancelamento do último cupom emitido.
+Emissão de Leitura X.
+Permitir inclusão de CPF no cupom fiscal.
+Atualização de preços por atalho.
+Não será permitido a inclusão de produtos sem código de barras.
+Não será permitido emitir cupons com CPF inválido.
+Emissão de relatórios de vendas por data.
+emissão de relatório de compras por data.
+emissão de relatório de movimentações diárias

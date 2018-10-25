@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ArgoMini.Models.NotaFiscalSaida>
+
+@{
+    ViewBag.Title = "Notas Fiscais Emitidas";
+}
+
+<h2>Notas Fiscais Emitidas</h2>
+
+<p>
+    @Html.ActionLink("Emitir Nova Nota", "EmitirNotaFiscal")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Serie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.ValorTotalNota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.ClienteId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.DataEmissao)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var emp in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(x => emp.Numero)
+
+        </td>
+        <td>
+            @Html.DisplayFor(x => emp.Serie)
+        </td>
+        <td>
+            @Html.DisplayFor(x => emp.ValorTotalNota)
+        </td>
+        <td>
+            @Html.DisplayFor(x => emp.ClienteId)
+        </td>
+        <td>
+            @Html.DisplayFor(x => emp.DataEmissao)
+        </td>
+        <td>
+            @Html.ActionLink("Detalhes", "Detalhes", new { id = emp.NotaFiscalSaidaId }) |
+        </td>
+    </tr>
+    }
+</table>

@@ -5,63 +5,64 @@
 }
 
 <h2>Emitir Documento</h2>
+@using (Html.BeginForm())
+{
+    @*@Html.HiddenFor(model => model.NotaFiscalSaidaId)*@
 
-@*@Html.HiddenFor(model => model.NotaFiscalSaidaId)*@
-
-<div>
-    <div class="col-sm-8">
-        @Html.ActionLink("Adicionar Produto", "AddProduto", "FrenteCaixa", new { @class = "btn btn-primary " })
-
-    </div>
-    <div class="col-md-4">
-        <div class="col-md-offset-8">
-            @Html.ActionLink("Emitir Nota Fiscal", "EmitirNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary" })
-            
+    <div class="form-horizontal">
+        <div>
+            @Html.ActionLink("Adicionar Produto", "AddProduto", "FrenteCaixa", new { @class = "btn btn-primary col-md-push-11" })
         </div>
-    </div>
-</div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayName("Código de Barras")
-        </th>
-        <th>
-            @Html.DisplayName("Valor Total")
-        </th>
-        <th>
-            @Html.DisplayName("Quantidade")
-        </th>
-        <th>
-            @Html.DisplayName("Valor Total")
-        </th>
-        <th></th>
-    </tr>
-    @foreach (var emp in Model.Itens)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(x => emp.Mercadoria.CodigoBarras)
-            </td>
-            <td>
-                @Html.DisplayFor(x => emp.PrecoVenda)
-            </td>
-            <td>
-                @Html.DisplayFor(x => emp.Quantidade)
-            </td>
-            <td>
-                @Html.DisplayFor(x => emp.TotalMercadoria)
-            </td>
-            @*<td>
-                    @Html.ActionLink("Editar Mercadoria", "Edit", new { id = emp.MercadoriaId })
-                    @Html.ActionLink("Detalhe Mercadoria", "Detail", new { id = emp.MercadoriaId })
-                    @Html.ActionLink("Excluir Mercadoria", "Delete", new { id = emp.MercadoriaId })
-                </td>*@
-        </tr>
-    }
-</table>
 
-<div class="form-group">
-    <div class="col-md-offset-9 col-md-10">
-        
+        <br />
+        <table class="table table-responsive table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayName("Código de Barras")
+                </th>
+                <th>
+                    @Html.DisplayName("Preço Venda")
+                </th>
+                <th>
+                    @Html.DisplayName("Quantidade")
+                </th>
+                <th>
+                    @Html.DisplayName("Valor Total")
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var emp in Model.Itens)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(x => emp.Mercadoria.CodigoBarras)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => emp.PrecoVenda)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => emp.Quantidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => emp.TotalMercadoria)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.ValorTotalNota, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ValorTotalNota, new { htmlAttributes = new { disabled = "disabled", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ValorTotalNota, "", new { @class = "text-danger" })
+            </div>*@
+            <label class="control-label" for="ValorTotalNota">ValorTotalNota</label>
+            <input class="form-control text-box single-line" data-val="true" data-val-number="The field ValorTotalNota must be a number." data-val-required="O campo ValorTotalNota é obrigatório." disabled="disabled" id="ValorTotalNota" name="ValorTotalNota" type="text" value="0,00">
+        </div>
+        <div>
+            @Html.ActionLink("Emitir Nota Fiscal", "EmitirNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary " })
+        </div>
+
     </div>
-</div>
+}
