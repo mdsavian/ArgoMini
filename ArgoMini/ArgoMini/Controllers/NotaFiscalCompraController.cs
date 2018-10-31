@@ -18,7 +18,7 @@ namespace ArgoMini.Controllers
             var xx = NotaFiscalCompraNegocio.Consultar();
             if (string.IsNullOrEmpty(xx))
                 xx = NotaFiscalCompraNegocio.Consultar();
-
+            var xy = xx;
             return View();
         }
 

@@ -13,6 +13,6 @@
         public virtual Mercadoria Mercadoria { get; set; }
         public decimal Quantidade { get; set; }
         public decimal PrecoCusto { get; set; }
-        public string TotalMercadoria { get; set; }
+        public decimal TotalMercadoria { get; set; }
     }
 }

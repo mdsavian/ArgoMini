@@ -9,7 +9,7 @@ namespace ArgoMini.Models
     {
         public int Id { get; set; }
         public string Numero { get; set; }
-        public string chave { get; set; }
+        public string Chave { get; set; }
         public int Serie { get; set; }
         public int FornecedorId { get; set; }
         public DateTime DataEmissao { get; set; }

@@ -171,9 +171,10 @@
     <Compile Include="Controllers\EstabelecimentoController.cs" />
     <Compile Include="Controllers\FrenteCaixaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\Impressora.cs" />
     <Compile Include="Models\NotaFiscalCompra.cs" />
     <Compile Include="Models\NotaFiscalCompraItem.cs" />
-    <Compile Include="Models\Estoque.cs" />
+    <Compile Include="Models\MercadoriaEstoque.cs" />
     <Compile Include="Negocio\InterfaceEpsonNf.cs" />
     <Compile Include="Negocio\FlexDocsNegocio.cs" />
     <Compile Include="Negocio\ImpressoraNegocio.cs" />

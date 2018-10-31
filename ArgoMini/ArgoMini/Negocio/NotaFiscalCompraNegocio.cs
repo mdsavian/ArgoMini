@@ -133,13 +133,13 @@ namespace ArgoMini.Negocio
                     var emissao = RetornarTag(xml, "dhEmi");
                     var DataEntrada = DateTime.Now;
 
-                    notaCompra = new NotaFiscalCompra
-                    {
-                        chave = Chave,
-                        Numero = Convert.ToInt16(NumeroDocumento),
-                        Serie = Convert.ToInt16(SerieDocumento),
-                        DataEmissao = Convert.ToDateTime(emissao)
-                    };
+                    //notaCompra = new NotaFiscalCompra
+                    //{
+                    //    chave = Chave,
+                    //    Numero = Convert.ToInt16(NumeroDocumento),
+                    //    Serie = Convert.ToInt16(SerieDocumento),
+                    //    DataEmissao = Convert.ToDateTime(emissao)
+                    //};
 
                     
 
@@ -150,12 +150,12 @@ namespace ArgoMini.Negocio
                         var pessoaCnpj = nodoEmitente[0]["CNPJ"].InnerText;
                         var nome = nodoEmitente[0]["xNome"].InnerText;
 
-                        notaCompra.Cnpj = pessoaCnpj;
-                        notaCompra.NomeFornecedor = nome;
+                        //notaCompra.Cnpj = pessoaCnpj;
+                        //notaCompra.NomeFornecedor = nome;
 
                     }
 
-                    var Itens = MontarItensNotaCompraComXml(xml.GetElementsByTagName("det"), notaCompra);
+                    //var Itens = MontarItensNotaCompraComXml(xml.GetElementsByTagName("det"), notaCompra);
                 }
             }
 
@@ -171,10 +171,7 @@ namespace ArgoMini.Negocio
                 var codigoItem = nodoItemNota["prod"]["cProd"].InnerText;
                 var Quantidade = nodoItemNota["prod"]["qCom"].InnerText/*.AlterarFormatoDecimal().ToDecimal()*/;
                 var Descricao = nodoItemNota["prod"]["xProd"].InnerText.ToUpper();
-
                 
-                
-
                 string codigoBarras;
                 string ncmNota;
                 string cestNota;
@@ -198,8 +195,8 @@ namespace ArgoMini.Negocio
                     Id = i++,
                     MercadoriaId = codigoItem,
                     MercadoriaDescricao = Descricao,
-                    Quantidade = Quantidade,
-                    TotalMercadoria = valorTotal,
+                    //Quantidade = Quantidade,
+                    //TotalMercadoria = valorTotal,
                     NotaFiscalCompraId = nota.Id,
                     //PrecoCusto =  Math.Round(valorTotal / Quantidade, 8)
             });

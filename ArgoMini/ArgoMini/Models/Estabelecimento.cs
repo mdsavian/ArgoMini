@@ -28,5 +28,10 @@ namespace ArgoMini.Models
         public string InscricaoEstadual { get; set; }
         [Display(Name = "Código Regime Tributário")]
         public int CodigoRegimeTributario { get; set; }
+
+        public string ModeloNota { get; set; }
+        public string Serie { get; set; }
+        public string NumeroNota { get; set; }
+
     }
 }
