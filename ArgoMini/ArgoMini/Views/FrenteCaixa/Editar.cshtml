@@ -1,0 +1,59 @@
+﻿@model ArgoMini.Models.NotaFiscalSaidaItem
+
+@{
+    ViewBag.Title = "Editar Nota Fiscal Item";
+}
+
+<h2>Editar Nota Fiscal item</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.MercadoriaId)
+    @Html.HiddenFor(model => model.NotaFiscalSaidaId)
+    @Html.HiddenFor(model => model.NotaFiscalSaidaItemId)
+
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(x => x.Mercadoria.CodigoBarras, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.Mercadoria.CodigoBarras, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Mercadoria.CodigoBarras, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Quantidade, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.Quantidade, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Quantidade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.PrecoVenda, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.PrecoVenda, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.PrecoVenda, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.TotalMercadoria, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.TotalMercadoria, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.TotalMercadoria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar Produto" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

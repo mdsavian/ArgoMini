@@ -15,33 +15,33 @@ namespace ArgoMini.Controllers
 
         public ActionResult ImportarNotaFiscalCompra()
         {
-
-            var notasFiscais = _context.NotasFiscalSaida;
-            NotaFiscalCompraNegocio.ConsultaNotaCompraPorCodigoBarra(string.Empty);
+            var xx = NotaFiscalCompraNegocio.Consultar();
+            if (string.IsNullOrEmpty(xx))
+                xx = NotaFiscalCompraNegocio.Consultar();
 
             return View();
         }
 
-        public ActionResult EmitirNotaFiscal()
-        {
-            return RedirectToAction("FrenteCaixa", "FrenteCaixa");
-        }
+        //public ActionResult EmitirNotaFiscal()
+        //{
+        //    return RedirectToAction("FrenteCaixa", "FrenteCaixa");
+        //}
 
-        public ActionResult Detalhes(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+        //public ActionResult Detalhes(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
 
-            var notaFiscal = _context.NotasFiscalSaida.SingleOrDefault(e => e.NotaFiscalSaidaId == id);
-            if (notaFiscal == null)
-            {
-                return HttpNotFound();
-            }
-            return View(notaFiscal);
+        //    var notaFiscal = _context.NotasFiscalSaida.SingleOrDefault(e => e.NotaFiscalSaidaId == id);
+        //    if (notaFiscal == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(notaFiscal);
 
-        }
+        //}
 
         protected override void Dispose(bool disposing)
         {

@@ -171,7 +171,12 @@
     <Compile Include="Controllers\EstabelecimentoController.cs" />
     <Compile Include="Controllers\FrenteCaixaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\NotaFiscalCompra.cs" />
+    <Compile Include="Models\NotaFiscalCompraItem.cs" />
+    <Compile Include="Models\Estoque.cs" />
+    <Compile Include="Negocio\InterfaceEpsonNf.cs" />
     <Compile Include="Negocio\FlexDocsNegocio.cs" />
+    <Compile Include="Negocio\ImpressoraNegocio.cs" />
     <Compile Include="Negocio\NotaFiscalCompraNegocio.cs" />
     <Compile Include="Negocio\NotaFiscalSaidaItemNegocio.cs" />
     <Compile Include="Enums\ESituacaoNotaFiscalSaida.cs" />
@@ -187,7 +192,7 @@
     <Compile Include="Models\Estabelecimento.cs" />
     <Compile Include="Models\Mercadoria.cs" />
     <Compile Include="Models\NaoPersistidos\FrenteCaixa.cs" />
-    <Compile Include="Models\NotaFiscalItem.cs" />
+    <Compile Include="Models\NotaFiscalSaidaItem.cs" />
     <Compile Include="Models\NotaFiscalSaida.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Negocio\NotaFiscalNegocio.cs" />
@@ -1868,6 +1873,8 @@
     <Content Include="Views\NotaFiscal\NotasFiscais.cshtml" />
     <Content Include="Views\NotaFiscal\Detalhes.cshtml" />
     <Content Include="Views\NotaFiscalCompra\ImportarNotaFiscalCompra.cshtml" />
+    <Content Include="Views\FrenteCaixa\Editar.cshtml" />
+    <Content Include="Views\FrenteCaixa\Cancelar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

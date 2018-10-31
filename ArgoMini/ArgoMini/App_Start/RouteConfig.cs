@@ -18,6 +18,12 @@ namespace ArgoMini
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    name: "Composta",
+            //    url: "{controller}/{action}/{id}/{secondId}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, secondID = UrlParameter.Optional }
+            //);
         }
     }
 }

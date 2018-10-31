@@ -1,4 +1,7 @@
-importar os códigos da uf -- 43 e os codigos do municipio 
+﻿importar os códigos da uf -- 43 e os codigos do municipio 
 colocar modelo da nota, serie, numero nota no cadastro estabelecimento
 ajustar -> ConverterParaChave | ConverteParaIdentificador
 criar CEST, Unidade de medida na mercadoria 
+criar notafiscalcompra, impressora, DadosConexoes, tabela estoque
+atualizar estoque nota de compra
+transformar em modal salvar, deletar

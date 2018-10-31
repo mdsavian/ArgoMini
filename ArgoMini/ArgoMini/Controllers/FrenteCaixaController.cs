@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 using ArgoMini.Models;
 using ArgoMini.Models.NaoPersistidos;
@@ -20,7 +21,16 @@ namespace ArgoMini.Controllers
                 notaFiscal = new NotaFiscalNegocio().CriarNotaFiscal();
 
             TempData["NotaFiscalSaida"] = notaFiscal;
-            return View(notaFiscal);
+            try
+            {
+                return View(notaFiscal);
+            }
+            catch (Exception ex)
+            {
+                return View(notaFiscal);
+            }
+
+            
         }
 
         public ActionResult EmitirNotaFiscal()
@@ -73,6 +83,80 @@ namespace ArgoMini.Controllers
 
             return RedirectToAction("FrenteCaixa");
         }
+        
+        public ActionResult Editar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var notaFiscalSaidaItem = _context.NotaFiscalSaidaItems.SingleOrDefault(e => e.NotaFiscalSaidaItemId == id);
+            if (notaFiscalSaidaItem == null)
+            {
+                return HttpNotFound();
+            }
+            return View(notaFiscalSaidaItem);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(NotaFiscalSaidaItem notaFiscalSaidaItem)
+        {
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+
+                    NotaFiscalSaidaItemNegocio.EditarItemNota(notaFiscalSaidaItem);
+
+                    notaFiscal = NotaFiscalNegocio.AtualizarValorNota(notaFiscal.NotaFiscalSaidaId);
+
+                    TempData["NotaFiscalSaida"] = notaFiscal;
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+                //AtualizarNota();
+                return RedirectToAction("FrenteCaixa");
+            }
+
+            return View(notaFiscalSaidaItem);
+        }
+
+        public ActionResult Cancelar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var notaFiscalSaidaItem = _context.NotaFiscalSaidaItems.SingleOrDefault(e => e.NotaFiscalSaidaItemId == id);
+            if (notaFiscalSaidaItem == null)
+            {
+                return HttpNotFound();
+            }
+            return View(notaFiscalSaidaItem);
+        }
+
+        [HttpPost]
+        public ActionResult Cancelar(int id)
+        {
+            var notaFiscalSaidaItem = _context.NotaFiscalSaidaItems.FirstOrDefault(c => c.NotaFiscalSaidaItemId == id);
+
+            var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+            _context.NotaFiscalSaidaItems.Remove(notaFiscalSaidaItem ?? throw new InvalidOperationException());
+            _context.SaveChanges();
+
+            notaFiscal = NotaFiscalNegocio.AtualizarValorNota(notaFiscal.NotaFiscalSaidaId);
+
+            TempData["NotaFiscalSaida"] = notaFiscal;
+            return RedirectToAction("FrenteCaixa");
+        }
+
 
         protected override void Dispose(bool disposing)
         {

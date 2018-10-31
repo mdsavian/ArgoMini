@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using ArgoMini.Enums;
 using ArgoMini.Models;
 
 namespace ArgoMini.Negocio
 {
-    public class NotaFiscalNegocio
+    internal class NotaFiscalNegocio
     {
         private readonly ArgoMiniContext _contexto = new ArgoMiniContext();
 
@@ -41,6 +42,23 @@ namespace ArgoMini.Negocio
             catch (Exception)
             {
             }
+        }
+
+        public static NotaFiscalSaida AtualizarValorNota(int notaFiscalId)
+        {
+            using (var contexto = new ArgoMiniContext())
+            {
+                var notaFiscal = contexto.NotasFiscalSaida.Include(c => c.Itens).Include(c=> c.Itens.Select(d=> d.Mercadoria))
+                    .First(c => c.NotaFiscalSaidaId == notaFiscalId);
+
+                notaFiscal.ValorTotalNota = notaFiscal.Itens.Sum(c => c.TotalMercadoria);
+
+                contexto.Entry(notaFiscal).State = EntityState.Modified;
+                contexto.SaveChanges();
+
+                return notaFiscal;  
+            }
+
         }
     }
 }

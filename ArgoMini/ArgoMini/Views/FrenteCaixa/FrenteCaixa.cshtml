@@ -1,7 +1,7 @@
 ﻿@using ArgoMini.Models
 @model NotaFiscalSaida
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Emitir Documento";
 }
 
 <h2>Emitir Documento</h2>
@@ -46,17 +46,16 @@
                     <td>
                         @Html.DisplayFor(x => emp.TotalMercadoria)
                     </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Editar", new { id = emp.NotaFiscalSaidaItemId}) |
+                        @Html.ActionLink("Cancelar", "Cancelar", new { id = emp.NotaFiscalSaidaItemId})
+                    </td>
                 </tr>
             }
 
         </table>
 
         <div class="form-group">
-            @*@Html.LabelFor(model => model.ValorTotalNota, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ValorTotalNota, new { htmlAttributes = new { disabled = "disabled", @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ValorTotalNota, "", new { @class = "text-danger" })
-            </div>*@
             <label class="control-label" for="ValorTotalNota">ValorTotalNota</label>
             <input class="form-control text-box single-line" data-val="true" data-val-number="The field ValorTotalNota must be a number." data-val-required="O campo ValorTotalNota é obrigatório." disabled="disabled" id="ValorTotalNota" name="ValorTotalNota" type="text" value="0,00">
         </div>
