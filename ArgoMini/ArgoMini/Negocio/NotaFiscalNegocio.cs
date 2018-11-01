@@ -38,9 +38,11 @@ namespace ArgoMini.Negocio
             try
             {
                 new FlexDocsNegocio().EmitirNfe(notaFiscal);
+                MercadoriaEstoqueNegocio.AtualizarEstoqueNotaSaida(notaFiscal);
             }
             catch (Exception)
             {
+
             }
         }
 

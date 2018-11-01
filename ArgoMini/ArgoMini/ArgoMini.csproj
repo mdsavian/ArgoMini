@@ -60,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
@@ -165,6 +166,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\MercadoriaEstoqueNegocio.cs" />
     <Compile Include="Controllers\NotaFiscalCompraController.cs" />
     <Compile Include="Controllers\NotaFiscalController.cs" />
     <Compile Include="Controllers\MercadoriaController.cs" />
@@ -175,7 +177,9 @@
     <Compile Include="Models\NotaFiscalCompra.cs" />
     <Compile Include="Models\NotaFiscalCompraItem.cs" />
     <Compile Include="Models\MercadoriaEstoque.cs" />
-    <Compile Include="Negocio\InterfaceEpsonNf.cs" />
+    <Compile Include="Negocio\Impressora\ElginBase.cs" />
+    <Compile Include="Negocio\Impressora\ElginHelper.cs" />
+    <Compile Include="Negocio\Impressora\ElginI9.cs" />
     <Compile Include="Negocio\FlexDocsNegocio.cs" />
     <Compile Include="Negocio\ImpressoraNegocio.cs" />
     <Compile Include="Negocio\NotaFiscalCompraNegocio.cs" />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ArgoMini.Models;
+using ArgoMini.Negocio;
 
 namespace ArgoMini.Controllers
 {
@@ -27,8 +28,12 @@ namespace ArgoMini.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 _context.Mercadorias.Add(mercadoria);
                 _context.SaveChanges();
+
+                MercadoriaEstoqueNegocio.AtualizarEstoqueMercadoria(mercadoria);
+
                 return RedirectToAction("Index");
             }
             return View(mercadoria);
@@ -56,6 +61,9 @@ namespace ArgoMini.Controllers
             {
                 _context.Entry(mercadoria).State = EntityState.Modified;
                 _context.SaveChanges();
+
+                MercadoriaEstoqueNegocio.AtualizarEstoqueMercadoria(mercadoria);
+
                 return RedirectToAction("Index");
             }
 
