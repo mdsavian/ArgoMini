@@ -96,3 +96,8 @@ c:\temp\ArgoMini\ArgoMini\ArgoMini\obj\Release\ArgoMini.pdb
 c:\temp\ArgoMini\ArgoMini\ArgoMini\obj\Release\ArgoMini.csprojAssemblyReference.cache
 c:\temp\ArgoMini\ArgoMini\ArgoMini\obj\Release\ArgoMini.Migrations.PrimeiraMigracao.resources
 c:\temp\ArgoMini\ArgoMini\ArgoMini\obj\Release\ArgoMini.csproj.GenerateResource.cache
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.Web.Helpers.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.Data.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.WebData.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.WebData.xml
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.Data.xml

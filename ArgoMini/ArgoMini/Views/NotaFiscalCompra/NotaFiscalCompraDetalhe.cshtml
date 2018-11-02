@@ -10,6 +10,8 @@
 
 @using (Html.BeginForm())
 {
+    <input type="submit" value="Salvar Nota" class="btn btn-primary" />
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(x => x.Numero, new { @class = "control-label col-md-2" })
@@ -108,10 +110,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(x => emp.TotalMercadoria)
-                    </td>
-                    <td>
-                        @*@Html.ActionLink("Editar", "Editar", new { id = emp.Id }) |
-                            @Html.ActionLink("Excluir", "Excluir", new { id = emp.Id })*@
                     </td>
                 </tr>
             }

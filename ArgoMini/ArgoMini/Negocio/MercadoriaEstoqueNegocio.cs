@@ -5,9 +5,9 @@ namespace ArgoMini.Negocio
 {
     class MercadoriaEstoqueNegocio
     {
-        public static void AtualizarEstoqueMercadoria(Mercadoria mercadoria)
+        public static void AtualizarEstoqueMercadoria(Mercadoria mercadoria, ArgoMiniContext contexto = null)
         {
-            using (var contexto = new ArgoMiniContext())
+            using (contexto = new ArgoMiniContext())
             {
                 var mercadoriaEstoque = contexto.MercadoriaEstoque.FirstOrDefault(c => c.MercadoriaId == mercadoria.MercadoriaId);
 
@@ -57,6 +57,7 @@ namespace ArgoMini.Negocio
                         AtualizarEstoqueMercadoria(item.Mercadoria);
 
                     }
+
                 }
             }
         }

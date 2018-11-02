@@ -26,9 +26,9 @@ namespace ArgoMini.Negocio
 
         }
 
-        public static NotaFiscalCompra ConsultarNotaCompra()
+        public static NotaFiscalCompra ConsultarNotaCompra(string chaveNota)
         {
-            var xml = new FlexDocsNegocio().BaixarXmlNfe(string.Empty);
+            var xml = new FlexDocsNegocio().BaixarXmlNfe(chaveNota);
 
             return MontarNotaCompraComXml(xml);
         }
@@ -89,14 +89,12 @@ namespace ArgoMini.Negocio
                 var quantidade = decimal.Parse(nodoItemNota["prod"]["qCom"].InnerText);
                 var descricao = nodoItemNota["prod"]["xProd"].InnerText.ToUpper();
 
-                decimal codigoBarras = 0;
+                string codigoBarras = string.Empty;
                 string ncm = string.Empty;
                 string cest = string.Empty;
 
                 if (nodoItemNota["prod"]["cEAN"] != null)
-                {
-                    codigoBarras = decimal.Parse(nodoItemNota["prod"]["cEAN"].InnerText);
-                }
+                    codigoBarras = nodoItemNota["prod"]["cEAN"].InnerText;
 
                 if (nodoItemNota["prod"]["NCM"] != null)
                     ncm = nodoItemNota["prod"]["NCM"].InnerText;
@@ -149,6 +147,16 @@ namespace ArgoMini.Negocio
                 contexto.SaveChanges();
 
                 return notaCompra;
+            }
+        }
+
+        public static void SalvarNotaCompra(NotaFiscalCompra notaFiscalCompra)
+        {
+            using (var contexto = new ArgoMiniContext())
+            {
+                notaFiscalCompra.Situacao = ESituacaoNotaFiscalCompra.Importada;
+                contexto.Entry(notaFiscalCompra).State = EntityState.Modified;
+                contexto.SaveChanges();
             }
         }
     }

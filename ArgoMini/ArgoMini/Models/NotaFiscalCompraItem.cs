@@ -10,7 +10,7 @@
         public virtual Mercadoria Mercadoria { get; set; }
 
         public string CodigoMercadoriaImportada { get; set; }
-        public decimal CodigoBarrasMercadoriaImportada { get; set; }
+        public string CodigoBarrasMercadoriaImportada { get; set; }
         public string DescricaoMercadoriaImportada { get; set; }
         public decimal Quantidade { get; set; }
         public decimal PrecoCusto { get; set; }

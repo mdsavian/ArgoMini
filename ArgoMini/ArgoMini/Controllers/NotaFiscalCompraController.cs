@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
+using System.IO;
+using System.Web;
 using System.Web.Mvc;
 using ArgoMini.Models;
 using ArgoMini.Models.NaoPersistidos;
 using ArgoMini.Negocio;
+using File = System.IO.File;
 
 namespace ArgoMini.Controllers
 {
@@ -15,20 +15,74 @@ namespace ArgoMini.Controllers
 
         public ActionResult ImportarNotaFiscalCompraView()
         {
-            return View();
+            NotaFiscalCompra notaCompra = new NotaFiscalCompra();
+            return View(notaCompra);
         }
 
-        public ActionResult ImportarNota()
+        [HttpPost]
+        public ActionResult ImportarNotaFiscalCompraView(NotaFiscalCompra notaCompraTela)
         {
-            var notaCompra = NotaFiscalCompraNegocio.ConsultarNotaCompra();
+            
 
-            if (notaCompra == null)
-                return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
 
-            TempData["notaCompra"] = notaCompra;
-            TempData.Keep("notaCompra");
+            if (!string.IsNullOrEmpty(notaCompraTela.Chave))
+            {
+                var notaNova = NotaFiscalCompraNegocio.ConsultarNotaCompra(notaCompraTela.Chave);
 
-            return RedirectToAction("NotaFiscalCompraDetalhe", "NotaFiscalCompra");
+                if (notaNova != null)
+                {
+                    TempData["notaCompra"] = notaNova;
+                    TempData.Keep("notaCompra");
+
+                    return RedirectToAction("NotaFiscalCompraDetalhe", "NotaFiscalCompra");
+                }
+            }
+
+            return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
+        }
+
+        public ActionResult TesteView()
+        {
+            FileUpload testex = new FileUpload();
+           
+            return View(testex);
+        }
+
+        [HttpPost]
+        public ActionResult TesteView(FileUpload id)
+        {
+            var aa = Request.Files;
+
+
+            var fileName = "";
+            var fileSavePath = "";
+            var uploadedFile = Request.Files[0];
+            fileName = Path.GetFileName(uploadedFile.FileName);
+            fileSavePath = Server.MapPath("~/App_Data/UploadedFiles/" +
+                                          fileName);
+            uploadedFile.SaveAs(fileSavePath);
+
+            var result = "";
+            Array userData = null;
+            char[] delimiterChar = { ',' };
+
+            if (System.IO.File.Exists(fileSavePath))
+            {
+                userData = System.IO.File.ReadAllLines(fileSavePath);
+                if (userData == null)
+                {
+                    // Empty file.
+                    result = "The file is empty.";
+                }
+            }
+            else
+            {
+                // File does not exist.
+                result = "The file does not exist.";
+            }
+
+
+            return View();
         }
 
         public ActionResult NotaFiscalCompraDetalhe()
@@ -39,6 +93,17 @@ namespace ArgoMini.Controllers
                 return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
 
             return View(notaCompra);
+        }
+
+        [HttpPost]
+        public ActionResult NotaFiscalCompraDetalhe(NotaFiscalCompra notaFiscalCompra)
+        {
+            if (notaFiscalCompra == null)
+                return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
+
+            NotaFiscalCompraNegocio.SalvarNotaCompra(notaFiscalCompra);
+
+            return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
         }
 
         //public ActionResult EditarNotaFiscalCompraItem(int? id)
@@ -124,4 +189,5 @@ namespace ArgoMini.Controllers
             base.Dispose(disposing);
         }
     }
+
 }

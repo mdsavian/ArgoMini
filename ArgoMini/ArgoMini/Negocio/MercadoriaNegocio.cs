@@ -7,38 +7,42 @@ namespace ArgoMini.Negocio
     public class MercadoriaNegocio
     {
 
-        public static void AtualizaNotaCompraItem(NotaFiscalCompraItem notaFiscalCompraItem)
+        public static void AtualizaNotaCompraItem(NotaFiscalCompra notaFiscalCompra)
         {
             using (var contexto = new ArgoMiniContext())
             {
-                decimal.TryParse(notaFiscalCompraItem.CodigoMercadoriaImportada, out var codigoDecimal);
 
-                var mercadoria = contexto.Mercadorias.FirstOrDefault(c => c.CodigoBarras == codigoDecimal);
-
-                if (mercadoria == null)
+                foreach (var notaFiscalCompraItem in notaFiscalCompra.Itens)
                 {
-                    mercadoria = new Mercadoria
+                    decimal.TryParse(notaFiscalCompraItem.CodigoMercadoriaImportada, out var codigoDecimal);
+
+                    var mercadoria = contexto.Mercadorias.FirstOrDefault(c => c.CodigoBarras == codigoDecimal);
+
+                    if (mercadoria == null)
                     {
-                        CodigoBarras = notaFiscalCompraItem.CodigoBarrasMercadoriaImportada,
-                        Cest = notaFiscalCompraItem.Cest,
-                        NcmId = notaFiscalCompraItem.Ncm,
-                        Descricao = notaFiscalCompraItem.DescricaoMercadoriaImportada,
-                        PrecoCusto = notaFiscalCompraItem.PrecoCusto,
-                        Quantidade = notaFiscalCompraItem.Quantidade
-                    };
+                        mercadoria = new Mercadoria
+                        {
+                            CodigoBarras = codigoDecimal,
+                            Cest = notaFiscalCompraItem.Cest,
+                            NcmId = notaFiscalCompraItem.Ncm,
+                            Descricao = notaFiscalCompraItem.DescricaoMercadoriaImportada,
+                            PrecoCusto = notaFiscalCompraItem.PrecoCusto,
+                            Quantidade = notaFiscalCompraItem.Quantidade
+                        };
 
-                    contexto.Entry(mercadoria).State = EntityState.Modified;
-                    contexto.SaveChanges();
-                }
-                else
-                {
-                    mercadoria.Quantidade += notaFiscalCompraItem.Quantidade;
-                    mercadoria.PrecoCusto = notaFiscalCompraItem.PrecoCusto;
-                    mercadoria.Cest = notaFiscalCompraItem.Cest;
-                    mercadoria.NcmId = notaFiscalCompraItem.Ncm;
-                }
+                        contexto.Entry(mercadoria).State = EntityState.Modified;
+                        contexto.SaveChanges();
+                    }
+                    else
+                    {
+                        mercadoria.Quantidade += notaFiscalCompraItem.Quantidade;
+                        mercadoria.PrecoCusto = notaFiscalCompraItem.PrecoCusto;
+                        mercadoria.Cest = notaFiscalCompraItem.Cest;
+                        mercadoria.NcmId = notaFiscalCompraItem.Ncm;
+                    }
 
-                MercadoriaEstoqueNegocio.AtualizarEstoqueMercadoria(mercadoria);
+                    MercadoriaEstoqueNegocio.AtualizarEstoqueMercadoria(mercadoria);
+                }
 
             }
 

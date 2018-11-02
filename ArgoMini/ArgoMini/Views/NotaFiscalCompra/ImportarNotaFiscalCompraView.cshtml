@@ -1,5 +1,7 @@
-﻿@*@model ArgoMini.Models.NotaFiscalSaida*@
-
+﻿@using System.Web.UI.WebControls
+@using ArgoMini.Models
+@using FileUpload = Microsoft.Web.Helpers.FileUpload
+@model NotaFiscalCompra
 @{
     ViewBag.Title = "Importar Nota Fiscal Compra";
 }
@@ -10,15 +12,13 @@
 {
 <div class="form-horizontal">
     <div class="form-group">
-        @Html.Label("CodigoBarra", new { @class = "control-label col-md-2" })
+        @Html.LabelFor(c => c.Chave, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.TextBox("codigoBarra")
-        
-        @Html.ActionLink("Importar Nota Fiscal Compra", "ImportarNota", "NotaFiscalCompra", new { @class = "btn btn-primary"})
+            @Html.EditorFor(c => c.Chave, new { @class = "form-control" })
+            <input type="submit" value="Consultar Nota De Compra" class="btn btn-primary" />
         </div>
     </div>
-    <div>
-        
-    </div>
 </div>
+}
+
 }

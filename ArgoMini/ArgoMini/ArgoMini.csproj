@@ -54,6 +54,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="NFe_Util_2G">
       <HintPath>..\..\FlexDocs\NFe_Util\2Gv4.05a\NFe_Util_2G.dll</HintPath>
     </Reference>
@@ -124,6 +127,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.6\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Diagnostics.DiagnosticSource">
@@ -167,6 +176,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Enums\ESituacaoNotaFiscalCompra.cs" />
+    <Compile Include="Models\NaoPersistidos\FileUpload.cs" />
     <Compile Include="Negocio\MercadoriaEstoqueNegocio.cs" />
     <Compile Include="Controllers\NotaFiscalCompraController.cs" />
     <Compile Include="Controllers\NotaFiscalController.cs" />
@@ -1885,9 +1895,10 @@
     <Content Include="Views\FrenteCaixa\Cancelar.cshtml" />
     <Content Include="Views\NotaFiscalCompra\NotaFiscalCompraDetalhe.cshtml" />
     <Content Include="Views\NotaFiscalCompra\EditarNotaFiscalCompraItem.cshtml" />
+    <Content Include="Views\NotaFiscalCompra\TesteView.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
