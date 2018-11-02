@@ -7,15 +7,14 @@
 <h2>Importar Nota Fiscal Compra</h2>
 
 
-@using (Html.BeginForm("TesteView", "NotaFiscalCompra", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("ImportarXmlNota", "NotaFiscalCompra", FormMethod.Post, new { enctype = "multipart/form-data" }))
 
-{
+{   
     <div class="form-horizontal">
         <div class="form-group">
             @Html.LabelFor(c => c.File, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(c => c.File, new { type = "file" })
-                @Html.TextBoxFor(c => c.Nome, new { type = "form-control" })
+                @Html.TextBoxFor(c => c.File, new { type = "file", accept = ".xml" })
                 <input type="submit" value="Consultar Nota De Compra" class="btn btn-primary" />
             </div>
         </div>

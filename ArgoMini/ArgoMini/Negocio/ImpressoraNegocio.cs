@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
-using System.IO;
 using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Web;
+using ArgoMini.Models;
 using ArgoMini.Negocio.Impressora;
 
 namespace ArgoMini.Negocio
@@ -14,14 +13,16 @@ namespace ArgoMini.Negocio
     public class ImpressoraNegocio
     {
 
-        private void ArgoButtonBuscarSerialHd_Click(object sender, EventArgs e)
+        public bool ExisteImpressoraSerial(string serialHd)
         {
-            var serial = this.BuscarSerialDiscoLocalC();
+            using (var contexto = new ArgoMiniContext())
+            {
+                
+                   var impressora = contexto.Impressoras.FirstOrDefault(c => c.SerialHd == serialHd);
+
+                return impressora != null;
+            }
         }
-
-
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        private static extern Int32 GetShortPathName(String path, StringBuilder shortPath, Int32 shortPathLength);
 
         public string BuscarSerialDiscoLocalC()
         {
@@ -42,7 +43,7 @@ namespace ArgoMini.Negocio
             }
         }
 
-        private void TestarConexao()
+        public void TestarConexao()
         {
 
             var stringao =
@@ -52,9 +53,14 @@ namespace ArgoMini.Negocio
                 $"{Environment.NewLine}Teste de impressão{Environment.NewLine}Teste de impressão{Environment.NewLine}Teste de impressão{Environment.NewLine}Teste de impressão" +
                 $"{Environment.NewLine}Teste de impressão{Environment.NewLine}Teste de impressão{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}|BARCODE|";
 
-            var nomeImpressora = BuscarImpressoraClick();
+            var nomeImpressora = BuscarImpressoras();
 
-            this.TestarImpressao(nomeImpressora, stringao);
+
+            var escolhida = nomeImpressora.First(c=> c.Equals("ELGIN i9(USB)"));
+
+            this.TestarImpressao(escolhida, stringao);
+
+
         }
 
         public void TestarImpressao(string nome, string texto)
@@ -76,7 +82,7 @@ namespace ArgoMini.Negocio
             elginI9.ImprimirComBarra(texto, barra);
         }
 
-        public string BuscarImpressoraClick()
+        public List<string> BuscarImpressoras()
         {
             var impressorasInstaladas = PrinterSettings.InstalledPrinters;
 
@@ -84,16 +90,11 @@ namespace ArgoMini.Negocio
             {
                 return CarregarCombo();
             }
-            else
-            {
-                
-            }
 
-            return string.Empty;
-
+            return new List<string>();
         }
 
-        public string CarregarCombo()
+        public List<string> CarregarCombo()
         {
             var impressoras = new List<string>();
             foreach (string installedPrinter in PrinterSettings.InstalledPrinters)
@@ -101,7 +102,7 @@ namespace ArgoMini.Negocio
                 impressoras.Add(installedPrinter);
             }
 
-            return string.Empty;
+            return impressoras;
         }
     }
 }

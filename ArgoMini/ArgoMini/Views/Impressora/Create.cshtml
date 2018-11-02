@@ -1,0 +1,50 @@
+﻿@model ArgoMini.Models.NaoPersistidos.ImpressorasConectadas
+
+@{
+    ViewBag.Title = "Create";
+
+    List<SelectListItem> listaImpressoras = new List<SelectListItem>();
+    foreach (var impressora in Model.Impressoras)
+    {
+
+        listaImpressoras.Add(new SelectListItem
+        {
+            Text = impressora,
+            Value = impressora
+        });
+    }
+
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Impressora", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-horizontal">
+        <h4>Employees</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(x => x.CodigoBarras, new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @Html.DropDownListFor(c => c.Impressora.Nome, listaImpressoras)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Impressora.Descricao, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.Impressora.Descricao, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Impressora.Descricao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Impressora")
+</div>

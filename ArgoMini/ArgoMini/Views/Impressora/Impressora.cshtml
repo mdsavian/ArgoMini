@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ArgoMini.Models.Impressora>
+
+@{
+    ViewBag.Title = "Impressora";
+}
+
+<h2>Impressora</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.SerialHd)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => emp.Nome)
+
+            </td>
+            <td>
+                @Html.DisplayFor(x => emp.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(x => emp.SerialHd)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = emp.Id }) 
+                @Html.ActionLink("Delete", "Delete", new { id = emp.Id })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml;
 using ArgoMini.Models;
 using ArgoMini.Models.NaoPersistidos;
 using ArgoMini.Negocio;
@@ -22,9 +24,6 @@ namespace ArgoMini.Controllers
         [HttpPost]
         public ActionResult ImportarNotaFiscalCompraView(NotaFiscalCompra notaCompraTela)
         {
-            
-
-
             if (!string.IsNullOrEmpty(notaCompraTela.Chave))
             {
                 var notaNova = NotaFiscalCompraNegocio.ConsultarNotaCompra(notaCompraTela.Chave);
@@ -41,44 +40,64 @@ namespace ArgoMini.Controllers
             return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
         }
 
-        public ActionResult TesteView()
+        public ActionResult ImportarXmlNota()
         {
-            FileUpload testex = new FileUpload();
-           
-            return View(testex);
+            FileUpload arquivoXml = new FileUpload();
+
+            return View(arquivoXml);
         }
 
         [HttpPost]
-        public ActionResult TesteView(FileUpload id)
+        public ActionResult ImportarXmlNota(FileUpload id)
         {
-            var aa = Request.Files;
-
-
-            var fileName = "";
-            var fileSavePath = "";
-            var uploadedFile = Request.Files[0];
-            fileName = Path.GetFileName(uploadedFile.FileName);
-            fileSavePath = Server.MapPath("~/App_Data/UploadedFiles/" +
-                                          fileName);
-            uploadedFile.SaveAs(fileSavePath);
-
-            var result = "";
-            Array userData = null;
-            char[] delimiterChar = { ',' };
-
-            if (System.IO.File.Exists(fileSavePath))
+            try
             {
-                userData = System.IO.File.ReadAllLines(fileSavePath);
-                if (userData == null)
+                var uploadedFile = Request.Files[0];
+                var fileName = Path.GetFileName(uploadedFile.FileName);
+
+                if (!string.IsNullOrEmpty(fileName) && Path.GetExtension(uploadedFile.FileName) == ".xml")
                 {
-                    // Empty file.
-                    result = "The file is empty.";
+                    var fileSavePath = Server.MapPath("~/App_Data/UploadedFiles/" + fileName);
+                    uploadedFile.SaveAs(fileSavePath);
+
+                    string userData = null;
+                    char[] delimiterChar = {','};
+
+                    if (System.IO.File.Exists(fileSavePath))
+                    {
+                        userData = System.IO.File.ReadAllText(fileSavePath);
+                        
+                        if (!string.IsNullOrEmpty(userData))
+                        {
+                            XmlDocument xml = new XmlDocument();
+                            xml.LoadXml(userData);
+                            var notaCompra = NotaFiscalCompraNegocio.MontarNotaCompraComXml(xml);
+
+                            if (notaCompra != null)
+                            {
+                                TempData["notaCompra"] = notaCompra;
+                                TempData.Keep("notaCompra");
+
+                                return RedirectToAction("NotaFiscalCompraDetalhe", "NotaFiscalCompra");
+                            }
+                        }
+                        
+                        // Empty file.
+
+                    }
+                    else
+                    {
+                        // File does not exist.
+                    }
+                }
+                else
+                {
+                    // arquivo inválido
                 }
             }
-            else
+            catch(Exception ex)
             {
-                // File does not exist.
-                result = "The file does not exist.";
+                
             }
 
 

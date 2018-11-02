@@ -46,12 +46,12 @@ namespace ArgoMini.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var employee = _context.Mercadorias.SingleOrDefault(e => e.MercadoriaId == id);
-            if (employee == null)
+            var mercadoria = _context.Mercadorias.SingleOrDefault(e => e.MercadoriaId == id);
+            if (mercadoria == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(mercadoria);
         }
 
         [HttpPost]

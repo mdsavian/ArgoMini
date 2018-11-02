@@ -96,7 +96,7 @@ namespace ArgoMini.Negocio.Impressora
 
                 // Texto Condensado
                 //ElginHelper.CharFontBText(this.ImpressoraComunicacao.Descricao);
-                ElginHelper.PrintText(this.ImpressoraComunicacao.Descricao, texto, this.Encoding);
+                ElginHelper.PrintText(this.ImpressoraComunicacao.Nome, texto, this.Encoding);
             }
             catch (Exception)
             {

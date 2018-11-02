@@ -175,8 +175,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ImpressoraController.cs" />
     <Compile Include="Enums\ESituacaoNotaFiscalCompra.cs" />
     <Compile Include="Models\NaoPersistidos\FileUpload.cs" />
+    <Compile Include="Models\NaoPersistidos\ImpressorasConectadas.cs" />
     <Compile Include="Negocio\MercadoriaEstoqueNegocio.cs" />
     <Compile Include="Controllers\NotaFiscalCompraController.cs" />
     <Compile Include="Controllers\NotaFiscalController.cs" />
@@ -1895,7 +1897,11 @@
     <Content Include="Views\FrenteCaixa\Cancelar.cshtml" />
     <Content Include="Views\NotaFiscalCompra\NotaFiscalCompraDetalhe.cshtml" />
     <Content Include="Views\NotaFiscalCompra\EditarNotaFiscalCompraItem.cshtml" />
-    <Content Include="Views\NotaFiscalCompra\TesteView.cshtml" />
+    <Content Include="Views\NotaFiscalCompra\ImportarXmlNota.cshtml" />
+    <Content Include="Views\Impressora\Impressora.cshtml" />
+    <Content Include="Views\Impressora\Edit.cshtml" />
+    <Content Include="Views\Impressora\Create.cshtml" />
+    <Content Include="Views\Impressora\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\UploadedFiles\" />
