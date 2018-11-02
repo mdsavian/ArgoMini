@@ -166,6 +166,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Enums\ESituacaoNotaFiscalCompra.cs" />
     <Compile Include="Negocio\MercadoriaEstoqueNegocio.cs" />
     <Compile Include="Controllers\NotaFiscalCompraController.cs" />
     <Compile Include="Controllers\NotaFiscalController.cs" />
@@ -182,7 +183,9 @@
     <Compile Include="Negocio\Impressora\ElginI9.cs" />
     <Compile Include="Negocio\FlexDocsNegocio.cs" />
     <Compile Include="Negocio\ImpressoraNegocio.cs" />
+    <Compile Include="Negocio\MercadoriaNegocio.cs" />
     <Compile Include="Negocio\NotaFiscalCompraNegocio.cs" />
+    <Compile Include="Negocio\NotaFiscalCompraItemNegocio.cs" />
     <Compile Include="Negocio\NotaFiscalSaidaItemNegocio.cs" />
     <Compile Include="Enums\ESituacaoNotaFiscalSaida.cs" />
     <Compile Include="Global.asax.cs">
@@ -1877,9 +1880,11 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\NotaFiscal\NotasFiscais.cshtml" />
     <Content Include="Views\NotaFiscal\Detalhes.cshtml" />
-    <Content Include="Views\NotaFiscalCompra\ImportarNotaFiscalCompra.cshtml" />
+    <Content Include="Views\NotaFiscalCompra\ImportarNotaFiscalCompraView.cshtml" />
     <Content Include="Views\FrenteCaixa\Editar.cshtml" />
     <Content Include="Views\FrenteCaixa\Cancelar.cshtml" />
+    <Content Include="Views\NotaFiscalCompra\NotaFiscalCompraDetalhe.cshtml" />
+    <Content Include="Views\NotaFiscalCompra\EditarNotaFiscalCompraItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

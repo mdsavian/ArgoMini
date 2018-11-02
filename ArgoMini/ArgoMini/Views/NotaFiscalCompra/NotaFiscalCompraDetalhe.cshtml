@@ -1,0 +1,121 @@
+﻿@model ArgoMini.Models.NotaFiscalCompra
+
+@{
+    ViewBag.Title = "Nota Fiscal Compra Detalhe";
+}
+
+<h2>Nota Fiscal Compra Detalhe</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(x => x.Numero, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.Numero, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Numero, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(x => x.Serie, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.Serie, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Serie, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(x => x.Chave, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.Chave, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Chave, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(x => x.NomeFornecedor, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.NomeFornecedor, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.NomeFornecedor, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(x => x.ValorTotalNota, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.ValorTotalNota, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.ValorTotalNota, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(x => x.DataEmissao, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(x => x.DataEmissao, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.DataEmissao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <table class="table table-responsive table-hover">
+        <tr>
+            <th>
+                @Html.DisplayName("Código")
+            </th>
+            <th>
+                @Html.DisplayName("Descrição")
+            </th>
+            <th>
+                @Html.DisplayName("Quantidade")
+            </th>
+            <th>
+                @Html.DisplayName("Preço Custo")
+            </th>
+            <th>
+                @Html.DisplayName("Total Mercadoria")
+            </th>
+
+            <th></th>
+        </tr>
+
+        @if (Model.Itens.Any())
+        {
+            foreach (var emp in Model.Itens)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(x => emp.CodigoMercadoriaImportada)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => emp.DescricaoMercadoriaImportada)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => emp.Quantidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => emp.PrecoCusto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => emp.TotalMercadoria)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Editar", "Editar", new { id = emp.Id }) |
+                            @Html.ActionLink("Excluir", "Excluir", new { id = emp.Id })*@
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+}

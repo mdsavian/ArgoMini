@@ -119,8 +119,6 @@ namespace ArgoMini.Controllers
                 {
 
                 }
-
-                //AtualizarNota();
                 return RedirectToAction("FrenteCaixa");
             }
 

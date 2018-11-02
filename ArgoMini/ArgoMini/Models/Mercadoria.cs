@@ -23,9 +23,9 @@ namespace ArgoMini.Models
         public decimal Quantidade { get; set; }
 
         [Display(Name = "Código de Barras")]
-        public int CodigoBarras { get; set; }
+        public decimal CodigoBarras { get; set; }
 
-        public int Cest { get; set; }
+        public string Cest { get; set; }
 
         public string UnidadeMedida { get; set; }
     }

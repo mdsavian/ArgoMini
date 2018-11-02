@@ -13,35 +13,107 @@ namespace ArgoMini.Controllers
     {
         private readonly ArgoMiniContext _context = new ArgoMiniContext();
 
-        public ActionResult ImportarNotaFiscalCompra()
+        public ActionResult ImportarNotaFiscalCompraView()
         {
-            var xx = NotaFiscalCompraNegocio.Consultar();
-            if (string.IsNullOrEmpty(xx))
-                xx = NotaFiscalCompraNegocio.Consultar();
-            var xy = xx;
             return View();
         }
 
-        //public ActionResult EmitirNotaFiscal()
-        //{
-        //    return RedirectToAction("FrenteCaixa", "FrenteCaixa");
-        //}
+        public ActionResult ImportarNota()
+        {
+            var notaCompra = NotaFiscalCompraNegocio.ConsultarNotaCompra();
 
-        //public ActionResult Detalhes(int? id)
+            if (notaCompra == null)
+                return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
+
+            TempData["notaCompra"] = notaCompra;
+            TempData.Keep("notaCompra");
+
+            return RedirectToAction("NotaFiscalCompraDetalhe", "NotaFiscalCompra");
+        }
+
+        public ActionResult NotaFiscalCompraDetalhe()
+        {
+            var notaCompra = (NotaFiscalCompra)TempData.Peek("notaCompra");
+
+            if (notaCompra == null)
+                return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
+
+            return View(notaCompra);
+        }
+
+        //public ActionResult EditarNotaFiscalCompraItem(int? id)
         //{
         //    if (id == null)
         //    {
         //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         //    }
 
-        //    var notaFiscal = _context.NotasFiscalSaida.SingleOrDefault(e => e.NotaFiscalSaidaId == id);
-        //    if (notaFiscal == null)
+        //    var notaFiscalCompraItem = _context.NotaFiscalCompraItem.SingleOrDefault(e => e.Id == id);
+        //    if (notaFiscalCompraItem == null)
         //    {
         //        return HttpNotFound();
         //    }
-        //    return View(notaFiscal);
-
+        //    return View(notaFiscalCompraItem);
         //}
+
+        //[HttpPost]
+        //public ActionResult EditarNotaFiscalCompraItem(NotaFiscalCompraItem notaFiscalCompraItem)
+        //{
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            var notaCompra = (NotaFiscalCompra)TempData.Peek("notaCompra");
+
+        //            NotaFiscalCompraItemNegocio.EditarItemNota(notaFiscalCompraItem);
+
+        //            notaCompra = NotaFiscalCompraNegocio.AtualizarValorNota(notaCompra.Id);
+
+        //            TempData["NotaFiscalSaida"] = notaFiscal;
+        //        }
+        //        catch (Exception ex)
+        //        {
+
+        //        }
+
+        //        return RedirectToAction("FrenteCaixa");
+        //    }
+
+        //    return View(notaFiscalSaidaItem);
+        //}
+
+        //public ActionResult Cancelar(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+
+        //    var notaFiscalSaidaItem = _context.NotaFiscalSaidaItems.SingleOrDefault(e => e.NotaFiscalSaidaItemId == id);
+        //    if (notaFiscalSaidaItem == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(notaFiscalSaidaItem);
+        //}
+
+        //[HttpPost]
+        //public ActionResult Cancelar(int id)
+        //{
+        //    var notaFiscalSaidaItem = _context.NotaFiscalSaidaItems.FirstOrDefault(c => c.NotaFiscalSaidaItemId == id);
+
+        //    var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+        //    _context.NotaFiscalSaidaItems.Remove(notaFiscalSaidaItem ?? throw new InvalidOperationException());
+        //    _context.SaveChanges();
+
+        //    notaFiscal = NotaFiscalNegocio.AtualizarValorNota(notaFiscal.NotaFiscalSaidaId);
+
+        //    TempData["NotaFiscalSaida"] = notaFiscal;
+        //    return RedirectToAction("FrenteCaixa");
+        //}
+
+
 
         protected override void Dispose(bool disposing)
         {

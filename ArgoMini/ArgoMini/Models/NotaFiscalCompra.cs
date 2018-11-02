@@ -16,7 +16,7 @@ namespace ArgoMini.Models
         public DateTime DataEntrada { get; set; }
         public string Cnpj{ get; set; }
         public string NomeFornecedor { get; set; }
-
+        public ESituacaoNotaFiscalCompra Situacao { get; set; }
         public decimal ValorTotalNota { get; set; }
 
         public virtual List<NotaFiscalCompraItem> Itens { get; set; }
