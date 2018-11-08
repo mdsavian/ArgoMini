@@ -13,7 +13,7 @@ namespace ArgoMini.Negocio
 
         public NotaFiscalSaida CriarNotaFiscal()
         {
-            var ultimaNotaFiscalSaida = _contexto.NotasFiscalSaida.ToList().LastOrDefault();
+            var ultimaNotaFiscalSaida = _contexto.NotasFiscalSaidas.ToList().LastOrDefault();
 
             NotaFiscalSaida nota =
                 new NotaFiscalSaida
@@ -26,8 +26,7 @@ namespace ArgoMini.Negocio
                 };
 
 
-            _contexto.NotasFiscalSaida.Add(nota);
-            _contexto.SaveChanges();
+            _contexto.NotasFiscalSaidas.Add(nota);
 
             return nota;
         }
@@ -37,8 +36,10 @@ namespace ArgoMini.Negocio
         {
             try
             {
+                _contexto.SaveChanges();
                 new FlexDocsNegocio().EmitirNfe(notaFiscal);
                 MercadoriaEstoqueNegocio.AtualizarEstoqueNotaSaida(notaFiscal);
+                
             }
             catch (Exception)
             {
@@ -50,7 +51,7 @@ namespace ArgoMini.Negocio
         {
             using (var contexto = new ArgoMiniContext())
             {
-                var notaFiscal = contexto.NotasFiscalSaida.Include(c => c.Itens).Include(c=> c.Itens.Select(d=> d.Mercadoria))
+                var notaFiscal = contexto.NotasFiscalSaidas.Include(c => c.Itens).Include(c=> c.Itens.Select(d=> d.Mercadoria))
                     .First(c => c.NotaFiscalSaidaId == notaFiscalId);
 
                 notaFiscal.ValorTotalNota = notaFiscal.Itens.Sum(c => c.TotalMercadoria);
@@ -61,6 +62,21 @@ namespace ArgoMini.Negocio
                 return notaFiscal;  
             }
 
+        }
+
+        public void DeletaNota(NotaFiscalSaida notaFiscal)
+        {
+            using (var contexto = new ArgoMiniContext())
+            {
+                contexto.NotasFiscalSaidas.Remove(notaFiscal);
+
+                if (notaFiscal.Itens == null)
+                {
+                    notaFiscal.Itens = contexto.NotaFiscalSaidaItems.Where(c => c.NotaFiscalSaidaId == notaFiscal.NotaFiscalSaidaId).ToList();
+                }
+
+                contexto.NotaFiscalSaidaItems.RemoveRange(notaFiscal.Itens);
+            }
         }
     }
 }

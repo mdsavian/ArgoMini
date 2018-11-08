@@ -32,7 +32,7 @@ namespace ArgoMini.Controllers
                 _context.Mercadorias.Add(mercadoria);
                 _context.SaveChanges();
 
-                MercadoriaEstoqueNegocio.AtualizarEstoqueMercadoria(mercadoria);
+                MercadoriaEstoqueNegocio.AtualizarEstoqueMercadoria(mercadoria, _context);
 
                 return RedirectToAction("Index");
             }
@@ -62,7 +62,7 @@ namespace ArgoMini.Controllers
                 _context.Entry(mercadoria).State = EntityState.Modified;
                 _context.SaveChanges();
 
-                MercadoriaEstoqueNegocio.AtualizarEstoqueMercadoria(mercadoria);
+                MercadoriaEstoqueNegocio.AtualizarEstoqueMercadoria(mercadoria, _context);
 
                 return RedirectToAction("Index");
             }

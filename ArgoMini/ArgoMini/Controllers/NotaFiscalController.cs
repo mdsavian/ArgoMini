@@ -16,7 +16,7 @@ namespace ArgoMini.Controllers
         public ActionResult NotasFiscais()
         {
 
-            var notasFiscais = _context.NotasFiscalSaida;
+            var notasFiscais = _context.NotasFiscalSaidas;
 
             return View(notasFiscais);
         }
@@ -33,7 +33,7 @@ namespace ArgoMini.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var notaFiscal = _context.NotasFiscalSaida.SingleOrDefault(e => e.NotaFiscalSaidaId == id);
+            var notaFiscal = _context.NotasFiscalSaidas.SingleOrDefault(e => e.NotaFiscalSaidaId == id);
             if (notaFiscal == null)
             {
                 return HttpNotFound();

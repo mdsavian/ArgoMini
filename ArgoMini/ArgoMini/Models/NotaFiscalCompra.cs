@@ -19,7 +19,7 @@ namespace ArgoMini.Models
         public ESituacaoNotaFiscalCompra Situacao { get; set; }
         public decimal ValorTotalNota { get; set; }
 
-        public string CaminhoXml { get; set; }
+        public string Xml { get; set; }
 
         public virtual List<NotaFiscalCompraItem> Itens { get; set; }
     }

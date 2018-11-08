@@ -56,14 +56,14 @@ namespace ArgoMini.Negocio
                         DataEntrada = dataEntrada,
                         Situacao = ESituacaoNotaFiscalCompra.Construcao
                     };
-                    
+
                     XmlNodeList nodoEmitente = xml.GetElementsByTagName("emit");
                     if (nodoEmitente.Count > 0)
                     {
 
                         var pessoaCnpj = nodoEmitente[0]["CNPJ"].InnerText;
                         var nome = nodoEmitente[0]["xNome"].InnerText;
-                            
+
                         notaCompra.Cnpj = pessoaCnpj;
                         notaCompra.NomeFornecedor = nome;
                     }
@@ -84,8 +84,8 @@ namespace ArgoMini.Negocio
             foreach (XmlNode nodoItemNota in xmlItens)
             {
                 var i = 0;
-                
-                var codigoItem =  nodoItemNota["prod"]["cProd"].InnerText;
+
+                var codigoItem = nodoItemNota["prod"]["cProd"].InnerText;
                 var quantidade = decimal.Parse(nodoItemNota["prod"]["qCom"].InnerText);
                 var descricao = nodoItemNota["prod"]["xProd"].InnerText.ToUpper();
 
@@ -154,9 +154,24 @@ namespace ArgoMini.Negocio
         {
             using (var contexto = new ArgoMiniContext())
             {
-                notaFiscalCompra.Situacao = ESituacaoNotaFiscalCompra.Importada;
-                contexto.Entry(notaFiscalCompra).State = EntityState.Modified;
-                contexto.SaveChanges();
+                using (var contextoTransaction = contexto.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        notaFiscalCompra.Situacao = ESituacaoNotaFiscalCompra.Importada;
+                        contexto.NotaFiscalCompra.Add(notaFiscalCompra);
+                        contexto.SaveChanges();
+                        contextoTransaction.Commit();
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        contextoTransaction.Rollback();
+                    }
+                }
+
+
             }
         }
     }

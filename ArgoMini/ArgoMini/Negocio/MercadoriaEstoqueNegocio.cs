@@ -7,27 +7,23 @@ namespace ArgoMini.Negocio
     {
         public static void AtualizarEstoqueMercadoria(Mercadoria mercadoria, ArgoMiniContext contexto = null)
         {
-            using (contexto = new ArgoMiniContext())
+            var mercadoriaEstoque = contexto.MercadoriaEstoque.FirstOrDefault(c => c.MercadoriaId == mercadoria.MercadoriaId);
+
+            if (mercadoriaEstoque != null)
             {
-                var mercadoriaEstoque = contexto.MercadoriaEstoque.FirstOrDefault(c => c.MercadoriaId == mercadoria.MercadoriaId);
-
-                if (mercadoriaEstoque != null)
+                mercadoriaEstoque.EstoqueAtual = mercadoria.Quantidade;
+            }
+            else
+            {
+                mercadoriaEstoque = new MercadoriaEstoque
                 {
-                    mercadoriaEstoque.EstoqueAtual = mercadoria.Quantidade;
-                }
-                else
-                {
-                    mercadoriaEstoque = new MercadoriaEstoque
-                    {
-                        Mercadoria = mercadoria,
-                        MercadoriaId = mercadoria.MercadoriaId,
-                        EstoqueAtual = mercadoria.Quantidade
-                    };
+                    Mercadoria = mercadoria,
+                    MercadoriaId = mercadoria.MercadoriaId,
+                    EstoqueAtual = mercadoria.Quantidade
+                };
 
-                    contexto.MercadoriaEstoque.Add(mercadoriaEstoque);
-                    contexto.SaveChanges();
-
-                }
+                contexto.MercadoriaEstoque.Add(mercadoriaEstoque);
+                contexto.SaveChanges();
             }
         }
 
@@ -48,13 +44,13 @@ namespace ArgoMini.Negocio
                     {
                         if (item.Mercadoria == null)
                         {
-                            var mercadoria = contexto.Mercadorias.FirstOrDefault(c=> c.MercadoriaId == item.MercadoriaId);
-                            if(mercadoria != null)
-                                AtualizarEstoqueMercadoria(mercadoria);
+                            var mercadoria = contexto.Mercadorias.FirstOrDefault(c => c.MercadoriaId == item.MercadoriaId);
+                            if (mercadoria != null)
+                                AtualizarEstoqueMercadoria(mercadoria,contexto);
                             return;
                         }
 
-                        AtualizarEstoqueMercadoria(item.Mercadoria);
+                        AtualizarEstoqueMercadoria(item.Mercadoria, contexto);
 
                     }
 

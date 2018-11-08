@@ -1,4 +1,5 @@
 ﻿importar os códigos da uf -- 43 e os codigos do municipio 
 ajustar -> ConverterParaChave | ConverteParaIdentificador
-atualizar estoque nota de compra
 transformar em tela modal salvar, deletar
+criar tela para add nota compra na nmão
+criar chaventoa na itemnotacompra

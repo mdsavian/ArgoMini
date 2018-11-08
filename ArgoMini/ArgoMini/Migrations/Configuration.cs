@@ -1,4 +1,4 @@
-namespace ArgoMini.Migrations
+namespace odesempre.Migrations
 {
     using System;
     using System.Data.Entity;

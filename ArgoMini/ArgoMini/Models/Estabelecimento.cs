@@ -26,8 +26,6 @@ namespace ArgoMini.Models
 
         [Display(Name = "Inscrição Estadual")]
         public string InscricaoEstadual { get; set; }
-        [Display(Name = "Código Regime Tributário")]
-        public int CodigoRegimeTributario { get; set; }
 
         public string ModeloNota { get; set; }
         public string Serie { get; set; }

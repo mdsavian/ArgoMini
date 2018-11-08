@@ -1,4 +1,5 @@
-﻿@using ArgoMini.Models
+﻿
+@using ArgoMini.Models
 @model NotaFiscalSaida
 @{
     ViewBag.Title = "Emitir Documento";
@@ -11,6 +12,14 @@
         <div>
             @Html.ActionLink("Adicionar Produto", "AddProduto", "FrenteCaixa", new { @class = "btn btn-primary col-md-push-11" })
         </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.CnpjCpf, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.CnpjCpf, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CnpjCpf, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
 
         <br />
         <table class="table table-responsive table-hover">
@@ -45,8 +54,8 @@
                         @Html.DisplayFor(x => emp.TotalMercadoria)
                     </td>
                     <td>
-                        @Html.ActionLink("Editar", "Editar", new { id = emp.NotaFiscalSaidaItemId}) |
-                        @Html.ActionLink("Cancelar", "Cancelar", new { id = emp.NotaFiscalSaidaItemId})
+                        @Html.ActionLink("Editar", "Editar", new { id = emp.NotaFiscalSaidaItemId }) |
+                        @Html.ActionLink("Cancelar", "Cancelar", new { id = emp.NotaFiscalSaidaItemId })
                     </td>
                 </tr>
             }
@@ -60,6 +69,56 @@
         <div>
             @Html.ActionLink("Emitir Nota Fiscal", "EmitirNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary " })
         </div>
-
     </div>
 }
+
+
+@*<head runat="server">
+
+        <script language="javascript" type="text/javascript">
+
+            $(window).on("beforeunload", function (e) {
+                //ajax post to controller action
+                /* { /*param1 : "value1", param2: "value2" }*/
+                $.ajax({
+                    type: 'POST',
+                    url: '/FrenteCaixa/LimpaNota',
+                    dataType: 'html'
+                });
+            });
+
+            function Opa() {
+                alert("hellloo");
+                //alert(document.);
+            }
+
+
+                //window.onbeforeunload =
+                //    function() {
+                //        if ((window.event.clientX < 0) || (window.event.clientY < 0)) {
+                //            window.open("../LOGOUT/Logout.aspx", "fechar");
+                //        }
+                //    }
+
+
+
+                //function Verificar() {
+                //    var tecla = window.event.keyCode; //tecla normal
+                //    var alt = window.event.altKey; // Para Controle da Tecla ALT
+                //    var ctrl = window.event.ctrlKey; // Para Controle da Tecla CTRL
+
+                //    if (alt && tecla == 115) // Evita fechar via Teclado
+                //    {
+                //        alert("Para sair do sistema clique em SAIR !");
+                //        event.keyCode = 116;
+                //        event.returnValue = false;
+                //    }
+                //    if (ctrl && tecla == 78) {
+                //        alert("CTRL+N bloqueado");
+                //        event.keyCode = 0;
+                //        event.returnValue = false;
+                //    }
+                //}
+
+        </script>
+    </head>*@

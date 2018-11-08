@@ -13,8 +13,8 @@ namespace ArgoMini.Models
         }
 
         public DbSet<Estabelecimento> Estabelecimentos { get; set; }
-        public DbSet<Pessoa> Pessoas { get; set; }
-        public DbSet<NotaFiscalSaida> NotasFiscalSaida { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<NotaFiscalSaida> NotasFiscalSaidas { get; set; }
         public DbSet<NotaFiscalSaidaItem> NotaFiscalSaidaItems { get; set; }
         public DbSet<Mercadoria> Mercadorias { get; set; }
         public DbSet<Impressora> Impressoras { get; set; }

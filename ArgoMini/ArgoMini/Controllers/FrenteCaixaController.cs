@@ -33,12 +33,27 @@ namespace ArgoMini.Controllers
             
         }
 
+        public void LimpaNota()
+        {
+            var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+            try
+            {
+                //new NotaFiscalNegocio().DeletaNota(notaFiscal);
+                TempData.Remove("NotaFiscalSaida");
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+
         public ActionResult EmitirNotaFiscal()
         {
             var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
             try
             {
                 new NotaFiscalNegocio().EmitirNotaFiscal(notaFiscal);
+                
                 TempData.Remove("NotaFiscalSaida");
             }
             catch(Exception ex)

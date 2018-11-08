@@ -177,6 +177,11 @@
     </Compile>
     <Compile Include="Controllers\ImpressoraController.cs" />
     <Compile Include="Enums\ESituacaoNotaFiscalCompra.cs" />
+    <Compile Include="Migrations\201811072200415_teste.cs" />
+    <Compile Include="Migrations\201811072200415_teste.designer.cs">
+      <DependentUpon>201811072200415_teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NaoPersistidos\DadosCartao.cs" />
     <Compile Include="Models\NaoPersistidos\FileUpload.cs" />
     <Compile Include="Models\NaoPersistidos\ImpressorasConectadas.cs" />
     <Compile Include="Negocio\MercadoriaEstoqueNegocio.cs" />
@@ -1905,6 +1910,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\UploadedFiles\" />
+    <Folder Include="Negocio\Util\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -1914,6 +1920,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810100221223_PrimeiraMigracao.resx">
       <DependentUpon>201810100221223_PrimeiraMigracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811072200415_teste.resx">
+      <DependentUpon>201811072200415_teste.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using System.Xml;
 using ArgoMini.Models;
 using ArgoMini.Models.NaoPersistidos;
 using ArgoMini.Negocio;
 using File = System.IO.File;
+using FileUpload = ArgoMini.Models.NaoPersistidos.FileUpload;
 
 namespace ArgoMini.Controllers
 {
@@ -61,14 +66,18 @@ namespace ArgoMini.Controllers
                     uploadedFile.SaveAs(fileSavePath);
 
                     string userData = null;
-                    char[] delimiterChar = {','};
+
+                    char[] delimiterChar = { ',' };
 
                     if (System.IO.File.Exists(fileSavePath))
                     {
                         userData = System.IO.File.ReadAllText(fileSavePath);
-                        
+
                         if (!string.IsNullOrEmpty(userData))
                         {
+
+
+
                             XmlDocument xml = new XmlDocument();
                             xml.LoadXml(userData);
                             var notaCompra = NotaFiscalCompraNegocio.MontarNotaCompraComXml(xml);
@@ -81,23 +90,24 @@ namespace ArgoMini.Controllers
                                 return RedirectToAction("NotaFiscalCompraDetalhe", "NotaFiscalCompra");
                             }
                         }
-                        
+
                         // Empty file.
 
                     }
                     else
                     {
                         // File does not exist.
+
                     }
                 }
                 else
                 {
-                    // arquivo inválido
+                        // arquivo inválido
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+
             }
 
 
@@ -117,6 +127,8 @@ namespace ArgoMini.Controllers
         [HttpPost]
         public ActionResult NotaFiscalCompraDetalhe(NotaFiscalCompra notaFiscalCompra)
         {
+            notaFiscalCompra = (NotaFiscalCompra)TempData.Peek("notaCompra");
+
             if (notaFiscalCompra == null)
                 return RedirectToAction("ImportarNotaFiscalCompraView", "NotaFiscalCompra");
 
