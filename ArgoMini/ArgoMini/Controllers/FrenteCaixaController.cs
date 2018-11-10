@@ -33,20 +33,6 @@ namespace ArgoMini.Controllers
             
         }
 
-        public void LimpaNota()
-        {
-            var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
-            try
-            {
-                //new NotaFiscalNegocio().DeletaNota(notaFiscal);
-                TempData.Remove("NotaFiscalSaida");
-            }
-            catch (Exception ex)
-            {
-                
-            }
-        }
-
         public ActionResult EmitirNotaFiscal()
         {
             var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
@@ -59,6 +45,41 @@ namespace ArgoMini.Controllers
             catch(Exception ex)
             {
                 
+            }
+            // retornar para view frente caixa branco
+            return RedirectToAction("FrenteCaixa");
+        }
+
+
+        public ActionResult CancelarNotaFiscal()
+        {
+            var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+            try
+            {
+                new NotaFiscalNegocio().CancelarNotaFiscal(notaFiscal);
+
+                TempData.Remove("NotaFiscalSaida");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            // retornar para view frente caixa branco
+            return RedirectToAction("FrenteCaixa");
+        }
+
+        public ActionResult InutilizarNotaFiscal()
+        {
+            var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+            try
+            {
+                new NotaFiscalNegocio().InutilizarNotaFiscal(notaFiscal);
+
+                TempData.Remove("NotaFiscalSaida");
+            }
+            catch (Exception ex)
+            {
+
             }
             // retornar para view frente caixa branco
             return RedirectToAction("FrenteCaixa");
@@ -83,10 +104,13 @@ namespace ArgoMini.Controllers
             {
                 var notaFiscal = (NotaFiscalSaida) TempData.Peek("NotaFiscalSaida");
                 var notaFiscalItem = new NotaFiscalSaidaItemNegocio().TransformaFrenteCaixa(frenteCaixa, notaFiscal);
-
-
+                
                 if (notaFiscal != null)
-                    NotaFiscalSaidaItemNegocio.AdicionarNovoItemNota(ref notaFiscal, notaFiscalItem);
+                {
+                    notaFiscal.Itens.Add(notaFiscalItem);
+                    notaFiscal.ValorTotalNota = notaFiscal.Itens.Sum(c => c.TotalMercadoria);
+                }
+                    //NotaFiscalSaidaItemNegocio.AdicionarNovoItemNota(ref notaFiscal, notaFiscalItem);
 
                 TempData["NotaFiscalSaida"] = notaFiscal;
                 TempData.Keep();
@@ -105,8 +129,8 @@ namespace ArgoMini.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            var notaFiscalSaidaItem = _context.NotaFiscalSaidaItems.SingleOrDefault(e => e.NotaFiscalSaidaItemId == id);
+            var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+            var notaFiscalSaidaItem = notaFiscal.Itens.FirstOrDefault(c => c.NotaFiscalSaidaItemId == id);
             if (notaFiscalSaidaItem == null)
             {
                 return HttpNotFound();
@@ -123,10 +147,18 @@ namespace ArgoMini.Controllers
                 try
                 {
                     var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+                    var notaItem = notaFiscal.Itens.FirstOrDefault(c =>
+                        c.NotaFiscalSaidaItemId == notaFiscalSaidaItem.NotaFiscalSaidaItemId);
 
-                    NotaFiscalSaidaItemNegocio.EditarItemNota(notaFiscalSaidaItem);
+                    if (notaItem != null)
+                    {
+                        notaItem.PrecoVenda = notaFiscalSaidaItem.PrecoVenda;
+                        notaItem.Quantidade = notaFiscalSaidaItem.Quantidade;
+                        notaItem.TotalMercadoria = notaFiscalSaidaItem.PrecoVenda * notaFiscalSaidaItem.Quantidade;
+                    }
 
-                    notaFiscal = NotaFiscalNegocio.AtualizarValorNota(notaFiscal.NotaFiscalSaidaId);
+                    //NotaFiscalSaidaItemNegocio.EditarItemNota(notaFiscalSaidaItem);
+                    notaFiscal.ValorTotalNota = notaFiscal.Itens.Sum(c => c.TotalMercadoria);
 
                     TempData["NotaFiscalSaida"] = notaFiscal;
                 }
@@ -146,8 +178,10 @@ namespace ArgoMini.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
+            var notaFiscalSaidaItem = notaFiscal.Itens.FirstOrDefault(c =>
+                c.NotaFiscalSaidaItemId == id);
 
-            var notaFiscalSaidaItem = _context.NotaFiscalSaidaItems.SingleOrDefault(e => e.NotaFiscalSaidaItemId == id);
             if (notaFiscalSaidaItem == null)
             {
                 return HttpNotFound();
@@ -158,13 +192,13 @@ namespace ArgoMini.Controllers
         [HttpPost]
         public ActionResult Cancelar(int id)
         {
-            var notaFiscalSaidaItem = _context.NotaFiscalSaidaItems.FirstOrDefault(c => c.NotaFiscalSaidaItemId == id);
-
             var notaFiscal = (NotaFiscalSaida)TempData.Peek("NotaFiscalSaida");
-            _context.NotaFiscalSaidaItems.Remove(notaFiscalSaidaItem ?? throw new InvalidOperationException());
-            _context.SaveChanges();
+            var notaFiscalSaidaItem = notaFiscal.Itens.FirstOrDefault(c =>
+                c.NotaFiscalSaidaItemId == id);
 
-            notaFiscal = NotaFiscalNegocio.AtualizarValorNota(notaFiscal.NotaFiscalSaidaId);
+            notaFiscal.Itens.Remove(notaFiscalSaidaItem ?? throw new InvalidOperationException());
+
+            notaFiscal.ValorTotalNota = notaFiscal.Itens.Sum(c => c.TotalMercadoria);
 
             TempData["NotaFiscalSaida"] = notaFiscal;
             return RedirectToAction("FrenteCaixa");

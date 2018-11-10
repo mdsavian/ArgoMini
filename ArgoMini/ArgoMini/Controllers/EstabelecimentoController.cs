@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ArgoMini.Models;
+using ArgoMini.Negocio;
 
 namespace ArgoMini.Controllers
 {
@@ -30,6 +31,7 @@ namespace ArgoMini.Controllers
         {
             if (ModelState.IsValid)
             {
+                var xx = DadosCorreioNegocio.ConsultaCepService(estabelecimento.Cep);
                 _context.Estabelecimentos.Add(estabelecimento);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,6 +61,7 @@ namespace ArgoMini.Controllers
         {
             if (ModelState.IsValid)
             {
+                var xx = DadosCorreioNegocio.ConsultaCepService(estabelecimento.Cep);
                 _context.Entry(estabelecimento).State = EntityState.Modified;
                 _context.SaveChanges();
                 return RedirectToAction("Index");

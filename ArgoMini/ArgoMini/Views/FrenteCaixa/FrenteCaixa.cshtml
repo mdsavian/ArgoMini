@@ -42,7 +42,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(x => emp.Mercadoria.CodigoBarras)
+                        @Html.DisplayFor(x => emp.NotaFiscalSaidaItemId)
                     </td>
                     <td>
                         @Html.DisplayFor(x => emp.PrecoVenda)
@@ -68,6 +68,8 @@
         </div>
         <div>
             @Html.ActionLink("Emitir Nota Fiscal", "EmitirNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary " })
+            @Html.ActionLink("Cancelar Nota Fiscal", "CancelarNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary " })
+            @Html.ActionLink("Inutlizar Nota Fiscal", "InutilizarNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary " })
         </div>
     </div>
 }

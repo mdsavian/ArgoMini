@@ -13,7 +13,7 @@ namespace odesempre.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201811072200415_teste"; }
+            get { return "201811072353183_teste"; }
         }
         
         string IMigrationMetadata.Source

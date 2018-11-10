@@ -3,9 +3,8 @@ using System.Data.Entity;
 using System.Linq;
 using ArgoMini.Models;
 using ArgoMini.Models.NaoPersistidos;
-using ArgoMini.Negocio;
 
-namespace ArgoMini.Controllers
+namespace ArgoMini.Negocio
 {
     internal class NotaFiscalSaidaItemNegocio
     {
@@ -17,42 +16,59 @@ namespace ArgoMini.Controllers
         {
             using (var contexto = new ArgoMiniContext())
             {
+                var notaFiscalItem = notaFiscal.Itens.FirstOrDefault(c =>
+                    c.Mercadoria.CodigoBarras == frenteCaixa.CodigoMercadoria &&
+                    c.NotaFiscalSaidaId == notaFiscal.NotaFiscalSaidaId);
 
-                var notaFiscalItem = new NotaFiscalSaidaItem
+                if (notaFiscalItem == null)
                 {
-                    Mercadoria = contexto.Mercadorias.ToList()
-                        .First(c => c.CodigoBarras == frenteCaixa.CodigoMercadoria),
-                    Quantidade = frenteCaixa.Quantidade,
-                    PrecoVenda = frenteCaixa.PrecoVenda,
-                    TotalMercadoria = frenteCaixa.ValorTotal,
-                    MercadoriaId = frenteCaixa.CodigoMercadoria,
-                    NotaFiscalSaidaId = notaFiscal.NotaFiscalSaidaId
-                };
-                
-                contexto.NotaFiscalSaidaItems.Add(notaFiscalItem);
-                contexto.SaveChanges();
+                    var id = notaFiscal.Itens.LastOrDefault()?.NotaFiscalSaidaItemId ?? 0;
+                    id = id+1;
+                    var mercadoria = contexto.Mercadorias.ToList()
+                        .First(c => c.CodigoBarras == frenteCaixa.CodigoMercadoria);
+                    notaFiscalItem = new NotaFiscalSaidaItem
+                    {
+                        NotaFiscalSaidaItemId = id,
+                        Mercadoria = mercadoria,
+                        Quantidade = frenteCaixa.Quantidade,
+                        PrecoVenda = frenteCaixa.PrecoVenda,
+                        TotalMercadoria = frenteCaixa.Quantidade * frenteCaixa.PrecoVenda,
+                        MercadoriaId = mercadoria.MercadoriaId,
+                        NotaFiscalSaidaId = notaFiscal.NotaFiscalSaidaId
+                    };
 
+                    //contexto.NotaFiscalSaidaItems.Add(notaFiscalItem);
+                    //contexto.SaveChanges();
+                }
+                else
+                {
+                    notaFiscalItem.PrecoVenda = frenteCaixa.PrecoVenda;
+                    notaFiscalItem.Quantidade += frenteCaixa.Quantidade;
+                    notaFiscalItem.TotalMercadoria = frenteCaixa.PrecoVenda * notaFiscalItem.Quantidade;
+                    notaFiscal.Itens.Remove(notaFiscalItem);
+                }
+                
                 return notaFiscalItem;
             }
         }
 
-        public static void AdicionarNovoItemNota(ref NotaFiscalSaida notaFiscal, NotaFiscalSaidaItem notaFiscalItem)
-        {
-            try
-            {
-                using (var contexto = new ArgoMiniContext())
-                {
-                    notaFiscal.Itens.Add(notaFiscalItem);
-                    notaFiscal.ValorTotalNota = notaFiscal.Itens.Sum(c => c.TotalMercadoria);
-                    contexto.Entry(notaFiscal).State = EntityState.Modified;
-                    contexto.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                notaFiscal.Itens.Remove(notaFiscalItem);
-            }
-        }
+
+        //public static void AdicionarNovoItemNota(ref NotaFiscalSaida notaFiscal, NotaFiscalSaidaItem notaFiscalItem)
+        //{
+        //    try
+        //    {
+        //        using (var contexto = new ArgoMiniContext())
+        //        {
+                    
+        //            //contexto.Entry(notaFiscal).State = EntityState.Modified;
+        //            //contexto.SaveChanges();
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        notaFiscal.Itens.Remove(notaFiscalItem);
+        //    }
+        //}
 
         public static void EditarItemNota(NotaFiscalSaidaItem notaFiscalItem)
         {
@@ -69,8 +85,8 @@ namespace ArgoMini.Controllers
                         notaItemBanco.Quantidade = notaFiscalItem.Quantidade;
                         notaItemBanco.TotalMercadoria = notaFiscalItem.TotalMercadoria;
 
-                        contexto.Entry(notaItemBanco).State = EntityState.Modified;
-                        contexto.SaveChanges();    
+                        //contexto.Entry(notaItemBanco).State = EntityState.Modified;
+                        //contexto.SaveChanges();    
                     }
                 }
 

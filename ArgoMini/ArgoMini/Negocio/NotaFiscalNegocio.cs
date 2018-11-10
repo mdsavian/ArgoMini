@@ -9,26 +9,25 @@ namespace ArgoMini.Negocio
 {
     internal class NotaFiscalNegocio
     {
-        private readonly ArgoMiniContext _contexto = new ArgoMiniContext();
+
 
         public NotaFiscalSaida CriarNotaFiscal()
         {
-            var ultimaNotaFiscalSaida = _contexto.NotasFiscalSaidas.ToList().LastOrDefault();
+            using (var contexto = new ArgoMiniContext())
+            {
+                var ultimaNotaFiscalSaida = contexto.NotasFiscalSaidas.ToList().LastOrDefault();
 
-            NotaFiscalSaida nota =
-                new NotaFiscalSaida
-                {
-                    NotaFiscalSaidaId = ultimaNotaFiscalSaida?.NotaFiscalSaidaId + 1 ?? 1,
-                    Numero = ultimaNotaFiscalSaida?.NotaFiscalSaidaId + 1 ?? 1,
-                    Itens = new List<NotaFiscalSaidaItem>(),
-                    Situacao = ESituacaoNotaFiscalSaida.Construcao,
-                    Serie = 113
-                };
-
-
-            _contexto.NotasFiscalSaidas.Add(nota);
-
-            return nota;
+                NotaFiscalSaida nota =
+                    new NotaFiscalSaida
+                    {
+                        NotaFiscalSaidaId = ultimaNotaFiscalSaida?.NotaFiscalSaidaId + 1 ?? 1,
+                        Numero = ultimaNotaFiscalSaida?.NotaFiscalSaidaId + 1 ?? 1,
+                        Itens = new List<NotaFiscalSaidaItem>(),
+                        Situacao = ESituacaoNotaFiscalSaida.Construcao,
+                        Serie = 113
+                    };
+                return nota;
+            }
         }
 
 
@@ -36,33 +35,54 @@ namespace ArgoMini.Negocio
         {
             try
             {
-                _contexto.SaveChanges();
-                new FlexDocsNegocio().EmitirNfe(notaFiscal);
-                MercadoriaEstoqueNegocio.AtualizarEstoqueNotaSaida(notaFiscal);
-                
+                using (var contexto = new ArgoMiniContext())
+                {
+                    contexto.NotasFiscalSaidas.Add(notaFiscal);
+                    new FlexDocsNegocio().EmitirNfe(notaFiscal, contexto);
+                    MercadoriaEstoqueNegocio.AtualizarEstoqueNotaSaida(notaFiscal, contexto);
+                }
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
         }
 
-        public static NotaFiscalSaida AtualizarValorNota(int notaFiscalId)
+        public void CancelarNotaFiscal(NotaFiscalSaida notaFiscal)
         {
             using (var contexto = new ArgoMiniContext())
             {
-                var notaFiscal = contexto.NotasFiscalSaidas.Include(c => c.Itens).Include(c=> c.Itens.Select(d=> d.Mercadoria))
-                    .First(c => c.NotaFiscalSaidaId == notaFiscalId);
+                try
+                {
+                    contexto.NotasFiscalSaidas.Add(notaFiscal);
+                    new FlexDocsNegocio().CancelarNfce(notaFiscal, "teste cancelamento");
 
-                notaFiscal.ValorTotalNota = notaFiscal.Itens.Sum(c => c.TotalMercadoria);
+                }
+                catch (Exception ex)
+                {
 
-                contexto.Entry(notaFiscal).State = EntityState.Modified;
-                contexto.SaveChanges();
-
-                return notaFiscal;  
+                }
             }
-
         }
+
+        public void InutilizarNotaFiscal(NotaFiscalSaida notaFiscal)
+        {
+            using (var contexto = new ArgoMiniContext())
+            {
+                try
+                {
+                    contexto.NotasFiscalSaidas.Add(notaFiscal);
+                    new FlexDocsNegocio().InutilizarNfce(notaFiscal, "teste inutlização");
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+
 
         public void DeletaNota(NotaFiscalSaida notaFiscal)
         {

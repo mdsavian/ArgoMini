@@ -101,4 +101,4 @@ c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.Data.dll
 c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.WebData.dll
 c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.WebData.xml
 c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.Data.xml
-c:\temp\ArgoMini\ArgoMini\ArgoMini\obj\Release\odesempre.Migrations.teste.resources
+C:\temp\ArgoMini\ArgoMini\ArgoMini\obj\Release\odesempre.Migrations.teste.resources

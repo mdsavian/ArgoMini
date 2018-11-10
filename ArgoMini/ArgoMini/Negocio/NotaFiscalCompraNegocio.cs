@@ -47,6 +47,8 @@ namespace ArgoMini.Negocio
                     var emissao = DateTime.Parse(RetornarTag(xml, "dhEmi"));
                     var dataEntrada = DateTime.Now;
 
+                    new FlexDocsNegocio().SalvarXml(xml.InnerXml, 2, chave);
+
                     notaCompra = new NotaFiscalCompra
                     {
                         Chave = chave,

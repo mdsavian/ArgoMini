@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using ArgoMini.Enums;
+using ArgoMini.Negocio.Utilitarios;
 
 namespace ArgoMini.Models
 {
@@ -23,6 +24,9 @@ namespace ArgoMini.Models
 
         public int VistaPrazo { get; set; }
 
+
+        //[ValidacaoAtributoCPF(ErrorMessage = "opaaa")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:###-###-###.##}")]
         public string CnpjCpf { get; set; }
 
         public decimal ValorMercadorias { get; set; }

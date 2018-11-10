@@ -5,6 +5,7 @@
         Autorizada = 1,
         Cancelada = 2,
         ComErro = 3,
-        Construcao = 4
+        Construcao = 4,
+        Inutilizada = 5
     }
 }
