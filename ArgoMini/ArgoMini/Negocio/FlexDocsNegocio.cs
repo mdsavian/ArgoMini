@@ -632,7 +632,9 @@ namespace ArgoMini.Negocio
 
                 using (var contexto = new ArgoMiniContext())
                 {
-                    notaSaida = contexto.NotasFiscalSaidas.OrderByDescending(c => c.NotaFiscalSaidaId).FirstOrDefault(c => c.Situacao == ESituacaoNotaFiscalSaida.Autorizada);
+                    notaSaida = contexto.NotasFiscalSaidas.FirstOrDefault(c => c.NotaFiscalSaidaId == 6);
+
+
                     if (notaSaida == null)
                     {
                         throw new Exception("Houve um erro na tentativa de inutilização, tente mais tarde.");
@@ -654,9 +656,9 @@ namespace ArgoMini.Negocio
                     var ano = dataHora.Value.ToString("yy");
                     var cnpj = _estabelecimento.Cnpj;
                     var modelo = "65";
-                    var serie = notaSaida.Serie.ToString();
-                    var nroNfeInicial = notaSaida.Numero.ToString();
-                    var nroNfeFinal = notaSaida.Numero.ToString();
+                    var serie = /*notaSaida.Serie.ToString()*/"547";
+                    var nroNfeInicial = "13"; /*notaSaida.Numero.ToString()*/
+                    var nroNfeFinal = "13"; /*notaSaida.Numero.ToString()*/;
                     var justificativa = justificativaCancelamento;
                     var licenca = _licenca;
 
@@ -674,6 +676,7 @@ namespace ArgoMini.Negocio
                         notaSaida.CancelamentoNumeroProtocolo = reciboInutilizacao.Protocolo;
                         notaSaida.CancelamentoDataHoraProtocolo = reciboInutilizacao.DataHora;
                         notaSaida.ChaveNota = reciboInutilizacao.Chave;
+                        SalvarXml(msgRetWs, 1, notaSaida.ChaveNota);
                         MercadoriaEstoqueNegocio.CancelamentoNotaFiscalSaida(notaSaida, contexto);
                     }
                     else

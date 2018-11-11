@@ -61,7 +61,9 @@
             }
 
         </table>
-
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
         <div class="form-group">
             <label class="control-label" for="ValorTotalNota">ValorTotalNota</label>
             <input class="form-control text-box single-line" data-val="true" data-val-number="The field ValorTotalNota must be a number." data-val-required="O campo ValorTotalNota é obrigatório." disabled="disabled" id="ValorTotalNota" name="ValorTotalNota" type="text" value="0,00">
@@ -71,10 +73,45 @@
             @Html.ActionLink("Cancelar Nota Fiscal", "CancelarNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary " })
             @Html.ActionLink("Inutlizar Nota Fiscal", "InutilizarNotaFiscal", "FrenteCaixa", new { @class = "btn btn-primary " })
         </div>
+
     </div>
 }
 
+<script type="text/javascript">
+    $(document).ready(function () {
 
+        $("#progressBar").kendoProgressBar({
+            min: 0,
+            max: 100,
+            type: "percent",
+        });
+    });
+
+    function StartInvoicing()
+    {
+        var progressNotifier = $.connection.progressHub;
+
+        // client-side sendMessage function that will be called from the server-side
+        progressNotifier.client.sendMessage = function (message, count) {
+            // update progress
+            UpdateProgress(message, count);
+            //alert(message);
+        };
+
+        // establish the connection to the server and start server-side operation
+        $.connection.hub.start().done(function () {
+            // call the method CallLongOperation defined in the Hub
+            progressNotifier.server.getCountAndMessage();
+        });
+    }
+
+// Update the progress bar 
+    function UpdateProgress(message, count) {
+        var result = $("#result");
+        result.html(message);
+        $("#progressBar").data("kendoProgressBar").value(count);
+    }
+</script>
 @*<head runat="server">
 
         <script language="javascript" type="text/javascript">

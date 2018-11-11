@@ -102,3 +102,15 @@ c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.WebData.dll
 c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.WebData.xml
 c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\WebMatrix.Data.xml
 C:\temp\ArgoMini\ArgoMini\ArgoMini\obj\Release\odesempre.Migrations.teste.resources
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Canducci.Zip.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.AspNet.SignalR.Core.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.Owin.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.Owin.Security.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Owin.dll
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.AspNet.SignalR.Core.xml
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.Owin.xml
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\temp\ArgoMini\ArgoMini\ArgoMini\bin\Microsoft.Owin.Security.xml

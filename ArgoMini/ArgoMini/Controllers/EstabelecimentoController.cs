@@ -31,7 +31,7 @@ namespace ArgoMini.Controllers
         {
             if (ModelState.IsValid)
             {
-                var xx = DadosCorreioNegocio.ConsultaCepService(estabelecimento.Cep);
+                var xx = DadosCorreioNegocio.ConsultaCep(estabelecimento.Cep);
                 _context.Estabelecimentos.Add(estabelecimento);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -61,7 +61,7 @@ namespace ArgoMini.Controllers
         {
             if (ModelState.IsValid)
             {
-                var xx = DadosCorreioNegocio.ConsultaCepService(estabelecimento.Cep);
+                var xx = DadosCorreioNegocio.ConsultaCep(estabelecimento.Cep);
                 _context.Entry(estabelecimento).State = EntityState.Modified;
                 _context.SaveChanges();
                 return RedirectToAction("Index");

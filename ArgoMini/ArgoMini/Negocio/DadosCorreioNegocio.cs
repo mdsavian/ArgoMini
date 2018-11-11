@@ -1,71 +1,49 @@
-﻿using ArgoMini.Models;
-using ArgoMini.WSCorreios;
+﻿using System;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using ArgoMini.Models;
+using Canducci.Zip;
 
 
 namespace ArgoMini.Negocio
 {
     public class DadosCorreioNegocio
     {
-        public static DadosCorreio ConverDadosCorreio(enderecoERP endereco)
+        public static DadosCorreio ConsultaCep(string cep)
         {
-            return new DadosCorreio
-            {
-                Bairro = endereco.bairro,
-                Cidade = endereco.cidade,
-                Complemento = endereco.complemento2,
-                Uf = endereco.uf,
-                Rua = endereco.end
-            };
-        }
+            cep = Regex.Replace(cep, @"[^\d]", "");
 
-        public static DadosCorreio ConsultaCepService(string cep)
-        {
-            cep = cep.Replace(".", string.Empty).Replace("-", string.Empty);
             try
             {
-                var ws = new consultaCEPResponse();
-                //var ws = new AtendeClienteClient();
-                //var resposta = ws.consultaCEP(cep);
-                //if (resposta != null)
-                //    return ConverDadosCorreio(resposta);
-                //return null;
+                using (ZipCodeLoad zipLoad = new ZipCodeLoad())
+                {
+                    if (ZipCode.TryParse(cep, out var zipCode))
+                    {
+                        var result = Task.Run(() => zipLoad.FindAsync(zipCode)).Result;
 
-                //var resposta = ws.consultaCEPResponse(cep);
-                //do
-                //{
-                //    if (resposta.IsCompleted)
-                //    {
-                //        //if (resposta.Result.@return == null)
-                //        //    return null;
+                        if (result.IsValid)
+                        {
+                            if (!string.IsNullOrWhiteSpace(result.Value.Uf))
+                            {
+                                var dados = new DadosCorreio
+                                {
+                                    Bairro = result.Value.District.ToUpper(),
+                                    Cep = result.Value.Zip,
+                                    Rua = result.Value.Address.ToUpper(),
+                                    CodigoMunicipio = result.Value.Ibge,
+                                    Cidade = result.Value.City.ToUpper(),
+                                    Uf = result.Value.Uf.ToUpper()
+                                };
 
-                //        return DadosCorreioNegocio.ConverDadosCorreio(resposta.Result.@return);
-                //    }
-
-                //} while (!resposta.IsCompleted);
-
-                //var ws = new WsCorreiros.AtendeClienteClient();
-                //var resposta = ws.consultaCEPAsync(cep);
-                //do
-                //{
-                //    if (resposta.IsCompletedSuccessfully)
-                //    {
-                //        //if (resposta.Result.@return == null)
-                //        //    return null;
-
-                //        return DadosCorreioNegocio.ConverDadosCorreio(resposta.Result.@return);
-                //    }
-
-                //} while (!resposta.IsCompletedSuccessfully);
-
-                //if (resposta.IsCompletedSuccessfully)
-                //    return DadosCorreioNegocio.ConverDadosCorreio(resposta.Result.@return);
-
+                                return dados;
+                            }
+                        }
+                    }
+                }
             }
-            catch (Exception Exception)
+            catch (Exception ex)
             {
-
             }
-
             return null;
         }
     }
